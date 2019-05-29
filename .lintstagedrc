@@ -1,0 +1,10 @@
+{
+	"*.{js,css}": [
+		"npx prettier --write \"**/*.js\" \"**/*.css\"",
+		"git add"
+	],
+	"*.js": [
+		"npx eslint ./ --fix",
+		"git add"
+	]
+}
