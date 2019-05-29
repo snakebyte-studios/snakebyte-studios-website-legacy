@@ -8,7 +8,9 @@ class Home extends Component {
 			<React.Fragment>
 				{/* Meta content */}
 				<Head>
-					<title>Snakebyte Studios</title>
+					<title>
+						Toronto based Web Design & Development - Snakebyte Studios
+					</title>
 				</Head>
 
 				{/* Page content */}
@@ -18,12 +20,21 @@ class Home extends Component {
 						<h1>Snakebyte Studios</h1>
 					</div>
 
+					<p className="description">
+						Snakebyte Studios is a Toronto based digital agency focused on
+						delivering quality web&nbsp;development and graphic&nbsp;design
+						experiences for your brand.
+					</p>
+
 					<nav>
 						<Link href="/team">
 							<a>Team</a>
 						</Link>
 						<Link href="/portfolio">
 							<a>Portfolio</a>
+						</Link>
+						<Link href="/blog">
+							<a>Blog</a>
 						</Link>
 						<Link href="/contact">
 							<a>Contact</a>
@@ -62,16 +73,31 @@ class Home extends Component {
 					}
 
 					nav a {
+						padding: 20px;
 						text-decoration: none;
 						color: black;
 						text-transform: uppercase;
-						margin-right: 60px;
+						margin-right: 40px;
 						font-weight: bold;
 						font-size: 20px;
+						transition: 0.2s;
+					}
+
+					nav a:hover {
+						opacity: 0.6;
 					}
 
 					nav a:last-of-type {
 						margin-right: 0;
+					}
+
+					.description {
+						font-size: 16px;
+						margin-top: 50px;
+						max-width: 700px;
+						text-align: center;
+						line-height: 1.6em;
+						opacity: 0.7;
 					}
 				`}</style>
 			</React.Fragment>

@@ -1,4 +1,5 @@
 import App, { Container } from "next/app";
+import Link from "next/link";
 import "globals/styles/_reset.css";
 import "globals/styles/style.css";
 
@@ -21,7 +22,11 @@ class MainApp extends App {
 				<main>
 					{/* Header */}
 					<header>
-						<img src="https://placehold.it/100x50" />
+						<Link href="/">
+							<a>
+								<div className="brandmark" />
+							</a>
+						</Link>
 						<div className="menu-button">
 							<span />
 						</div>
@@ -41,12 +46,12 @@ class MainApp extends App {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<i className="fab fa-instagram" />
+								<img src="static/images/instagram.svg" />
 							</a>
 						</div>
 					</footer>
 
-					{/* Styles for main app layout */}
+					{/* CSS for main app layout */}
 					<style jsx>{`
 						header {
 							display: flex;
@@ -58,6 +63,12 @@ class MainApp extends App {
 							left: 0;
 							height: 90px;
 							width: 100vw;
+						}
+
+						header .brandmark {
+							height: 40px;
+							width: 50px;
+							background-color: black;
 						}
 
 						.menu-button {
@@ -98,13 +109,18 @@ class MainApp extends App {
 							padding: 15px;
 						}
 
+						footer .copyright {
+							opacity: 0.4;
+						}
+
 						footer .social a {
-							padding: 5px;
+							padding: 10px;
 							color: black;
 						}
 
-						footer .social i {
-							font-size: 24px;
+						footer .social img {
+							height: 24px;
+							width: 24px;
 						}
 					`}</style>
 				</main>
