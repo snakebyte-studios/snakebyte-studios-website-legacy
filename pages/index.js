@@ -1,12 +1,11 @@
 import { Component } from "react";
 import Head from "next/head";
 import Link from "next/link";
-import Layout from "layouts/DefaultLayout.js";
 
 class Home extends Component {
   render() {
     return (
-      <Layout>
+      <React.Fragment>
         {/* Meta content */}
         <Head>
           <title>Snakebyte Studios</title>
@@ -75,7 +74,7 @@ class Home extends Component {
             margin-right: 0;
           }
         `}</style>
-      </Layout>
+      </React.Fragment>
     );
   }
 }

@@ -1,7 +1,6 @@
 const { readFileSync, readdirSync, statSync } = require("fs");
 const path = require("path");
-const withSass = require("@zeit/next-sass");
-const withOffline = require("next-offline");
+const withCSS = require("@zeit/next-css");
 
 const nextConfig = {
   webpack(config) {
@@ -25,4 +24,4 @@ const nextConfig = {
   }
 };
 
-module.exports = withOffline(withSass(nextConfig));
+module.exports = withCSS(nextConfig);
