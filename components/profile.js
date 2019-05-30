@@ -85,8 +85,9 @@ class Profile extends Component {
 
 					.profile img {
 						border-radius: 1000px;
-						max-height: 300px;
-						max-width: 300px;
+						height: 300px;
+						width: 300px;
+						background-color: #ccc;
 						margin-bottom: 20px;
 					}
 

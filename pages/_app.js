@@ -1,7 +1,7 @@
 import App, { Container } from "next/app";
 import Link from "next/link";
-import "globals/styles/_reset.css";
-import "globals/styles/style.css";
+import "global/styles/_reset.css";
+import "global/styles/style.css";
 
 class MainApp extends App {
 	static async getInitialProps({ Component, ctx }) {
@@ -110,7 +110,8 @@ class MainApp extends App {
 						}
 
 						footer .copyright {
-							opacity: 0.4;
+							opacity: 0.3;
+							font-size: 12px;
 						}
 
 						footer .social a {

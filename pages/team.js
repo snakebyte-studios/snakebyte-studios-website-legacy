@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Head from "next/head";
+import { MEMBERS, KEYS } from "global/constants.js";
 import Profile from "components/profile.js";
 
 class Team extends Component {
@@ -26,29 +27,35 @@ class Team extends Component {
 				</Head>
 
 				{/* Page content */}
-				<main className={activeProfile ? "detail-view" : ""}>
+				<main
+					className={activeProfile ? "detail-view" : ""}
+					tabIndex="0"
+					onKeyDown={e =>
+						e.keyCode === KEYS.ESC ? switchActiveProfile(null) : null
+					}
+				>
 					<Profile
-						name="Lev Markelov"
+						name={MEMBERS.LEV}
 						photo="https://placehold.it/750"
 						specialty="Backend Developer"
 						bio="Lorem ipsum dolor sit amet"
-						isActive={activeProfile === "Lev Markelov"}
+						isActive={activeProfile === MEMBERS.LEV}
 						onProfileSelect={switchActiveProfile}
 					/>
 					<Profile
-						name="Daryl Pinto"
+						name={MEMBERS.DARYL}
 						photo="https://placehold.it/750"
 						specialty="Frontend Developer"
 						bio="Lorem ipsum dolor sit amet"
-						isActive={activeProfile === "Daryl Pinto"}
+						isActive={activeProfile === MEMBERS.DARYL}
 						onProfileSelect={switchActiveProfile}
 					/>
 					<Profile
-						name="Kumail Nanji"
+						name={MEMBERS.KUMAIL}
 						photo="https://placehold.it/750"
 						specialty="Graphic Designer"
 						bio="Lorem ipsum dolor sit amet"
-						isActive={activeProfile === "Kumail Nanji"}
+						isActive={activeProfile === MEMBERS.KUMAIL}
 						onProfileSelect={switchActiveProfile}
 					/>
 				</main>
@@ -63,6 +70,7 @@ class Team extends Component {
 						margin: 0 auto;
 						justify-content: space-between;
 						align-items: center;
+						outline: 0;
 					}
 
 					.detail-view :global(.profile:not(.is-active)) {
