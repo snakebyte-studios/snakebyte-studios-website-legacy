@@ -1,6 +1,6 @@
 import { Component } from "react";
 import Head from "next/head";
-import Link from "next/link";
+import Navigation from "components/navigation.js";
 
 class Home extends Component {
 	render() {
@@ -14,7 +14,7 @@ class Home extends Component {
 				</Head>
 
 				{/* Page content */}
-				<main>
+				<main id="home-page">
 					<div id="logo">
 						<div className="brandmark" />
 						<h1>Snakebyte Studios</h1>
@@ -26,20 +26,7 @@ class Home extends Component {
 						experiences for your brand.
 					</p>
 
-					<nav>
-						<Link href="/team">
-							<a>Team</a>
-						</Link>
-						<Link href="/portfolio">
-							<a>Portfolio</a>
-						</Link>
-						<Link href="/blog">
-							<a>Blog</a>
-						</Link>
-						<Link href="/contact">
-							<a>Contact</a>
-						</Link>
-					</nav>
+					<Navigation />
 				</main>
 
 				{/* CSS */}
@@ -68,11 +55,11 @@ class Home extends Component {
 						margin-left: 10px;
 					}
 
-					nav {
+					#home-page :global(nav) {
 						margin-top: 40px;
 					}
 
-					nav a {
+					#home-page :global(nav a) {
 						padding: 20px;
 						text-decoration: none;
 						color: black;
@@ -83,11 +70,11 @@ class Home extends Component {
 						transition: 0.2s;
 					}
 
-					nav a:hover {
+					#home-page :global(nav a:hover) {
 						opacity: 0.6;
 					}
 
-					nav a:last-of-type {
+					#home-page :global(nav a:last-of-type) {
 						margin-right: 0;
 					}
 

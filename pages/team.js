@@ -28,6 +28,7 @@ class Team extends Component {
 
 				{/* Page content */}
 				<main
+					id="team-page"
 					className={activeProfile ? "detail-view" : ""}
 					tabIndex="0"
 					onKeyDown={e =>
