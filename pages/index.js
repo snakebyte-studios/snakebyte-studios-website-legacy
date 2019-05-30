@@ -1,8 +1,8 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 import Head from "next/head";
 import Navigation from "components/navigation.js";
 
-class Home extends Component {
+class Home extends PureComponent {
 	render() {
 		return (
 			<React.Fragment>

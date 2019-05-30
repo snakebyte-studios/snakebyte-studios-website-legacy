@@ -1,9 +1,9 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 import Head from "next/head";
 import { MEMBERS, KEYS } from "global/constants.js";
 import Profile from "components/profile.js";
 
-class Team extends Component {
+class Team extends PureComponent {
 	constructor(props) {
 		super(props);
 		this.state = {

@@ -1,6 +1,6 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 
-class Profile extends Component {
+class Profile extends PureComponent {
 	constructor(props) {
 		super(props);
 	}

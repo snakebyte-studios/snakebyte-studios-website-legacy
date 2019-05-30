@@ -1,7 +1,7 @@
-import { Component } from "react";
+import { PureComponent } from "react";
 import Link from "next/link";
 
-class Navigation extends Component {
+class Navigation extends PureComponent {
 	render() {
 		return (
 			<nav>
@@ -17,8 +17,6 @@ class Navigation extends Component {
 				<Link href="/contact">
 					<a>Contact</a>
 				</Link>
-				{/* CSS */}
-				<style jsx>{""}</style>
 			</nav>
 		);
 	}
