@@ -41,6 +41,7 @@ class MainApp extends App {
 				<main
 					tabIndex="0"
 					onKeyDown={e => (e.keyCode === KEYS.ESC ? closeNavDrawer() : null)}
+					className={navDrawerOpen ? "blurred" : ""}
 				>
 					{/* Header */}
 					<header>
@@ -56,7 +57,9 @@ class MainApp extends App {
 					</header>
 
 					{/* Pages render here */}
-					<Component {...pageProps} />
+					<div className="page">
+						<Component {...pageProps} />
+					</div>
 
 					{/* Navigation Drawer Sidemenu */}
 					<NavDrawer isOpen={navDrawerOpen} onCloseNav={closeNavDrawer} />
@@ -79,6 +82,12 @@ class MainApp extends App {
 
 					{/* CSS for main app layout */}
 					<style jsx>{`
+						.blurred > header,
+						.blurred > .page,
+						.blurred > footer {
+							filter: blur(3px);
+						}
+
 						header {
 							display: flex;
 							justify-content: space-between;

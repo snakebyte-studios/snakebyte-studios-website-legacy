@@ -1,7 +1,7 @@
-import { PureComponent } from "react";
-import Link from "next/link";
+import { Component } from "react";
+import Link from "components/ActiveLink.js";
 
-class Navigation extends PureComponent {
+class Navigation extends Component {
 	constructor(props) {
 		super(props);
 	}

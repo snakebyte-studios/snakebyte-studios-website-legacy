@@ -11,6 +11,12 @@ class Home extends PureComponent {
 					<title>
 						Toronto based Web Design & Development - Snakebyte Studios
 					</title>
+					<meta
+						name="description"
+						content="Snakebyte Studios is a Toronto based digital agency focused on
+						delivering quality web development and graphic design
+						experiences for your brand."
+					/>
 				</Head>
 
 				{/* Page content */}

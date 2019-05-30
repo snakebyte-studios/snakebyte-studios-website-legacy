@@ -24,6 +24,11 @@ class Team extends PureComponent {
 				{/* Meta content */}
 				<Head>
 					<title>Our Team - Snakebyte Studios</title>
+					<meta
+						name="description"
+						content="Years of experience and keen eyes for detail –
+						Meet the brilliant minds at Snakebyte Studios."
+					/>
 				</Head>
 
 				{/* Page content */}

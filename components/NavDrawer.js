@@ -1,7 +1,7 @@
-import { PureComponent } from "react";
+import { Component } from "react";
 import Navigation from "components/Navigation.js";
 
-class NavDrawer extends PureComponent {
+class NavDrawer extends Component {
 	constructor(props) {
 		super(props);
 	}
@@ -54,7 +54,7 @@ class NavDrawer extends PureComponent {
 					}
 
 					.open .nav-drawer-shade {
-						background-color: rgba(0, 0, 0, 0.6);
+						background-color: rgba(0, 0, 0, 0.45);
 						pointer-events: auto;
 					}
 
@@ -72,7 +72,8 @@ class NavDrawer extends PureComponent {
 						transition: 0.2s;
 					}
 
-					.nav-drawer :global(nav a:hover) {
+					.nav-drawer :global(nav a:hover),
+					.nav-drawer :global(nav a.active) {
 						background-color: rgba(255, 255, 255, 0.3);
 					}
 				`}</style>
