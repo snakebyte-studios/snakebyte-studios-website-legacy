@@ -72,7 +72,7 @@ class MainApp extends App {
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								<img src="static/images/instagram.svg" />
+								<img src="/static/images/instagram.svg" />
 							</a>
 						</div>
 					</footer>
