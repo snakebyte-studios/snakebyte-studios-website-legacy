@@ -1,6 +1,6 @@
 import { PureComponent } from "react";
 import Head from "next/head";
-import Navigation from "components/navigation.js";
+import Navigation from "components/Navigation.js";
 
 class Home extends PureComponent {
 	render() {
@@ -26,7 +26,7 @@ class Home extends PureComponent {
 						experiences for your brand.
 					</p>
 
-					<Navigation />
+					<Navigation showHomeLink={false} />
 				</main>
 
 				{/* CSS */}

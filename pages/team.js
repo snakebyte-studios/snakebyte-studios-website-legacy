@@ -1,7 +1,7 @@
 import { PureComponent } from "react";
 import Head from "next/head";
 import { MEMBERS, KEYS } from "global/constants.js";
-import Profile from "components/profile.js";
+import Profile from "components/Profile.js";
 
 class Team extends PureComponent {
 	constructor(props) {
@@ -30,7 +30,7 @@ class Team extends PureComponent {
 				<main
 					id="team-page"
 					className={activeProfile ? "detail-view" : ""}
-					tabIndex="0"
+					tabIndex="1"
 					onKeyDown={e =>
 						e.keyCode === KEYS.ESC ? switchActiveProfile(null) : null
 					}

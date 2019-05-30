@@ -2,6 +2,8 @@ import App, { Container } from "next/app";
 import Link from "next/link";
 import "global/styles/_reset.css";
 import "global/styles/style.css";
+import { KEYS } from "global/constants.js";
+import NavDrawer from "components/NavDrawer.js";
 
 class MainApp extends App {
 	static async getInitialProps({ Component, ctx }) {
@@ -14,12 +16,32 @@ class MainApp extends App {
 		return { pageProps };
 	}
 
+	constructor(props) {
+		super(props);
+		this.state = {
+			navDrawerOpen: false
+		};
+	}
+
+	openNavDrawer = () => {
+		this.setState({ navDrawerOpen: true });
+	};
+
+	closeNavDrawer = () => {
+		this.setState({ navDrawerOpen: false });
+	};
+
 	render() {
+		const { navDrawerOpen } = this.state;
 		const { Component, pageProps } = this.props;
+		const { openNavDrawer, closeNavDrawer } = this;
 
 		return (
 			<Container>
-				<main>
+				<main
+					tabIndex="0"
+					onKeyDown={e => (e.keyCode === KEYS.ESC ? closeNavDrawer() : null)}
+				>
 					{/* Header */}
 					<header>
 						<Link href="/">
@@ -27,13 +49,17 @@ class MainApp extends App {
 								<div className="brandmark" />
 							</a>
 						</Link>
-						<div className="menu-button">
+
+						<div className="menu-button" onClick={openNavDrawer}>
 							<span />
 						</div>
 					</header>
 
 					{/* Pages render here */}
 					<Component {...pageProps} />
+
+					{/* Navigation Drawer Sidemenu */}
+					<NavDrawer isOpen={navDrawerOpen} onCloseNav={closeNavDrawer} />
 
 					{/* Footer */}
 					<footer>
@@ -63,6 +89,7 @@ class MainApp extends App {
 							left: 0;
 							height: 90px;
 							width: 100vw;
+							outline: 0;
 						}
 
 						header .brandmark {

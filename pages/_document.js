@@ -8,7 +8,7 @@ class MainDocument extends Document {
 
 	render() {
 		return (
-			<Html>
+			<Html lang="en">
 				<Head>
 					<link
 						href="https://fonts.googleapis.com/css?family=Heebo:400,700&display=swap"

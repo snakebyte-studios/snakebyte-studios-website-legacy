@@ -48,7 +48,6 @@ class Profile extends PureComponent {
 						box-sizing: border-box;
 						position: relative;
 						transition: 0.2s;
-						z-index: 1;
 					}
 
 					.profile .close {
