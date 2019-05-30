@@ -4,6 +4,7 @@
 		"start": "next start",
 		"build": "next build",
 		"export": "next build && next export",
+		"cleanup-export": "rm -r out/_next/static/development/ out/_next/static/webpack/",
 		"format": "npx prettier --write \"**/*.js\" \"**/*.css\" && (npx eslint ./ --fix || exit 0)"
 	},
 	"dependencies": {
