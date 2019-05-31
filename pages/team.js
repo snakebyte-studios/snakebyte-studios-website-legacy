@@ -1,6 +1,7 @@
 import { PureComponent } from "react";
 import Head from "next/head";
-import { MEMBERS, KEYS } from "global/constants.js";
+import TEAM_MEMBERS from "data/team_members.json";
+import { KEYS } from "global/constants.js";
 import Profile from "components/Profile.js";
 
 class Team extends PureComponent {
@@ -40,30 +41,17 @@ class Team extends PureComponent {
 						e.keyCode === KEYS.ESC ? switchActiveProfile(null) : null
 					}
 				>
-					<Profile
-						name={MEMBERS.LEV}
-						photo="https://placehold.it/750"
-						specialty="Backend Developer"
-						bio="Lorem ipsum dolor sit amet"
-						isActive={activeProfile === MEMBERS.LEV}
-						onProfileSelect={switchActiveProfile}
-					/>
-					<Profile
-						name={MEMBERS.DARYL}
-						photo="https://placehold.it/750"
-						specialty="Frontend Developer"
-						bio="Lorem ipsum dolor sit amet"
-						isActive={activeProfile === MEMBERS.DARYL}
-						onProfileSelect={switchActiveProfile}
-					/>
-					<Profile
-						name={MEMBERS.KUMAIL}
-						photo="https://placehold.it/750"
-						specialty="Graphic Designer"
-						bio="Lorem ipsum dolor sit amet"
-						isActive={activeProfile === MEMBERS.KUMAIL}
-						onProfileSelect={switchActiveProfile}
-					/>
+					{TEAM_MEMBERS.map(member => (
+						<Profile
+							key={member.name}
+							name={member.name}
+							photo={member.photo}
+							specialty={member.specialty}
+							bio={member.bio}
+							isActive={activeProfile === member.name}
+							onProfileSelect={switchActiveProfile}
+						/>
+					))}
 				</main>
 
 				{/* CSS */}

@@ -1,0 +1,20 @@
+[
+	{
+		"name": "Lev Markelov",
+		"specialty": "Backend Developer",
+		"bio": "Lorem ipsum dolor sit amet",
+		"photo": "https://placehold.it/750"
+	},
+	{
+		"name": "Daryl Pinto",
+		"specialty": "Frontend Developer",
+		"bio": "Lorem ipsum dolor sit amet",
+		"photo": "https://placehold.it/750"
+	},
+	{
+		"name": "Kumail Nanji",
+		"specialty": "Graphic Designer",
+		"bio": "Lorem ipsum dolor sit amet",
+		"photo": "https://placehold.it/750"
+	}
+]
