@@ -41,7 +41,6 @@ class MainApp extends App {
 				<main
 					tabIndex="0"
 					onKeyDown={e => (e.keyCode === KEYS.ESC ? closeNavDrawer() : null)}
-					className={navDrawerOpen ? "blurred" : ""}
 				>
 					{/* Header */}
 					<header>
@@ -82,12 +81,6 @@ class MainApp extends App {
 
 					{/* CSS for main app layout */}
 					<style jsx>{`
-						.blurred > header,
-						.blurred > .page,
-						.blurred > footer {
-							filter: blur(3px);
-						}
-
 						header {
 							display: flex;
 							justify-content: space-between;
@@ -108,8 +101,13 @@ class MainApp extends App {
 						}
 
 						.menu-button {
-							padding: 10px 0;
+							padding: 25px 15px;
 							cursor: pointer;
+							transition: 0.2s;
+						}
+
+						.menu-button:hover {
+							opacity: 0.7;
 						}
 
 						.menu-button span,
