@@ -25,10 +25,11 @@ class NavDrawer extends Component {
 
 				<style jsx>{`
 					.nav-drawer {
-						width: 20vw;
+						width: 300px;
 						height: 100vh;
+						max-width: 80vw;
 						position: fixed;
-						right: -20vw;
+						right: -300px;
 						top: 0;
 						background-color: #ccc;
 						z-index: 50;
