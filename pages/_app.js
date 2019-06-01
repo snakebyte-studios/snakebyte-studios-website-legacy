@@ -1,5 +1,6 @@
 import App, { Container } from "next/app";
 import Link from "next/link";
+import { PageTransition } from "next-page-transitions";
 import "global/styles/_reset.css";
 import "global/styles/style.css";
 import { KEYS } from "global/constants.js";
@@ -33,7 +34,7 @@ class MainApp extends App {
 
 	render() {
 		const { navDrawerOpen } = this.state;
-		const { Component, pageProps } = this.props;
+		const { Component, router, pageProps } = this.props;
 		const { openNavDrawer, closeNavDrawer } = this;
 
 		return (
@@ -56,9 +57,9 @@ class MainApp extends App {
 					</header>
 
 					{/* Pages render here */}
-					<div className="page">
-						<Component {...pageProps} />
-					</div>
+					<PageTransition timeout={100} classNames="page-transition">
+						<Component {...pageProps} key={router.route} />
+					</PageTransition>
 
 					{/* Navigation Drawer Sidemenu */}
 					<NavDrawer isOpen={navDrawerOpen} onCloseNav={closeNavDrawer} />
@@ -81,6 +82,7 @@ class MainApp extends App {
 
 					{/* CSS for main app layout */}
 					<style jsx>{`
+						/* Header */
 						header {
 							display: flex;
 							justify-content: space-between;
@@ -132,6 +134,26 @@ class MainApp extends App {
 							top: 10px;
 						}
 
+						/* Main Page */
+						:global(.page-transition-enter) {
+							opacity: 0;
+						}
+
+						:global(.page-transition-enter-active) {
+							opacity: 1;
+							transition: opacity 100ms;
+						}
+
+						:global(.page-transition-exit) {
+							opacity: 1;
+						}
+
+						:global(.page-transition-exit-active) {
+							opacity: 0;
+							transition: opacity 100ms;
+						}
+
+						/* Footer */
 						footer {
 							display: flex;
 							justify-content: space-between;
