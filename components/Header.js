@@ -24,6 +24,8 @@ const Header = ({ onMenuBtnClick }) => (
 				left: 0;
 				height: 90px;
 				width: 100vw;
+				background-color: #efefef;
+				z-index: 2;
 			}
 
 			header .brandmark {

@@ -75,6 +75,17 @@ class Team extends PureComponent {
 						opacity: 0;
 						pointer-events: none;
 					}
+
+					@media screen and (max-width: 1035px) {
+						main {
+							flex-direction: column;
+							height: auto;
+							top: 0;
+							transform: none;
+							padding-top: 110px;
+							padding-bottom: 40px;
+						}
+					}
 				`}</style>
 			</React.Fragment>
 		);

@@ -117,6 +117,27 @@ const Profile = ({
 				font-size: 18px;
 				margin-bottom: 10px;
 			}
+
+			@media screen and (max-width: 1035px) {
+				.profile:nth-child(1n) {
+					align-items: center;
+					position: static;
+					transform: none;
+					width: 100%;
+					pointer-events: none;
+					margin-bottom: 15px;
+				}
+
+				.profile:nth-child(1n) img {
+					max-width: 70%;
+					height: auto;
+				}
+
+				.profile:nth-child(1n) .info {
+					text-align: center;
+					margin-left: 0;
+				}
+			}
 		`}</style>
 	</div>
 );

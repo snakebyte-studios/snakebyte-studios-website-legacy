@@ -87,6 +87,34 @@ const Index = () => (
 				line-height: 1.6em;
 				opacity: 0.7;
 			}
+
+			@media screen and (max-width: 690px) {
+				#logo .brandmark {
+					height: 30px;
+					width: 40px;
+				}
+
+				#logo h1 {
+					font-size: 30px;
+				}
+
+				.description {
+					font-size: 14px;
+					margin-top: 20px;
+					padding: 0 20px;
+				}
+
+				#home-page :global(nav a) {
+					padding: 10px;
+					text-decoration: none;
+					color: black;
+					text-transform: uppercase;
+					margin-right: 10px;
+					font-weight: bold;
+					font-size: 14px;
+					transition: 0.2s;
+				}
+			}
 		`}</style>
 	</React.Fragment>
 );

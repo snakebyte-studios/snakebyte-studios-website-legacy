@@ -25,6 +25,8 @@ const Footer = () => (
 				left: 0;
 				width: 100vw;
 				padding: 15px;
+				background-color: #efefef;
+				z-index: 2;
 			}
 
 			footer .copyright {
