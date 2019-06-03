@@ -18,10 +18,12 @@
 		"sourceType": "module"
 	},
 	"plugins": [
-		"react"
+		"react",
+		"import"
 	],
 	"rules": {
 		"react/jsx-uses-vars": "error",
+		"import/no-relative-parent-imports": "error",
 		"indent": [
 			"error",
 			"tab"
