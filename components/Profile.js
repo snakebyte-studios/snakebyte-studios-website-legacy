@@ -9,13 +9,13 @@ const Profile = ({
 	onProfileSelect
 }) => (
 	<div
-		className={isActive ? "profile is-active" : "profile"}
+		className={isActive ? "profile is-active" : "profile not-active"}
 		onClick={() => onProfileSelect(name)}
 	>
 		<img src={photo} alt={name} />
 		<div className="info">
-			<h1>{name}</h1>
-			<h2>{specialty}</h2>
+			<h2>{name}</h2>
+			<h3>{specialty}</h3>
 			<p>{bio}</p>
 		</div>
 
@@ -39,19 +39,21 @@ const Profile = ({
 				cursor: pointer;
 				box-sizing: border-box;
 				position: absolute;
-				top: 0;
 				left: 0;
 				transition: 0.2s;
-				transform: translate3d(0, -25px, 0);
 				will-change: transform;
 			}
 
+			.profile:nth-child(1) {
+				transform: translate3d(0, 0, 0);
+			}
+
 			.profile:nth-child(2) {
-				transform: translate3d(33.33%, -25px, 0);
+				transform: translate3d(33.33%, 0, 0);
 			}
 
 			.profile:nth-child(3) {
-				transform: translate3d(66.66%, -25px, 0);
+				transform: translate3d(66.66%, 0, 0);
 			}
 
 			.profile .close {
@@ -71,7 +73,7 @@ const Profile = ({
 				align-items: center;
 				background-color: rgba(255, 255, 255, 0.5);
 				min-width: 100%;
-				transform: none;
+				transform: translate3d(0, 15px, 0);
 			}
 
 			.profile.is-active .close {
@@ -85,10 +87,12 @@ const Profile = ({
 
 			.profile .info {
 				margin-left: 6%;
+				max-width: 200px;
 			}
 
 			.profile.is-active .info {
 				margin-left: 40px;
+				max-width: auto;
 			}
 
 			.profile img {
@@ -103,13 +107,13 @@ const Profile = ({
 				margin-bottom: 0;
 			}
 
-			.profile .info h1 {
+			.profile .info h2 {
 				font-size: 30px;
 				margin-left: -1px;
 				margin-bottom: 5px;
 			}
 
-			.profile .info h2 {
+			.profile .info h3 {
 				font-size: 18px;
 				margin-bottom: 10px;
 			}

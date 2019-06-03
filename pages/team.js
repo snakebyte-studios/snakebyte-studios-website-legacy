@@ -12,13 +12,13 @@ class Team extends PureComponent {
 		};
 	}
 
-	switchActiveProfile = name => {
+	setActiveProfile = name => {
 		this.setState({ activeProfile: name });
 	};
 
 	render() {
 		const { activeProfile } = this.state;
-		const { switchActiveProfile } = this;
+		const { setActiveProfile } = this;
 
 		return (
 			<React.Fragment>
@@ -36,9 +36,9 @@ class Team extends PureComponent {
 				<main
 					id="team-page"
 					className={activeProfile ? "detail-view" : ""}
-					tabIndex="1"
+					tabIndex="0"
 					onKeyDown={e =>
-						e.keyCode === KEYS.ESC ? switchActiveProfile(null) : null
+						e.keyCode === KEYS.ESC ? setActiveProfile(null) : null
 					}
 				>
 					{TEAM_MEMBERS.map(member => (
@@ -49,7 +49,7 @@ class Team extends PureComponent {
 							specialty={member.specialty}
 							bio={member.bio}
 							isActive={activeProfile === member.name}
-							onProfileSelect={switchActiveProfile}
+							onProfileSelect={setActiveProfile}
 						/>
 					))}
 				</main>
@@ -65,15 +65,14 @@ class Team extends PureComponent {
 						position: relative;
 						max-width: 90vw;
 						margin: auto;
-						top: 48vh;
-						transform: translateY(-40%);
-						overflow-x: hidden;
+						top: 50vh;
+						transform: translateY(-50%);
+						overflow: hidden;
 						outline: 0;
 					}
 
-					.detail-view :global(.profile:not(.is-active)) {
+					.detail-view :global(.profile.not-active) {
 						opacity: 0;
-						min-width: 0;
 						pointer-events: none;
 					}
 				`}</style>
