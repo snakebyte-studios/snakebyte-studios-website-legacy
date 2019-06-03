@@ -29,12 +29,14 @@ class NavDrawer extends Component {
 						height: 100vh;
 						max-width: 80vw;
 						position: fixed;
-						right: -300px;
 						top: 0;
+						right: 0;
 						background-color: #ccc;
 						z-index: 50;
+						border-top: 100px solid black;
+						transform: translate3d(100%, 0, 0);
 						transition: 0.2s;
-						border-top: 70px solid black;
+						will-change: transform;
 					}
 
 					.nav-drawer-shade {
@@ -47,10 +49,11 @@ class NavDrawer extends Component {
 						background-color: transparent;
 						pointer-events: none;
 						transition: 0.2s;
+						will-change: opacity;
 					}
 
 					.open .nav-drawer {
-						right: 0;
+						transform: none;
 						box-shadow: 0 0 40px rgba(0, 0, 0, 0.2);
 					}
 

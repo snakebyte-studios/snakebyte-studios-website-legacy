@@ -57,7 +57,11 @@ class MainApp extends App {
 					</header>
 
 					{/* Pages render here */}
-					<PageTransition timeout={100} classNames="page-transition">
+					<PageTransition
+						id="page-transition"
+						timeout={100}
+						classNames="page-transition"
+					>
 						<Component {...pageProps} key={router.route} />
 					</PageTransition>
 
@@ -135,6 +139,10 @@ class MainApp extends App {
 						}
 
 						/* Main Page */
+						#page-transition {
+							will-change: opacity;
+						}
+
 						:global(.page-transition-enter) {
 							opacity: 0;
 						}
