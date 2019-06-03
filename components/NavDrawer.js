@@ -1,6 +1,6 @@
 import Navigation from "components/Navigation.js";
 
-const TRANSITION_TIME = "350ms";
+const TRANSITION_TIME = "350";
 
 const NavDrawer = ({ isOpen, onCloseNav }) => (
 	<div
@@ -27,7 +27,7 @@ const NavDrawer = ({ isOpen, onCloseNav }) => (
 				box-shadow: 0 0 40px rgba(0, 0, 0, 0);
 				border-top: 100px solid black;
 				transform: translate3d(100%, 0, 0);
-				transition: ${TRANSITION_TIME};
+				transition: ${TRANSITION_TIME}ms;
 				will-change: transform;
 			}
 
@@ -40,7 +40,7 @@ const NavDrawer = ({ isOpen, onCloseNav }) => (
 				z-index: 45;
 				background-color: rgba(0, 0, 0, 0.45);
 				pointer-events: none;
-				transition: ${TRANSITION_TIME};
+				transition: ${TRANSITION_TIME}ms;
 				opacity: 0;
 				will-change: opacity;
 			}
@@ -66,7 +66,7 @@ const NavDrawer = ({ isOpen, onCloseNav }) => (
 				text-transform: uppercase;
 				color: black;
 				font-weight: bold;
-				transition: ${TRANSITION_TIME};
+				transition: ${TRANSITION_TIME}ms;
 			}
 
 			.nav-drawer :global(nav a:hover),

@@ -57,12 +57,17 @@ class Team extends PureComponent {
 				<style jsx>{`
 					main {
 						display: flex;
-						height: 100vh;
-						width: 1050px;
-						max-width: 90vw;
-						margin: 0 auto;
 						justify-content: space-between;
 						align-items: center;
+						height: 100vh;
+						width: 1050px;
+						height: 450px;
+						position: relative;
+						max-width: 90vw;
+						margin: auto;
+						top: 48vh;
+						transform: translateY(-40%);
+						overflow-x: hidden;
 						outline: 0;
 					}
 

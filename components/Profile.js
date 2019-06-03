@@ -29,17 +29,29 @@ const Profile = ({
 			✕
 		</span>
 
-		{/* CSS */}
 		<style jsx>{`
 			.profile {
 				display: flex;
-				align-items: center;
-				min-width: 29%;
+				align-items: flex-start;
+				width: inherit;
 				flex-direction: column;
+				padding: 25px;
 				cursor: pointer;
 				box-sizing: border-box;
-				position: relative;
+				position: absolute;
+				top: 0;
+				left: 0;
 				transition: 0.2s;
+				transform: translate3d(0, -25px, 0);
+				will-change: transform;
+			}
+
+			.profile:nth-child(2) {
+				transform: translate3d(33.33%, -25px, 0);
+			}
+
+			.profile:nth-child(3) {
+				transform: translate3d(66.66%, -25px, 0);
 			}
 
 			.profile .close {
@@ -56,9 +68,10 @@ const Profile = ({
 			.profile.is-active {
 				cursor: auto;
 				flex-direction: row;
+				align-items: center;
 				background-color: rgba(255, 255, 255, 0.5);
-				padding: 50px;
 				min-width: 100%;
+				transform: none;
 			}
 
 			.profile.is-active .close {
@@ -68,6 +81,10 @@ const Profile = ({
 
 			.profile.is-active .close:hover {
 				opacity: 0.7;
+			}
+
+			.profile .info {
+				margin-left: 6%;
 			}
 
 			.profile.is-active .info {

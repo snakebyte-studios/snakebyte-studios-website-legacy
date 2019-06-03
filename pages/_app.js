@@ -7,6 +7,8 @@ import Footer from "components/Footer.js";
 import "global/styles/_reset.css";
 import "global/styles/style.css";
 
+const PAGE_TRANSITION_TIME = 150;
+
 class MainApp extends App {
 	static async getInitialProps({ Component, ctx }) {
 		let pageProps = {};
@@ -50,7 +52,7 @@ class MainApp extends App {
 					{/* Page Contents */}
 					<PageTransition
 						id="page-transition"
-						timeout={100}
+						timeout={PAGE_TRANSITION_TIME}
 						classNames="page-transition"
 					>
 						<Component {...pageProps} key={router.route} />
@@ -77,7 +79,7 @@ class MainApp extends App {
 
 						:global(.page-transition-enter-active) {
 							opacity: 1;
-							transition: opacity 100ms;
+							transition: opacity ${PAGE_TRANSITION_TIME}ms;
 						}
 
 						:global(.page-transition-exit) {
@@ -86,7 +88,7 @@ class MainApp extends App {
 
 						:global(.page-transition-exit-active) {
 							opacity: 0;
-							transition: opacity 100ms;
+							transition: opacity ${PAGE_TRANSITION_TIME}ms;
 						}
 					`}</style>
 				</main>
