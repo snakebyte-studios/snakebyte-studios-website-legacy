@@ -1,6 +1,8 @@
 import { Component } from "react";
 import Navigation from "components/Navigation.js";
 
+const TRANSITION_TIME = "350ms";
+
 class NavDrawer extends Component {
 	constructor(props) {
 		super(props);
@@ -12,7 +14,7 @@ class NavDrawer extends Component {
 		return (
 			<div
 				className={
-					isOpen ? "nav-drawer-container open" : "nav-drawer-container closed"
+					isOpen ? "nav-drawer-container open" : "nav-drawer-container"
 				}
 			>
 				<aside className="nav-drawer">
@@ -33,9 +35,10 @@ class NavDrawer extends Component {
 						right: 0;
 						background-color: #ccc;
 						z-index: 50;
+						box-shadow: 0 0 40px rgba(0, 0, 0, 0);
 						border-top: 100px solid black;
 						transform: translate3d(100%, 0, 0);
-						transition: 0.2s;
+						transition: ${TRANSITION_TIME};
 						will-change: transform;
 					}
 
@@ -46,9 +49,10 @@ class NavDrawer extends Component {
 						width: 100vw;
 						height: 100vh;
 						z-index: 45;
-						background-color: transparent;
+						background-color: rgba(0, 0, 0, 0.45);
 						pointer-events: none;
-						transition: 0.2s;
+						transition: ${TRANSITION_TIME};
+						opacity: 0;
 						will-change: opacity;
 					}
 
@@ -58,7 +62,7 @@ class NavDrawer extends Component {
 					}
 
 					.open .nav-drawer-shade {
-						background-color: rgba(0, 0, 0, 0.45);
+						opacity: 1;
 						pointer-events: auto;
 					}
 
@@ -73,7 +77,7 @@ class NavDrawer extends Component {
 						text-transform: uppercase;
 						color: black;
 						font-weight: bold;
-						transition: 0.2s;
+						transition: ${TRANSITION_TIME};
 					}
 
 					.nav-drawer :global(nav a:hover),
