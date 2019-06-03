@@ -31,7 +31,6 @@ const Index = () => (
 			<Navigation showHomeLink={false} />
 		</main>
 
-		{/* CSS */}
 		<style jsx>{`
 			main {
 				display: flex;

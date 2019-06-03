@@ -54,7 +54,6 @@ class Team extends PureComponent {
 					))}
 				</main>
 
-				{/* CSS */}
 				<style jsx>{`
 					main {
 						display: flex;
