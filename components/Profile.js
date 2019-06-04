@@ -40,7 +40,7 @@ const Profile = ({
 				box-sizing: border-box;
 				position: absolute;
 				left: 0;
-				transition: 0.2s;
+				transition: var(--transition-time);
 				will-change: transform;
 			}
 

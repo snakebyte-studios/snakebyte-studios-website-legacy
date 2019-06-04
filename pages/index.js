@@ -48,7 +48,7 @@ const Index = () => (
 			#logo .brandmark {
 				height: 60px;
 				width: 70px;
-				background-color: black;
+				background-color: var(--site-text-color);
 			}
 
 			#logo h1 {
@@ -63,12 +63,12 @@ const Index = () => (
 			#home-page :global(nav a) {
 				padding: 20px;
 				text-decoration: none;
-				color: black;
+				color: var(--site-text-color);
 				text-transform: uppercase;
 				margin-right: 40px;
 				font-weight: bold;
 				font-size: 20px;
-				transition: 0.2s;
+				transition: var(--transition-time);
 			}
 
 			#home-page :global(nav a:hover) {
@@ -112,7 +112,7 @@ const Index = () => (
 					margin-right: 10px;
 					font-weight: bold;
 					font-size: 14px;
-					transition: 0.2s;
+					transition: var(--transition-time);
 				}
 			}
 		`}</style>

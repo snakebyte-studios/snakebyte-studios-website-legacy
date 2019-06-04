@@ -24,20 +24,20 @@ const Header = ({ onMenuBtnClick }) => (
 				left: 0;
 				height: 90px;
 				width: 100vw;
-				background-color: #efefef;
+				background-color: var(--site-bg-color);
 				z-index: 2;
 			}
 
 			header .brandmark {
 				height: 40px;
 				width: 50px;
-				background-color: black;
+				background-color: var(--site-text-color);
 			}
 
 			.menu-button {
 				padding: 25px 15px;
 				cursor: pointer;
-				transition: 0.2s;
+				transition: var(--transition-time);
 			}
 
 			.menu-button:hover {
@@ -51,7 +51,7 @@ const Header = ({ onMenuBtnClick }) => (
 				height: 5px;
 				width: 30px;
 				position: relative;
-				background-color: black;
+				background-color: var(--site-text-color);
 			}
 
 			.menu-button span:before {

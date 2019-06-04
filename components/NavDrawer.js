@@ -1,6 +1,6 @@
 import Navigation from "components/Navigation.js";
 
-const TRANSITION_TIME = "350";
+const DRAWER_TRANSITION_TIME = 350;
 
 const NavDrawer = ({ isOpen, onCloseNav }) => (
 	<div
@@ -22,12 +22,12 @@ const NavDrawer = ({ isOpen, onCloseNav }) => (
 				position: fixed;
 				top: 0;
 				right: 0;
-				background-color: #ccc;
+				background-color: var(--site-bg-color);
 				z-index: 50;
 				box-shadow: 0 0 40px rgba(0, 0, 0, 0);
 				border-top: 100px solid black;
 				transform: translate3d(100%, 0, 0);
-				transition: ${TRANSITION_TIME}ms;
+				transition: ${DRAWER_TRANSITION_TIME}ms;
 				will-change: transform;
 			}
 
@@ -40,7 +40,7 @@ const NavDrawer = ({ isOpen, onCloseNav }) => (
 				z-index: 45;
 				background-color: rgba(0, 0, 0, 0.45);
 				pointer-events: none;
-				transition: ${TRANSITION_TIME}ms;
+				transition: ${DRAWER_TRANSITION_TIME}ms;
 				opacity: 0;
 				will-change: opacity;
 			}
@@ -64,14 +64,14 @@ const NavDrawer = ({ isOpen, onCloseNav }) => (
 			.nav-drawer :global(nav a) {
 				padding: 30px 40px;
 				text-transform: uppercase;
-				color: black;
+				color: var(--site-text-color);
 				font-weight: bold;
-				transition: ${TRANSITION_TIME}ms;
+				transition: var(--transition-time);
 			}
 
 			.nav-drawer :global(nav a:hover),
 			.nav-drawer :global(nav a.active) {
-				background-color: rgba(255, 255, 255, 0.3);
+				background-color: rgba(255, 255, 255, 0.7);
 			}
 		`}</style>
 	</div>

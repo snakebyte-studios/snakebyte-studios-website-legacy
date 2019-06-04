@@ -25,7 +25,7 @@ const Footer = () => (
 				left: 0;
 				width: 100vw;
 				padding: 15px;
-				background-color: #efefef;
+				background-color: var(--site-bg-color);
 				z-index: 2;
 			}
 
@@ -42,6 +42,7 @@ const Footer = () => (
 			footer .social img {
 				height: 24px;
 				width: 24px;
+				fill-color: white;
 			}
 		`}</style>
 	</footer>

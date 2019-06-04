@@ -1,9 +1,16 @@
+:root {
+	--site-bg-color: #efefef;
+	--site-text-color: black;
+	--transition-time: 200ms;
+}
+
 * {
 	font-family: "Heebo", sans-serif;
+	color: var(--site-text-color);
 }
 
 body {
-	background-color: #efefef;
+	background-color: var(--site-bg-color);
 }
 
 a {
