@@ -33,29 +33,38 @@ class Team extends PureComponent {
 				</Head>
 
 				{/* Page content */}
-				<main
-					id="team-page"
-					className={activeProfile ? "detail-view" : ""}
-					tabIndex="0"
-					onKeyDown={e =>
-						e.keyCode === KEYS.ESC ? setActiveProfile(null) : null
-					}
-				>
-					{TEAM_MEMBERS.map(member => (
-						<Profile
-							key={member.name}
-							name={member.name}
-							photo={member.photo}
-							specialty={member.specialty}
-							bio={member.bio}
-							isActive={activeProfile === member.name}
-							onProfileSelect={setActiveProfile}
-						/>
-					))}
+				<main id="team-page">
+					<h1>Our Team</h1>
+
+					<div
+						className={
+							activeProfile
+								? "profile-container detail-view"
+								: "profile-container"
+						}
+						tabIndex="0"
+						onKeyDown={e =>
+							e.keyCode === KEYS.ESC ? setActiveProfile(null) : null
+						}
+					>
+						{/* <h1>Team</h1> */}
+
+						{TEAM_MEMBERS.map(member => (
+							<Profile
+								key={member.name}
+								name={member.name}
+								photo={member.photo}
+								specialty={member.specialty}
+								bio={member.bio}
+								isActive={activeProfile === member.name}
+								onProfileSelect={setActiveProfile}
+							/>
+						))}
+					</div>
 				</main>
 
 				<style jsx>{`
-					main {
+					.profile-container {
 						display: flex;
 						justify-content: space-between;
 						align-items: center;
@@ -66,12 +75,25 @@ class Team extends PureComponent {
 						max-width: 90vw;
 						margin: auto;
 						top: 50vh;
-						transform: translateY(-50%);
+						transform: translateY(-40%);
 						overflow: hidden;
 						outline: 0;
 					}
 
-					main:not(.detail-view):hover :global(.profile.not-active) {
+					h1 {
+						display: inline-block;
+						position: fixed;
+						text-transform: uppercase;
+						top: 90px;
+						right: 0;
+						left: 0;
+						margin: 0 auto;
+						text-align: center;
+						font-size: 50px;
+					}
+
+					.profile-container:not(.detail-view):hover
+						:global(.profile.not-active) {
 						opacity: 0.7;
 					}
 
@@ -81,16 +103,24 @@ class Team extends PureComponent {
 					}
 
 					@media screen and (max-width: 1035px) {
-						main {
+						h1 {
+							font-size: 42px;
+							margin-top: 100px;
+							display: block;
+							position: static;
+						}
+
+						.profile-container {
 							flex-direction: column;
 							height: auto;
-							top: 0;
+							top: 0px;
 							transform: none;
-							padding-top: 110px;
+							padding-top: 30px;
 							padding-bottom: 40px;
 						}
 
-						main:not(.detail-view):hover :global(.profile.not-active) {
+						.profile-container:not(.detail-view):hover
+							:global(.profile.not-active) {
 							opacity: 1;
 						}
 					}

@@ -44,15 +44,15 @@ const Profile = ({
 				will-change: transform;
 			}
 
-			.profile:nth-child(1) {
+			.profile:nth-of-type(1) {
 				transform: translate3d(0, 0, 0);
 			}
 
-			.profile:nth-child(2) {
+			.profile:nth-of-type(2) {
 				transform: translate3d(33.33%, 0, 0);
 			}
 
-			.profile:nth-child(3) {
+			.profile:nth-of-type(3) {
 				transform: translate3d(66.66%, 0, 0);
 			}
 
