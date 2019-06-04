@@ -33,7 +33,7 @@ class Team extends PureComponent {
 				</Head>
 
 				{/* Page content */}
-				<main id="team-page">
+				<main id="team-page" onClick={() => setActiveProfile(null)}>
 					<h1>Our Team</h1>
 
 					<div
@@ -64,6 +64,10 @@ class Team extends PureComponent {
 				</main>
 
 				<style jsx>{`
+					#team-page {
+						height: 100vh;
+					}
+
 					.profile-container {
 						display: flex;
 						justify-content: space-between;

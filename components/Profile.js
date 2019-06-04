@@ -10,7 +10,10 @@ const Profile = ({
 }) => (
 	<div
 		className={isActive ? "profile is-active" : "profile not-active"}
-		onClick={() => onProfileSelect(name)}
+		onClick={e => {
+			e.stopPropagation();
+			onProfileSelect(name);
+		}}
 	>
 		<img src={photo} alt={name} />
 		<div className="info">
