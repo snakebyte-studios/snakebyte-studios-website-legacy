@@ -56,6 +56,16 @@ const Profile = ({
 				transform: translate3d(66.66%, 0, 0);
 			}
 
+			.profile.not-active:hover {
+				opacity: 1 !important;
+			}
+
+			.profile p {
+				line-height: 1.4em;
+				max-height: 0;
+				overflow: hidden;
+			}
+
 			.profile .close {
 				opacity: 0;
 				pointer-events: none;
@@ -71,9 +81,13 @@ const Profile = ({
 				cursor: auto;
 				flex-direction: row;
 				align-items: center;
-				background-color: rgba(255, 255, 255, 0.5);
+				background-color: rgba(255, 255, 255, 0.7);
 				min-width: 100%;
-				transform: translate3d(0, 15px, 0);
+				transform: translate3d(0, -5px, 0);
+			}
+
+			.profile.is-active p {
+				max-height: none;
 			}
 
 			.profile.is-active .close {
@@ -92,7 +106,7 @@ const Profile = ({
 
 			.profile.is-active .info {
 				margin-left: 40px;
-				max-width: auto;
+				max-width: 50%;
 			}
 
 			.profile img {
@@ -136,6 +150,15 @@ const Profile = ({
 				.profile:nth-child(1n) .info {
 					text-align: center;
 					margin-left: 0;
+					width: 500px;
+					max-width: 100%;
+				}
+
+				.profile:nth-child(1n) .info p {
+					max-height: none;
+					font-size: 14px;
+					text-align: justify;
+					margin-top: 20px;
 				}
 			}
 		`}</style>

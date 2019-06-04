@@ -1,5 +1,7 @@
 import { memo } from "react";
 
+// Footer component is memoized even though it's not *technically*
+// a pure function. Should be fine, as it only updates annually :)
 const Footer = () => (
 	<footer>
 		<div className="copyright">
@@ -11,7 +13,7 @@ const Footer = () => (
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<img src="/static/images/instagram.svg" />
+				<img src="/static/images/social/instagram.svg" />
 			</a>
 		</div>
 
@@ -42,7 +44,6 @@ const Footer = () => (
 			footer .social img {
 				height: 24px;
 				width: 24px;
-				fill-color: white;
 			}
 		`}</style>
 	</footer>

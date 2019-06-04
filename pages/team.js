@@ -71,6 +71,10 @@ class Team extends PureComponent {
 						outline: 0;
 					}
 
+					main:not(.detail-view):hover :global(.profile.not-active) {
+						opacity: 0.7;
+					}
+
 					.detail-view :global(.profile.not-active) {
 						opacity: 0;
 						pointer-events: none;
@@ -84,6 +88,10 @@ class Team extends PureComponent {
 							transform: none;
 							padding-top: 110px;
 							padding-bottom: 40px;
+						}
+
+						main:not(.detail-view):hover :global(.profile.not-active) {
+							opacity: 1;
 						}
 					}
 				`}</style>
