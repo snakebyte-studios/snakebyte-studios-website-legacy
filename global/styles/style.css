@@ -16,3 +16,7 @@ body {
 a {
 	text-decoration: none;
 }
+
+.no-js .page-transition-enter {
+	opacity: 1;
+}
