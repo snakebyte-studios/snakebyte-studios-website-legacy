@@ -1,7 +1,7 @@
 import Head from "next/head";
 import HireForm from "components/HireForm.js";
 
-const HireUs = () => (
+const Hire = () => (
 	<React.Fragment>
 		{/* Meta content */}
 		<Head>
@@ -16,11 +16,11 @@ const HireUs = () => (
 		<main id="hire-page">
 			<div className="container">
 				<section>
-					<h1>We're excited that you're excited!</h1>
+					<h1>We're excited to hear from you.</h1>
 					<p>
-						Ready to kick your brand up a notch? We look forward to hearing from
-						you. Shoot us a message and we'll be sure to get back to you as soon
-						as possible ;)
+						Ready to take your brand to the next level? We're as hyped about it
+						as you are. Shoot us a message and we'll be sure to get back to you
+						as soon as possible!
 					</p>
 				</section>
 				<section>
@@ -102,4 +102,4 @@ const HireUs = () => (
 	</React.Fragment>
 );
 
-export default HireUs;
+export default Hire;
