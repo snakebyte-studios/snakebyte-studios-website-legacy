@@ -1,23 +1,57 @@
 import { PureComponent } from "react";
 
 class HireForm extends PureComponent {
+	constructor(props) {
+		super(props);
+		this.state = {
+			fullname: "",
+			email: "",
+			message: ""
+		};
+	}
+
+	handleFormChange = e => {
+		this.setState({
+			[e.target.name]: e.target.value.trim()
+		});
+	};
+
+	handleFormSubmit = () => {
+		// TO DO: Send data to a backend
+		console.log("Form Payload:", this.state);
+	};
+
 	render() {
+		const { handleFormChange, handleFormSubmit } = this;
+
 		return (
 			<React.Fragment>
-				<form onSubmit={e => e.preventDefault()}>
+				<form
+					onSubmit={e => {
+						e.preventDefault();
+						handleFormSubmit();
+					}}
+				>
 					<label htmlFor="form-fullname">
 						<span>Full Name</span>
 						<input
 							type="text"
 							id="form-fullname"
 							name="fullname"
-							maxlength="50"
+							maxLength="50"
+							onChange={handleFormChange}
 						/>
 					</label>
 
 					<label htmlFor="form-email">
 						<span>Email</span>
-						<input type="text" id="form-email" name="email" maxlength="75" />
+						<input
+							type="text"
+							id="form-email"
+							name="email"
+							maxLength="75"
+							onChange={handleFormChange}
+						/>
 					</label>
 
 					<label htmlFor="form-message">
@@ -26,7 +60,8 @@ class HireForm extends PureComponent {
 							type="text"
 							id="form-message"
 							name="message"
-							maxlength="600"
+							maxLength="600"
+							onChange={handleFormChange}
 						/>
 					</label>
 
