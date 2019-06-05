@@ -2,6 +2,7 @@
 	--site-bg-color: #efefef;
 	--site-text-color: black;
 	--transition-time: 200ms;
+	--container-width: 1200px;
 }
 
 * {
