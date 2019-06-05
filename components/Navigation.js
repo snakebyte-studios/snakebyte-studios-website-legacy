@@ -16,8 +16,8 @@ const Navigation = ({ showHomeLink }) => (
 		<Link href="/blog">
 			<a>Blog</a>
 		</Link>
-		<Link href="/contact">
-			<a>Contact</a>
+		<Link href="/hire">
+			<a>Hire Us</a>
 		</Link>
 	</nav>
 );

@@ -11,10 +11,10 @@ const HireUs = () => (
 		<main id="hire-page">
 			<div className="container">
 				<section>
-					<h1>THANK YOU FOR HIRING US!</h1>
+					<h1>We're excited that you're excited!</h1>
 					<p>
-						We see that you liked our stuff! We will gladly do the same for you,
-						fill out the form to the right and we will get back to you as soon
+						Ready to kick your brand up a notch? We look forward to hearing from
+						you. Shoot us a message and we'll be sure to get back to you as soon
 						as possible ;)
 					</p>
 				</section>
@@ -26,16 +26,25 @@ const HireUs = () => (
 				display: flex;
 				justify-content: center;
 				align-items: center;
-
 				height: 100vh;
 				width: 90%;
 				max-width: var(--container-width);
-
 				margin: auto;
 			}
 
 			section {
-				width: calc((var(--container-width) / 2) + 30px);
+				width: 500px;
+			}
+
+			section h1 {
+				font-size: 60px;
+				margin-bottom: 30px;
+				text-indent: -4px;
+			}
+
+			section p {
+				line-height: 1.6em;
+				font-size: 18px;
 			}
 		`}</style>
 	</React.Fragment>
