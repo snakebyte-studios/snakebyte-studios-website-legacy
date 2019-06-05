@@ -18,6 +18,7 @@ class HireForm extends PureComponent {
 
 	handleFormSubmit = () => {
 		// TO DO: Send data to a backend
+		// eslint-disable-next-line no-console
 		console.log("Form Payload:", this.state);
 	};
 
@@ -32,33 +33,30 @@ class HireForm extends PureComponent {
 						handleFormSubmit();
 					}}
 				>
-					<label htmlFor="form-fullname">
+					<label>
 						<span>Full Name</span>
 						<input
 							type="text"
-							id="form-fullname"
 							name="fullname"
 							maxLength="50"
 							onChange={handleFormChange}
 						/>
 					</label>
 
-					<label htmlFor="form-email">
+					<label>
 						<span>Email</span>
 						<input
 							type="text"
-							id="form-email"
 							name="email"
 							maxLength="75"
 							onChange={handleFormChange}
 						/>
 					</label>
 
-					<label htmlFor="form-message">
+					<label>
 						<span>Tell us about your vision</span>
 						<textarea
 							type="text"
-							id="form-message"
 							name="message"
 							maxLength="600"
 							onChange={handleFormChange}
@@ -69,40 +67,26 @@ class HireForm extends PureComponent {
 				</form>
 
 				<style jsx>{`
-					form {
-						display: flex;
-						flex-direction: column;
-						width: 500px;
-						margin-left: 80px;
-						padding-left: 80px;
-						padding-top: 15px;
-						padding-bottom: 15px;
-						border-left: 1px solid rgba(0, 0, 0, 0.2);
-					}
-
 					form * {
 						display: block;
 						width: 100%;
 					}
 
 					form label {
-						margin-bottom: 20px;
+						margin-bottom: 25px;
 					}
 
 					form span {
 						text-transform: uppercase;
 						font-weight: bold;
-						margin-bottom: 5px;
-					}
-
-					form input[type="text"] {
-						height: 45px;
+						margin-bottom: 7px;
 					}
 
 					form input[type="text"],
 					form textarea {
 						padding: 10px 13px;
 						border: 1px solid rgba(0, 0, 0, 0.175);
+						height: 45px;
 					}
 
 					form textarea {
