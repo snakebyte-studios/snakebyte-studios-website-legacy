@@ -19,11 +19,14 @@
 	},
 	"plugins": [
 		"react",
+		"react-hooks",
 		"import"
 	],
 	"rules": {
 		"react/jsx-uses-vars": "error",
 		"import/no-relative-parent-imports": "error",
+		"react-hooks/rules-of-hooks": "error",
+		"react-hooks/exhaustive-deps": "warn",
 		"indent": [
 			"error",
 			"tab"
