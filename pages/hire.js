@@ -6,10 +6,12 @@ const Hire = () => (
 		{/* Meta content */}
 		<Head>
 			<title>Hire Us - Snakebyte Studios</title>
-			<meta name="description" content="" />
-			{/* 
-				TODO: ADD META DESCRIPTION ^	
-			*/}
+			<meta
+				name="description"
+				content="Ready to take your brand to the next
+				level? We're as hyped about it as you are. Shoot us a message and we'll
+				be sure to get back to you as soon as possible!"
+			/>
 		</Head>
 
 		{/* Page content */}

@@ -1,6 +1,6 @@
 import { memo, useState } from "react";
 
-const HireFormFn = () => {
+const HireForm = () => {
 	const [fields, setFields] = useState({ name: "", email: "", message: "" });
 	const [status, setStatus] = useState({ loading: false, submitted: false });
 
@@ -29,8 +29,8 @@ const HireFormFn = () => {
 						<span>Full Name</span>
 						<input
 							type="text"
-							value={fields.name}
 							name="name"
+							value={fields.name}
 							maxLength="50"
 							required={true}
 							onChange={handleFieldChange}
@@ -41,8 +41,8 @@ const HireFormFn = () => {
 						<span>Email</span>
 						<input
 							type="email"
-							value={fields.email}
 							name="email"
+							value={fields.email}
 							maxLength="75"
 							required={true}
 							onChange={handleFieldChange}
@@ -52,9 +52,8 @@ const HireFormFn = () => {
 					<label>
 						<span>Tell us about your vision</span>
 						<textarea
-							type="text"
-							value={fields.message}
 							name="message"
+							value={fields.message}
 							maxLength="600"
 							required={true}
 							onChange={handleFieldChange}
@@ -150,4 +149,4 @@ const HireFormFn = () => {
 	);
 };
 
-export default memo(HireFormFn);
+export default memo(HireForm);
