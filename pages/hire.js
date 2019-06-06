@@ -2,7 +2,7 @@ import Head from "next/head";
 import HireForm from "components/HireForm.js";
 
 const Hire = () => (
-	<React.Fragment>
+	<>
 		{/* Meta content */}
 		<Head>
 			<title>Hire Us - Snakebyte Studios</title>
@@ -99,7 +99,7 @@ const Hire = () => (
 				}
 			}
 		`}</style>
-	</React.Fragment>
+	</>
 );
 
 export default Hire;

@@ -21,7 +21,7 @@ class Team extends PureComponent {
 		const { setActiveProfile } = this;
 
 		return (
-			<React.Fragment>
+			<>
 				{/* Meta content */}
 				<Head>
 					<title>Our Team - Snakebyte Studios</title>
@@ -129,7 +129,7 @@ class Team extends PureComponent {
 						}
 					}
 				`}</style>
-			</React.Fragment>
+			</>
 		);
 	}
 }

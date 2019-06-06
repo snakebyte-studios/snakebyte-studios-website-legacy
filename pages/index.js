@@ -3,7 +3,7 @@ import Head from "next/head";
 import Navigation from "components/Navigation.js";
 
 const Index = () => (
-	<React.Fragment>
+	<>
 		{/* Meta content */}
 		<Head>
 			<title>Toronto based Web Design & Development - Snakebyte Studios</title>
@@ -116,7 +116,7 @@ const Index = () => (
 				}
 			}
 		`}</style>
-	</React.Fragment>
+	</>
 );
 
 export default memo(Index);
