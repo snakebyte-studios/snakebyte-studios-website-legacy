@@ -33,6 +33,7 @@ const HireForm = () => {
 							value={fields.name}
 							maxLength="50"
 							required={true}
+							placeholder="ex. John Doe"
 							onChange={handleFieldChange}
 						/>
 					</label>
@@ -45,6 +46,7 @@ const HireForm = () => {
 							value={fields.email}
 							maxLength="75"
 							required={true}
+							placeholder="ex. stuff@example.com"
 							onChange={handleFieldChange}
 						/>
 					</label>
@@ -110,11 +112,13 @@ const HireForm = () => {
 					padding: 13px;
 					color: var(--site-bg-color);
 					background-color: var(--site-text-color);
-					border: 1px solid var(--site-text-color);
+					border: 1px solid var(--site-text-color) transparent;
 					transition: var(--transition-time);
 					text-transform: uppercase;
 					font-weight: bold;
 					cursor: pointer;
+
+					letter-spacing: 0.07em;
 				}
 
 				button:hover {
