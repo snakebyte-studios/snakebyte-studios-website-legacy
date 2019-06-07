@@ -1,5 +1,8 @@
 import Head from "next/head";
-import HireForm from "components/HireForm.js";
+import dynamic from "next/dynamic";
+const HireForm = dynamic(() => import("components/HireForm.js"), {
+	ssr: false
+});
 
 const Hire = () => (
 	<>
