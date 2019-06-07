@@ -42,7 +42,7 @@ class MainApp extends App {
 
 		return (
 			<Container>
-				<main
+				<div
 					tabIndex="0"
 					onKeyDown={e => (e.keyCode === KEYS.ESC ? closeNavDrawer() : null)}
 				>
@@ -51,7 +51,6 @@ class MainApp extends App {
 
 					{/* Page Contents */}
 					<PageTransition
-						id="page-transition"
 						timeout={PAGE_TRANSITION_TIME}
 						classNames="page-transition"
 					>
@@ -63,35 +62,31 @@ class MainApp extends App {
 
 					{/* Footer */}
 					<Footer />
+				</div>
 
-					<style jsx>{`
-						main {
-							outline: 0;
-						}
+				<style jsx>{`
+					div {
+						outline: 0;
+					}
 
-						#page-transition {
-							will-change: opacity;
-						}
+					:global(.page-transition-enter) {
+						opacity: 0;
+					}
 
-						:global(.page-transition-enter) {
-							opacity: 0;
-						}
+					:global(.page-transition-enter-active) {
+						opacity: 1;
+						transition: opacity ${PAGE_TRANSITION_TIME}ms;
+					}
 
-						:global(.page-transition-enter-active) {
-							opacity: 1;
-							transition: opacity ${PAGE_TRANSITION_TIME}ms;
-						}
+					:global(.page-transition-exit) {
+						opacity: 1;
+					}
 
-						:global(.page-transition-exit) {
-							opacity: 1;
-						}
-
-						:global(.page-transition-exit-active) {
-							opacity: 0;
-							transition: opacity ${PAGE_TRANSITION_TIME}ms;
-						}
-					`}</style>
-				</main>
+					:global(.page-transition-exit-active) {
+						opacity: 0;
+						transition: opacity ${PAGE_TRANSITION_TIME}ms;
+					}
+				`}</style>
 			</Container>
 		);
 	}

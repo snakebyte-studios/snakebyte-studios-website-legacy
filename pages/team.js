@@ -52,7 +52,7 @@ const Team = () => {
 
 			<style jsx>{`
 				#team-page {
-					height: 100vh;
+					min-height: 100vh;
 				}
 
 				.profile-container {

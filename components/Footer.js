@@ -1,5 +1,7 @@
 import { memo } from "react";
 
+const FOOTER_HEIGHT = 55;
+
 // Footer component is memoized even though it's not *technically*
 // a pure function. Should be fine, as it only updates annually :)
 const Footer = () => (
@@ -22,10 +24,9 @@ const Footer = () => (
 				display: flex;
 				justify-content: space-between;
 				align-items: center;
-				position: fixed;
-				bottom: 0;
-				left: 0;
-				width: 100vw;
+				width: 100%;
+				height: ${FOOTER_HEIGHT}px;
+				margin-top: -${FOOTER_HEIGHT}px;
 				padding: 15px;
 				background-color: var(--site-bg-color);
 				z-index: 2;
