@@ -47,7 +47,7 @@ const PortfolioLink = () => {
 					filter: blur(0);
 					transform: scale(1);
 
-					margin-bottom: 10px;
+					margin-bottom: 15px;
 				}
 
 				.cardTitle {
