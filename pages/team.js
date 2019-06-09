@@ -30,8 +30,6 @@ const Team = () => {
 						e.keyCode === KEYS.ESC ? setActiveProfile(null) : null
 					}
 				>
-					{/* <h1>Team</h1> */}
-
 					{TEAM_MEMBERS.map(member => (
 						<Profile
 							key={member.name}
