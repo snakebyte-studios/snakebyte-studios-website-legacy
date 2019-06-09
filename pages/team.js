@@ -24,11 +24,7 @@ const Team = () => {
 				<h1>Our Team</h1>
 
 				<div
-					className={
-						activeProfile
-							? "profile-container detail-view"
-							: "profile-container"
-					}
+					className={activeProfile ? "container detail-view" : "container"}
 					tabIndex="0"
 					onKeyDown={e =>
 						e.keyCode === KEYS.ESC ? setActiveProfile(null) : null
@@ -55,12 +51,12 @@ const Team = () => {
 					min-height: 100vh;
 				}
 
-				.profile-container {
+				.container {
 					display: flex;
 					justify-content: space-between;
 					align-items: center;
 					height: 100vh;
-					width: 1050px;
+					width: var(--container-width);
 					height: 450px;
 					position: relative;
 					max-width: 90vw;
@@ -83,8 +79,7 @@ const Team = () => {
 					font-size: 50px;
 				}
 
-				.profile-container:not(.detail-view):hover
-					:global(.profile.not-active) {
+				.container:not(.detail-view):hover :global(.profile.not-active) {
 					opacity: 0.7;
 				}
 
@@ -101,7 +96,7 @@ const Team = () => {
 						position: static;
 					}
 
-					.profile-container {
+					.container {
 						flex-direction: column;
 						height: auto;
 						top: 0px;
@@ -110,8 +105,7 @@ const Team = () => {
 						padding-bottom: 40px;
 					}
 
-					.profile-container:not(.detail-view):hover
-						:global(.profile.not-active) {
+					.container:not(.detail-view):hover :global(.profile.not-active) {
 						opacity: 1;
 					}
 				}

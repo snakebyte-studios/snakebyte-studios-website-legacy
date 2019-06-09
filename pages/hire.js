@@ -28,6 +28,7 @@ const Hire = () => (
 						as soon as possible!
 					</p>
 				</section>
+
 				<section>
 					<HireForm />
 				</section>
