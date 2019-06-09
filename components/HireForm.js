@@ -129,7 +129,7 @@ const HireForm = () => {
 				.thankyou-message {
 					max-height: 0;
 					overflow: hidden;
-					background-color: rgba(0, 128, 0, 0.5);
+					background-color: rgba(0, 1228, 0, 0.5);
 					border: 1px solid rgba(0, 128, 0, 0.8);
 					color: var(--site-bg-color);
 					text-align: center;
