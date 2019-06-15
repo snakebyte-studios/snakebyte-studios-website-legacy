@@ -1,5 +1,7 @@
 import Head from "next/head";
 import FeatureBlog from "components/FeatureBlog.js";
+import BlogCell from "components/BlogCell.js";
+import BLOG_DETAILS from "data/blog_data.json";
 
 const Blog = () => {
 	return (
@@ -9,7 +11,7 @@ const Blog = () => {
 				<title>Blog - Snakebyte Studios</title>
 				<meta
 					name="description"
-					content="" //TODO: Write blog meta description
+					content="Get your share of tech news, business content and other blog bits that we decide to write about!" //TODO: Write blog meta description
 				/>
 			</Head>
 
@@ -18,12 +20,26 @@ const Blog = () => {
 					<div>Filler 1</div>
 					<div>Filler 2</div>
 
-					<div className="blog-grid">
-						<div>Blog1</div>
-						<div>Blog2</div>
-						<div>Blog3</div>
-						<div>Blog4</div>
-					</div>
+					{BLOG_DETAILS.map(blogCell => (
+						<div className="blog-grid">
+							<div>
+								<BlogCell
+									title={blogCell.title}
+									photo={blogCell.photo}
+									summary={blogCell.summary}
+								/>
+							</div>
+							<div>
+								<BlogCell />
+							</div>
+							<div>
+								<BlogCell />
+							</div>
+							<div>
+								<BlogCell />
+							</div>
+						</div>
+					))}
 
 					<div className="blog-feature">
 						<FeatureBlog />
@@ -34,7 +50,7 @@ const Blog = () => {
 			<style jsx>{`
 				.container {
 					display: grid;
-					grid-template-columns: 1.5fr 2fr;
+					grid-template-columns: 1fr 2fr;
 					grid-template-rows: 90px 2fr 55px;
 
 					height: 100vh;
@@ -46,22 +62,16 @@ const Blog = () => {
 
 				.blog-grid {
 					display: grid;
-					grid-template-columns: repeat(3, 1fr);
+					grid-template-columns: repeat(2, 1fr);
 					grid-auto-rows: 200px;
 					grid-gap: 1em;
-				}
-
-				.blog-grid > div {
-					border: 1px solid black;
-					padding: 1em;
-					margin: 1em;
 				}
 
 				.blog-feature {
 					display: flex;
 					justify-content: center;
 					max-height: calc(100vh - (90px + 55px));
-					overflow: scroll;
+					overflow: auto;
 				}
 			`}</style>
 		</>

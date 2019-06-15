@@ -44,8 +44,9 @@ const FeatureBlog = () => {
 					max-width: 750px;
 				}
 				h1 {
-					font-size: 100px;
+					font-size: 80px;
 					padding-top: 5px;
+					max-height: 165px;
 				}
 
 				h4 {
@@ -53,16 +54,19 @@ const FeatureBlog = () => {
 				}
 
 				.summarySection {
+					margin: 10px 0px 10px 0px;
 					font-size: 25px;
 					padding: 10px;
 				}
 
 				.bodySection {
 					font-size: 40px;
+					margin: 10px 0px 10px 0px;
 				}
 
 				.conclusionSection {
 					font-size: 25px;
+					margin: 10px 0px 10px 0px;
 				}
 
 				button {
@@ -71,15 +75,6 @@ const FeatureBlog = () => {
 					outline: none;
 
 					cursor: pointer;
-				}
-
-				@keyframes stuff {
-					from {
-						height: 25vh;
-					}
-					to {
-						height: 100vh;
-					}
 				}
 			`}</style>
 		</>
