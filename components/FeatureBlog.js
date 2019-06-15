@@ -1,38 +1,30 @@
 import { useState } from "react";
 import { memo } from "react";
-import BLOG_DETAILS from "data/blog_data.json";
 
-const FeatureBlog = () => {
+const FeatureBlog = ({ title, date, summary, body, conclusion, photo }) => {
 	const [extraInfoShown, setExtraInfoShown] = useState(false);
 
 	return (
 		<>
-			{BLOG_DETAILS.map(blogPost => (
-				<div className="blog">
-					<h1>{blogPost.title}</h1>
-					<h4>{blogPost.date}</h4>
-					<p className="summarySection">{blogPost.summary}</p>
-					<p className="bodySection">{extraInfoShown ? blogPost.body : ""}</p>
-					<p className="conclusionSection">
-						{extraInfoShown ? blogPost.conclusion : ""}
-					</p>
-					{extraInfoShown ? (
-						<button
-							className="afterButton"
-							onClick={() => setExtraInfoShown(false)}
-						>
-							READ LESS
-						</button>
-					) : (
-						<button
-							className="ogButton"
-							onClick={() => setExtraInfoShown(true)}
-						>
-							READ MORE
-						</button>
-					)}
-				</div>
-			))}
+			<div className="blog">
+				<h1>{title}</h1>
+				<h4>{date}</h4>
+				<p className="summarySection">{summary}</p>
+				<p className="bodySection">{extraInfoShown ? body : ""}</p>
+				<p className="conclusionSection">{extraInfoShown ? conclusion : ""}</p>
+				{extraInfoShown ? (
+					<button
+						className="afterButton"
+						onClick={() => setExtraInfoShown(false)}
+					>
+						READ LESS
+					</button>
+				) : (
+					<button className="ogButton" onClick={() => setExtraInfoShown(true)}>
+						READ MORE
+					</button>
+				)}
+			</div>
 
 			<main />
 
@@ -43,10 +35,11 @@ const FeatureBlog = () => {
 					flex-direction: column;
 					max-width: 750px;
 				}
+
 				h1 {
 					font-size: 80px;
-					padding-top: 5px;
-					max-height: 165px;
+					background-image: url(${photo});
+					margin: 5px 0 5px 0;
 				}
 
 				h4 {

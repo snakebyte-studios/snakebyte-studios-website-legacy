@@ -41,9 +41,18 @@ const Blog = () => {
 						</div>
 					))}
 
-					<div className="blog-feature">
-						<FeatureBlog />
-					</div>
+					{BLOG_DETAILS.map(blogFeature => (
+						<div className="blog-feature">
+							<FeatureBlog
+								title={blogFeature.title}
+								date={blogFeature.date}
+								summary={blogFeature.summary}
+								body={blogFeature.body}
+								conclusion={blogFeature.conclusion}
+								photo={blogFeature.photo}
+							/>
+						</div>
+					))}
 				</div>
 			</main>
 

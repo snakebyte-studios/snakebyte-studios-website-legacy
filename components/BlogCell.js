@@ -12,6 +12,8 @@ const BlogCell = ({ title, photo, summary }) => {
 
 			<style jsx>{`
 				.blog-cell {
+					display: flex;
+					flex-direction: column;
 					border: 1px solid black;
 					height: 200px;
 					width: 200px;
@@ -21,8 +23,6 @@ const BlogCell = ({ title, photo, summary }) => {
 				}
 
 				h2 {
-					display: flex;
-					justify-content: center;
 					font-size: 2em;
 				}
 				p {
