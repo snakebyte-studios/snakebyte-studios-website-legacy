@@ -3,14 +3,13 @@ import FeatureBlog from "components/FeatureBlog.js";
 
 const Blog = () => {
 	return (
-		<React.Fragment>
+		<>
 			{/* Meta content */}
 			<Head>
-				<title>Our Blog - Snakebyte Studios</title>
+				<title>Blog - Snakebyte Studios</title>
 				<meta
 					name="description"
-					content="Years of experience and keen eyes for detail –
-                Meet the brilliant minds at Snakebyte Studios."
+					content="" //TODO: Write blog meta description
 				/>
 			</Head>
 
@@ -65,7 +64,7 @@ const Blog = () => {
 					overflow: scroll;
 				}
 			`}</style>
-		</React.Fragment>
+		</>
 	);
 };
 

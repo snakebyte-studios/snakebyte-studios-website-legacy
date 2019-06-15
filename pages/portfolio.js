@@ -9,11 +9,11 @@ const Portfolio = () => {
 				<title>Portfolio - Snakebyte Studios</title>
 				<meta
 					name="description"
-					content="Years of experience and keen eyes for detail –
-                Meet the brilliant minds at Snakebyte Studios."
+					content="" //TODO: Write portfolio meta description
 				/>
 			</Head>
 
+			{/* Page content */}
 			<main id="portfolio-page">
 				<div className="container">
 					<PortfolioLink
