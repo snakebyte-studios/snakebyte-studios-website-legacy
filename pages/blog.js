@@ -3,6 +3,16 @@ import FeatureBlog from "components/FeatureBlog.js";
 import BlogCell from "components/BlogCell.js";
 import BLOG_DETAILS from "data/blog_data.json";
 
+let thePost = null;
+
+BLOG_DETAILS.forEach(function(obj, len) {
+	let mostRecentBlog = obj;
+	if (mostRecentBlog.id)
+		if (mostRecentBlog.id > len) {
+			thePost = mostRecentBlog;
+		}
+});
+
 const Blog = () => {
 	return (
 		<>
@@ -19,9 +29,8 @@ const Blog = () => {
 				<div className="container">
 					<div>Filler 1</div>
 					<div>Filler 2</div>
-
-					{BLOG_DETAILS.map(blogCell => (
-						<div className="blog-grid">
+					<div className="blog-grid">
+						{BLOG_DETAILS.map(blogCell => (
 							<div>
 								<BlogCell
 									title={blogCell.title}
@@ -29,20 +38,11 @@ const Blog = () => {
 									summary={blogCell.summary}
 								/>
 							</div>
-							<div>
-								<BlogCell />
-							</div>
-							<div>
-								<BlogCell />
-							</div>
-							<div>
-								<BlogCell />
-							</div>
-						</div>
-					))}
+						))}
+					</div>
 
-					{BLOG_DETAILS.map(blogFeature => (
-						<div className="blog-feature">
+					<div className="blog-feature">
+						{/* {BLOG_DETAILS.map(blogFeature => (
 							<FeatureBlog
 								title={blogFeature.title}
 								date={blogFeature.date}
@@ -51,8 +51,17 @@ const Blog = () => {
 								conclusion={blogFeature.conclusion}
 								photo={blogFeature.photo}
 							/>
-						</div>
-					))}
+						))} */}
+
+						<FeatureBlog
+							title={thePost.title}
+							date={thePost.date}
+							summary={thePost.summary}
+							body={thePost.body}
+							conclusion={thePost.conclusion}
+							photo={thePost.photo}
+						/>
+					</div>
 				</div>
 			</main>
 
