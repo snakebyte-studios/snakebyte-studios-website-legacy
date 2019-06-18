@@ -83,6 +83,8 @@ const Blog = () => {
 					grid-template-columns: repeat(2, 1fr);
 					grid-auto-rows: 200px;
 					grid-gap: 1em;
+
+					overflow: auto;
 				}
 
 				.blog-feature {
