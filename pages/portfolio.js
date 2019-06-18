@@ -1,7 +1,11 @@
+import { useState } from "react";
 import Head from "next/head";
 import PortfolioLink from "components/PortfolioLink.js";
+import Modal from "components/Modal.js";
 
 const Portfolio = () => {
+	const [modalOpen, setModalOpen] = useState(false);
+
 	return (
 		<>
 			{/* Meta content */}
@@ -40,7 +44,12 @@ const Portfolio = () => {
 						description="This is a sample site made for a totally different company"
 						link="#"
 					/>
+					<button onClick={() => setModalOpen(true)}>Open Modal</button>
 				</div>
+
+				<Modal isOpen={modalOpen} onCloseModal={() => setModalOpen(false)}>
+					<p>Hello World :)</p>
+				</Modal>
 			</main>
 
 			<style jsx>{`
