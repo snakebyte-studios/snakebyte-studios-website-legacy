@@ -18,13 +18,25 @@ const Portfolio = () => {
 				<div className="container">
 					<PortfolioLink
 						name="Sample Website 1"
-						image="https://cdn.shopify.com/s/files/1/0533/2089/files/web-design-portfolio-inspiration-toyfight.png?v=1503510344"
+						image="https://assets.awwwards.com/awards/media/cache/optimize/submissions/2019/05/5ce3f805a5e83598700318.png"
 						description="This is a sample site made for a cool company"
 						link="#"
 					/>
 					<PortfolioLink
 						name="Sample Website 2"
-						image="https://cdn.shopify.com/s/files/1/0533/2089/files/web-design-portfolio-inspiration-toyfight.png?v=1503510344"
+						image="https://assets.awwwards.com/awards/media/cache/optimize/submissions/2019/05/5ce579eae5d2d041709194.png"
+						description="This is a sample site made for a totally different company"
+						link="#"
+					/>
+					<PortfolioLink
+						name="Sample Website 3"
+						image="https://assets.awwwards.com/awards/media/cache/optimize/submissions/2019/05/5ce583ce468e5487091155.jpg"
+						description="This is a sample site made for a totally different company"
+						link="#"
+					/>
+					<PortfolioLink
+						name="Sample Website 4"
+						image="https://assets.awwwards.com/awards/media/cache/optimize/submissions/2019/05/5ce583ce468e5487091155.jpg"
 						description="This is a sample site made for a totally different company"
 						link="#"
 					/>
@@ -48,7 +60,7 @@ const Portfolio = () => {
 
 				.container :global(.card) {
 					width: calc(33% - 20px);
-					margin-right: 20px;
+					margin-right: 30px;
 					margin-bottom: 20px;
 				}
 
