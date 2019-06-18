@@ -2,11 +2,18 @@ const PortfolioLink = ({ name, image, description, link }) => {
 	return (
 		<>
 			<div className="card">
-				<img src={image} alt={name} />
+				<a href={link}>
+					<img src={image} alt={name} />{" "}
+				</a>
 				<div className="info">
 					<h5>{name}</h5>
 					<p>{description}</p>
-					<a href={link} target="_blank" rel="noopener noreferrer">
+					<a
+						className="link"
+						href={link}
+						target="_blank"
+						rel="noopener noreferrer"
+					>
 						Visit
 					</a>
 				</div>
@@ -56,7 +63,7 @@ const PortfolioLink = ({ name, image, description, link }) => {
 				}
 				*/
 
-				.card a {
+				.card .link {
 					display: inline-block;
 					text-decoration: none;
 					/*   border: 1px solid black; */
@@ -65,6 +72,7 @@ const PortfolioLink = ({ name, image, description, link }) => {
 					background: orange;
 					color: white;
 					font-size: 1em;
+					margin-left: 33%;
 				}
 			`}</style>
 		</>
