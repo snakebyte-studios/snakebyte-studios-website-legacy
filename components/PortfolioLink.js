@@ -26,6 +26,8 @@ const PortfolioLink = ({ name, image, description, link }) => {
 					justify-content: center;
 					overflow: hidden;
 					padding: 20px;
+
+					border: 10px solid red;
 				}
 
 				.card img {
