@@ -37,6 +37,8 @@ const FeatureBlog = ({ title, date, summary, body, conclusion, photo }) => {
 				}
 
 				h1 {
+					display: flex;
+					align-items: center;
 					font-size: 80px;
 					height: 200px;
 					background-image: url(${photo});
@@ -66,7 +68,7 @@ const FeatureBlog = ({ title, date, summary, body, conclusion, photo }) => {
 					line-height: 25pt;
 					text-indent: 50px;
 
-					max-width: 900px;
+					max-width: 800px;
 				}
 
 				.conclusionSection {
@@ -75,7 +77,7 @@ const FeatureBlog = ({ title, date, summary, body, conclusion, photo }) => {
 					text-align: justify;
 					line-height: 25pt;
 					text-indent: 50px;
-					max-width: 900px;
+					max-width: 800px;
 				}
 
 				button {

@@ -74,9 +74,9 @@ const Blog = () => {
 					height: 100vh;
 				}
 
-				.container > div {
+				/* .container > div {
 					border: 1px solid black;
-				}
+				} */
 
 				.blog-grid {
 					display: grid;
