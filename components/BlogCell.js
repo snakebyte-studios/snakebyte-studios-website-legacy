@@ -12,44 +12,89 @@ const BlogCell = ({ title, photo, summary }) => {
 
 			<style jsx>{`
 				.blog-cell {
+					position: relative;
+
 					height: 200px;
 					width: 200px;
-					max-width: 200px;
-					margin: 10px;
 					background-position: center;
 					background-size: cover;
-					padding: 5px;
 
 					border: 2px solid black;
-					position: relative;
+
+					overflow: hidden;
 				}
 
 				.wrapper {
+					position: absolute;
+
+					height: 100%;
+					width: 100%;
+
 					z-index: 5;
+					transition: all 1s ease;
 				}
 
-				.blog-cell::before {
+				.wrapper > p,
+				h2 {
+					padding: 5px;
+				}
+
+				.wrapper:hover {
+					background-color: #2c2b2a;
+					opacity: 0.8;
+				}
+
+				.wrapper:hover h2 {
+					color: white;
+					bottom: 70px;
+				}
+
+				.wrapper:hover p {
+					color: white;
+					display: block;
+					padding: 10px;
+					background-color: #1c1b1b;
+				}
+
+				.blog-cell::after {
 					content: " ";
 					position: absolute;
+
 					top: 0;
 					left: 0;
 					height: 100%;
 					width: 100%;
+
 					background-image: url(${photo});
+					background-size: cover;
+					opacity: 0.6;
 
 					z-index: 2;
+					transition: all 1s ease;
+				}
+
+				.blog-cell:hover::after {
+					transform: scale(0.9);
 				}
 
 				h2 {
-					font-size: 2em;
-					text-align: center;
+					position: absolute;
+					bottom: 25px;
 
-					z-index: 100;
+					font-size: 1.5em;
+					text-align: left;
+					transition: all 1s ease;
 				}
+
 				p {
-					margin-top: 5px;
-					text-align: justify;
-					z-index: 100;
+					display: none;
+
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+
+					transition: all 1s ease;
+					text-align: left;
 				}
 			`}</style>
 		</>

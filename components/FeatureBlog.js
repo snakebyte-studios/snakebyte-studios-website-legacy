@@ -7,7 +7,9 @@ const FeatureBlog = ({ title, date, summary, body, conclusion, photo }) => {
 	return (
 		<>
 			<div className="blog">
-				<h1>{title}</h1>
+				<div className="banner">
+					<h1>{title}</h1>
+				</div>
 				<h4>{date}</h4>
 				<p className="summarySection">{summary}</p>
 				<p className="bodySection">{extraInfoShown ? body : ""}</p>
@@ -36,16 +38,27 @@ const FeatureBlog = ({ title, date, summary, body, conclusion, photo }) => {
 					width: 100%;
 				}
 
+				.banner {
+					position: relative;
+					width: 100%;
+					height: 100%;
+					max-height: 200px;
+
+					background-image: url(${photo});
+
+					background-repeat: no-repeat;
+					background-position: top center fixed;
+					background-size: cover;
+
+					margin-bottom: 25px;
+				}
+
 				h1 {
 					display: flex;
 					align-items: center;
+					justify-content: center;
 					font-size: 80px;
 					height: 200px;
-					background-image: url(${photo});
-					background-repeat: no-repeat;
-					background-position: center;
-					background-size: cover;
-					margin: 0px 0 25px 0;
 
 					text-align: center;
 				}
@@ -68,7 +81,7 @@ const FeatureBlog = ({ title, date, summary, body, conclusion, photo }) => {
 					line-height: 25pt;
 					text-indent: 50px;
 
-					max-width: 800px;
+					max-width: 950px;
 				}
 
 				.conclusionSection {
@@ -77,7 +90,7 @@ const FeatureBlog = ({ title, date, summary, body, conclusion, photo }) => {
 					text-align: justify;
 					line-height: 25pt;
 					text-indent: 50px;
-					max-width: 800px;
+					max-width: 950px;
 				}
 
 				button {
