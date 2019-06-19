@@ -1,8 +1,13 @@
+import { useState } from "react";
+import Modal from "components/Modal.js";
+
 const PortfolioLink = ({ name, image, description, link }) => {
+	const [modalOpen, setModalOpen] = useState(false);
+
 	return (
 		<>
 			<div className="card">
-				<a href={link}>
+				<a href={link} onClick={() => setModalOpen(true)}>
 					<img src={image} alt={name} />{" "}
 				</a>
 				<div className="info">
@@ -18,6 +23,13 @@ const PortfolioLink = ({ name, image, description, link }) => {
 					</a>
 				</div>
 			</div>
+
+			<Modal isOpen={modalOpen} onCloseModal={() => setModalOpen(false)}>
+				<div className="hello">
+					<img src={image} alt={name} /> <h5>{name}</h5>
+					<p>{description}</p>
+				</div>
+			</Modal>
 
 			<style jsx>{`
 				.card {
@@ -62,6 +74,10 @@ const PortfolioLink = ({ name, image, description, link }) => {
 					transform: scale(1);
 				}
 				*/
+
+				.hello img {
+					height: 200px;
+				}
 
 				.card .link {
 					display: inline-block;
