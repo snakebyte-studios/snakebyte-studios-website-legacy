@@ -22,6 +22,8 @@ const BlogCell = ({ title, photo, summary }) => {
 					border: 2px solid black;
 
 					overflow: hidden;
+
+					cursor: pointer;
 				}
 
 				.wrapper {
