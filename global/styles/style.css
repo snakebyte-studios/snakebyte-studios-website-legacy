@@ -1,6 +1,7 @@
 :root {
-	--site-bg-color: #efefef;
-	--site-text-color: black;
+	--site-bg-color: #191919;
+	--site-text-color: #efefef;
+	--brand-orange: #f26d00;
 	--transition-time: 200ms;
 	--container-width: 1050px;
 }

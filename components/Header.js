@@ -5,7 +5,11 @@ const Header = ({ onMenuBtnClick }) => (
 	<header>
 		<Link href="/">
 			<a>
-				<div className="brandmark" />
+				<img
+					src="/static/images/snakebyte/logo.svg"
+					className="brandmark"
+					alt="Snakebyte Studios"
+				/>
 			</a>
 		</Link>
 
@@ -31,7 +35,6 @@ const Header = ({ onMenuBtnClick }) => (
 			header .brandmark {
 				height: 40px;
 				width: 50px;
-				background-color: var(--site-text-color);
 			}
 
 			.menu-button {
@@ -51,7 +54,7 @@ const Header = ({ onMenuBtnClick }) => (
 				height: 5px;
 				width: 30px;
 				position: relative;
-				background-color: var(--site-text-color);
+				background-color: var(--brand-orange);
 			}
 
 			.menu-button span:before {

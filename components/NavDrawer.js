@@ -71,7 +71,7 @@ const NavDrawer = ({ isOpen, onCloseNav }) => (
 
 			.nav-drawer :global(nav a:hover),
 			.nav-drawer :global(nav a.active) {
-				background-color: rgba(255, 255, 255, 0.7);
+				background-color: rgba(0, 0, 0, 0.5);
 			}
 		`}</style>
 	</div>

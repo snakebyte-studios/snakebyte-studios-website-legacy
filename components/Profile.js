@@ -84,7 +84,7 @@ const Profile = ({
 				cursor: auto;
 				flex-direction: row;
 				align-items: center;
-				background-color: rgba(255, 255, 255, 0.7);
+				background-color: rgba(0, 0, 0, 0.3);
 				min-width: 100%;
 				transform: translate3d(0, -5px, 0);
 			}
@@ -116,7 +116,7 @@ const Profile = ({
 				border-radius: 1000px;
 				height: 300px;
 				width: 300px;
-				background-color: #ccc;
+				background-color: black;
 				margin-bottom: 20px;
 			}
 

@@ -18,8 +18,16 @@ const Index = () => (
 		{/* Page content */}
 		<main id="home-page">
 			<div id="logo">
-				<div className="brandmark" />
-				<h1>Snakebyte Studios</h1>
+				<img
+					src="/static/images/snakebyte/logo.svg"
+					className="brandmark"
+					alt="Snakebyte Studios"
+				/>
+				<img
+					src="/static/images/snakebyte/logo-text.svg"
+					className="logo-text"
+					alt="Snakebyte Studios"
+				/>
 			</div>
 
 			<p className="description">
@@ -42,18 +50,20 @@ const Index = () => (
 
 			#logo {
 				display: flex;
+				flex-direction: column;
 				align-items: center;
+				min-width: 700px;
 			}
 
 			#logo .brandmark {
-				height: 60px;
-				width: 70px;
-				background-color: var(--site-text-color);
+				width: 240px;
+				position: relative;
+				left: -15px;
 			}
 
-			#logo h1 {
-				font-size: 60px;
-				margin-left: 10px;
+			#logo .logo-text {
+				margin-top: 10px;
+				width: 450px;
 			}
 
 			#home-page :global(nav) {
@@ -64,6 +74,7 @@ const Index = () => (
 				padding: 20px;
 				text-decoration: none;
 				color: var(--site-text-color);
+				opacity: 0.8;
 				text-transform: uppercase;
 				margin-right: 40px;
 				font-weight: bold;
@@ -72,7 +83,8 @@ const Index = () => (
 			}
 
 			#home-page :global(nav a:hover) {
-				opacity: 0.6;
+				color: var(--brand-orange);
+				opacity: 1;
 			}
 
 			#home-page :global(nav a:last-of-type) {
@@ -90,12 +102,12 @@ const Index = () => (
 
 			@media screen and (max-width: 690px) {
 				#logo .brandmark {
-					height: 30px;
-					width: 40px;
+					height: 30vw;
+					left: -3vw;
 				}
 
-				#logo h1 {
-					font-size: 30px;
+				#logo .logo-text {
+					width: 80vw;
 				}
 
 				.description {
@@ -107,7 +119,6 @@ const Index = () => (
 				#home-page :global(nav a) {
 					padding: 10px;
 					text-decoration: none;
-					color: black;
 					text-transform: uppercase;
 					margin-right: 10px;
 					font-weight: bold;
