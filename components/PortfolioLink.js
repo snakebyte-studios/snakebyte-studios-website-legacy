@@ -76,7 +76,8 @@ const PortfolioLink = ({ name, image, description, link }) => {
 				*/
 
 				.hello img {
-					height: 200px;
+					height: 400px;
+					align-items: center;
 				}
 
 				.card .link {
