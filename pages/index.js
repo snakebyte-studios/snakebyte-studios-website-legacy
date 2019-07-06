@@ -17,6 +17,8 @@ const Index = () => (
 
 		{/* Page content */}
 		<main id="home-page">
+			<Navigation showHomeLink={false} />
+
 			<div id="logo">
 				<img
 					src="/static/images/snakebyte/logo.svg"
@@ -35,8 +37,6 @@ const Index = () => (
 				delivering quality web&nbsp;development and graphic&nbsp;design
 				experiences for your brand.
 			</p>
-
-			<Navigation showHomeLink={false} />
 		</main>
 
 		<style jsx>{`
@@ -67,23 +67,42 @@ const Index = () => (
 			}
 
 			#home-page :global(nav) {
-				margin-top: 40px;
+				margin-bottom: 60px;
 			}
 
 			#home-page :global(nav a) {
-				padding: 20px;
+				padding: 8px 20px;
 				text-decoration: none;
 				color: var(--site-text-color);
-				opacity: 0.8;
 				text-transform: uppercase;
 				margin-right: 40px;
 				font-weight: bold;
 				font-size: 20px;
+				border-radius: 100px;
+				position: relative;
+				transition: var(--transition-time);
+			}
+
+			#home-page :global(nav a::before) {
+				content: "";
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 100%;
+				border-radius: 100px;
+				z-index: -1;
+				background: linear-gradient(0.06turn, #bf0500, #ff8700);
+				opacity: 0;
 				transition: var(--transition-time);
 			}
 
 			#home-page :global(nav a:hover) {
-				color: var(--brand-orange);
+				color: var(--site-bg-color);
+			}
+
+			#home-page :global(nav a:hover::before) {
 				opacity: 1;
 			}
 
