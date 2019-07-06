@@ -1,5 +1,6 @@
 import { memo } from "react";
 import Head from "next/head";
+// eslint-disable-next-line no-unused-vars
 import Navigation from "components/Navigation.js";
 
 const Index = () => (
@@ -17,7 +18,7 @@ const Index = () => (
 
 		{/* Page content */}
 		<main id="home-page">
-			<Navigation showHomeLink={false} />
+			{/* <Navigation showHomeLink={false} /> */}
 
 			<div id="logo">
 				<img

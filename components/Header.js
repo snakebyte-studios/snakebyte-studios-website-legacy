@@ -1,5 +1,6 @@
 import ActiveLink from "components/ActiveLink.js";
 
+// eslint-disable-next-line no-unused-vars
 const Header = ({ onMenuBtnClick }) => (
 	<header>
 		<ActiveLink href="/">
@@ -12,9 +13,11 @@ const Header = ({ onMenuBtnClick }) => (
 			</a>
 		</ActiveLink>
 
-		<div className="menu-button" onClick={onMenuBtnClick}>
-			<span />
-		</div>
+		{/* 
+			<div className="menu-button" onClick={onMenuBtnClick}>
+				<span />
+			</div>
+		*/}
 
 		<style jsx>{`
 			header {
