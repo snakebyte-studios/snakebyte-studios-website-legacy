@@ -1,9 +1,8 @@
-import { memo } from "react";
-import Link from "next/link";
+import ActiveLink from "components/ActiveLink.js";
 
 const Header = ({ onMenuBtnClick }) => (
 	<header>
-		<Link href="/">
+		<ActiveLink href="/">
 			<a>
 				<img
 					src="/static/images/snakebyte/logo.svg"
@@ -11,7 +10,7 @@ const Header = ({ onMenuBtnClick }) => (
 					alt="Snakebyte Studios"
 				/>
 			</a>
-		</Link>
+		</ActiveLink>
 
 		<div className="menu-button" onClick={onMenuBtnClick}>
 			<span />
@@ -30,6 +29,15 @@ const Header = ({ onMenuBtnClick }) => (
 				width: 100vw;
 				background-color: var(--site-bg-color);
 				z-index: 2;
+			}
+
+			header > :global(a) {
+				transition: var(--transition-time);
+			}
+
+			header > :global(a.active) {
+				opacity: 0;
+				pointer-events: none;
 			}
 
 			header .brandmark {
@@ -72,4 +80,4 @@ const Header = ({ onMenuBtnClick }) => (
 	</header>
 );
 
-export default memo(Header);
+export default Header;
