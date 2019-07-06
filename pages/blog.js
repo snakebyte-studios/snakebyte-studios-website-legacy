@@ -3,17 +3,19 @@ import FeatureBlog from "components/FeatureBlog.js";
 import BlogCell from "components/BlogCell.js";
 import BLOG_DETAILS from "data/blog_data.json";
 
-let thePost = null;
+import { useState } from "react";
 
-BLOG_DETAILS.forEach(function(obj, len) {
-	let mostRecentBlog = obj;
-	if (mostRecentBlog.id)
-		if (mostRecentBlog.id > len) {
-			thePost = mostRecentBlog;
-		}
-});
+//sorts array based on post time, sets it to the newest post.
+const initialPost = BLOG_DETAILS.sort(
+	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+)[0];
 
 const Blog = () => {
+	const [selectedPostsId, setSelectedPostsId] = useState(initialPost.id);
+
+	//Returns the currently selected posts object.
+	const selectedPost = BLOG_DETAILS.find(post => post.id === selectedPostsId);
+
 	return (
 		<>
 			{/* Meta content */}
@@ -29,9 +31,10 @@ const Blog = () => {
 				<div className="container">
 					<div>Filler 1</div>
 					<div>Filler 2</div>
+
 					<div className="blog-grid">
 						{BLOG_DETAILS.map(blogCell => (
-							<div>
+							<div onClick={() => setSelectedPostsId(blogCell.id)}>
 								<BlogCell
 									title={blogCell.title}
 									photo={blogCell.photo}
@@ -42,24 +45,13 @@ const Blog = () => {
 					</div>
 
 					<div className="blog-feature">
-						{/* {BLOG_DETAILS.map(blogFeature => (
-							<FeatureBlog
-								title={blogFeature.title}
-								date={blogFeature.date}
-								summary={blogFeature.summary}
-								body={blogFeature.body}
-								conclusion={blogFeature.conclusion}
-								photo={blogFeature.photo}
-							/>
-						))} */}
-
 						<FeatureBlog
-							title={thePost.title}
-							date={thePost.date}
-							summary={thePost.summary}
-							body={thePost.body}
-							conclusion={thePost.conclusion}
-							photo={thePost.photo}
+							title={selectedPost.title}
+							date={selectedPost.date}
+							summary={selectedPost.summary}
+							body={selectedPost.body}
+							conclusion={selectedPost.conclusion}
+							photo={selectedPost.photo}
 						/>
 					</div>
 				</div>
@@ -68,21 +60,19 @@ const Blog = () => {
 			<style jsx>{`
 				.container {
 					display: grid;
-					grid-template-columns: 1fr 2fr;
+					grid-template-columns: auto 2fr;
 					grid-template-rows: 90px 2fr 55px;
 
 					height: 100vh;
 				}
 
-				.container > div {
-					border: 1px solid black;
-				}
-
 				.blog-grid {
 					display: grid;
-					grid-template-columns: repeat(2, 1fr);
+					grid-template-columns: repeat(1, 1fr);
 					grid-auto-rows: 200px;
 					grid-gap: 1em;
+
+					padding: 10px 25px 10px 10px;
 
 					overflow: auto;
 				}

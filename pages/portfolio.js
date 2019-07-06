@@ -44,7 +44,12 @@ const Portfolio = () => {
 						description="This is a sample site made for a totally different company"
 						link="#"
 					/>
-					<button onClick={() => setModalOpen(true)}>Open Modal</button>
+					<button
+						onClick={() => setModalOpen(true)}
+						style={{ backgroundColor: "var(--brand-orange)", padding: "10px" }}
+					>
+						Open Modal
+					</button>
 				</div>
 
 				<Modal isOpen={modalOpen} onCloseModal={() => setModalOpen(false)}>

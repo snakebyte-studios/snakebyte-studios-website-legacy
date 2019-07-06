@@ -1,17 +1,23 @@
-import { memo } from "react";
-import Link from "next/link";
+import ActiveLink from "components/ActiveLink.js";
 
+// eslint-disable-next-line no-unused-vars
 const Header = ({ onMenuBtnClick }) => (
 	<header>
-		<Link href="/">
+		<ActiveLink href="/">
 			<a>
-				<div className="brandmark" />
+				<img
+					src="/static/images/snakebyte/logo.svg"
+					className="brandmark"
+					alt="Snakebyte Studios"
+				/>
 			</a>
-		</Link>
+		</ActiveLink>
 
-		<div className="menu-button" onClick={onMenuBtnClick}>
-			<span />
-		</div>
+		{/* 
+			<div className="menu-button" onClick={onMenuBtnClick}>
+				<span />
+			</div>
+		*/}
 
 		<style jsx>{`
 			header {
@@ -28,10 +34,18 @@ const Header = ({ onMenuBtnClick }) => (
 				z-index: 2;
 			}
 
+			header > :global(a) {
+				transition: var(--transition-time);
+			}
+
+			header > :global(a.active) {
+				opacity: 0;
+				pointer-events: none;
+			}
+
 			header .brandmark {
 				height: 40px;
 				width: 50px;
-				background-color: var(--site-text-color);
 			}
 
 			.menu-button {
@@ -51,7 +65,7 @@ const Header = ({ onMenuBtnClick }) => (
 				height: 5px;
 				width: 30px;
 				position: relative;
-				background-color: var(--site-text-color);
+				background-color: var(--brand-orange);
 			}
 
 			.menu-button span:before {
@@ -69,4 +83,4 @@ const Header = ({ onMenuBtnClick }) => (
 	</header>
 );
 
-export default memo(Header);
+export default Header;

@@ -14,6 +14,11 @@ class MainDocument extends Document {
 						href="https://fonts.googleapis.com/css?family=Heebo:400,700&display=swap"
 						rel="stylesheet"
 					/>
+					<link
+						rel="shortcut icon"
+						type="image/ico"
+						href="/static/images/snakebyte/favicon.ico"
+					/>
 				</Head>
 				<body className="no-js">
 					<script

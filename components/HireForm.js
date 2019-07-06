@@ -33,7 +33,6 @@ const HireForm = () => {
 							value={fields.name}
 							maxLength="50"
 							required={true}
-							placeholder="ex. John Doe"
 							onChange={handleFieldChange}
 						/>
 					</label>
@@ -46,7 +45,6 @@ const HireForm = () => {
 							value={fields.email}
 							maxLength="75"
 							required={true}
-							placeholder="ex. stuff@example.com"
 							onChange={handleFieldChange}
 						/>
 					</label>
@@ -82,7 +80,7 @@ const HireForm = () => {
 				}
 
 				form *:focus {
-					border: 1px solid skyblue !important;
+					border: 1px solid var(--brand-orange) !important;
 				}
 
 				form label {
@@ -100,6 +98,7 @@ const HireForm = () => {
 					padding: 10px 13px;
 					border: 1px solid rgba(0, 0, 0, 0.175);
 					height: 45px;
+					color: var(--site-bg-color);
 				}
 
 				form textarea {
@@ -110,28 +109,25 @@ const HireForm = () => {
 
 				button {
 					padding: 13px;
-					color: var(--site-bg-color);
-					background-color: var(--site-text-color);
-					border: 1px solid var(--site-text-color) transparent;
+					background: var(--brand-orange);
+					border: 1px solid var(--brand-orange);
 					transition: var(--transition-time);
 					text-transform: uppercase;
 					font-weight: bold;
 					cursor: pointer;
-
-					letter-spacing: 0.07em;
 				}
 
 				button:hover {
 					background-color: transparent;
-					color: var(--site-text-color);
+					background: transparent;
+					color: var(--brand-orange);
 				}
 
 				.thankyou-message {
 					max-height: 0;
 					overflow: hidden;
-					background-color: rgba(0, 1228, 0, 0.5);
-					border: 1px solid rgba(0, 128, 0, 0.8);
-					color: var(--site-bg-color);
+					background: linear-gradient(0.06turn, #bf0500, #ff8700);
+					color: var(--site-text-color);
 					text-align: center;
 					border-radius: 3px;
 					padding: 0;
@@ -141,6 +137,8 @@ const HireForm = () => {
 
 				.submitted form {
 					max-height: 0;
+					opacity: 0;
+					transform: rotate(180deg);
 				}
 
 				.submitted .thankyou-message {

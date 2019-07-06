@@ -33,7 +33,7 @@ const PortfolioLink = ({ name, image, description, link }) => {
 
 			<style jsx>{`
 				.card {
-					background-color: #f4f7f6;
+					background-color: rgba(0, 0, 0, 0.3);
 					align-content: center;
 					justify-content: center;
 					overflow: hidden;
