@@ -10,16 +10,6 @@ import "global/styles/style.css";
 const PAGE_TRANSITION_TIME = 150;
 
 class MainApp extends App {
-	static async getInitialProps({ Component, ctx }) {
-		let pageProps = {};
-
-		if (Component.getInitialProps) {
-			pageProps = await Component.getInitialProps(ctx);
-		}
-
-		return { pageProps };
-	}
-
 	constructor(props) {
 		super(props);
 		this.state = {

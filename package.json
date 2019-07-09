@@ -3,13 +3,12 @@
 		"dev": "next",
 		"start": "next start",
 		"build": "next build",
-		"export": "next build && next export",
-		"cleanup-export": "rm -r out/_next/static/development/ out/_next/static/webpack/",
+		"export": "rm -rf .next out && next build && next export",
 		"format": "npx prettier --write \"**/*.js\" \"**/*.css\" && (npx eslint ./ --fix || exit 0)"
 	},
 	"dependencies": {
 		"@zeit/next-css": "^1.0.1",
-		"next": "^8.1.0",
+		"next": "^9.0.0",
 		"next-page-transitions": "^1.0.0-beta.2",
 		"react": "^16.8.6",
 		"react-dom": "^16.8.6"
