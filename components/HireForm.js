@@ -72,7 +72,11 @@ const HireForm = () => {
 				form {
 					max-height: 600px;
 					overflow: hidden;
+					background-color: #1d1d1d;
+					border-radius: 5px;
+					padding: 40px;
 					transition: calc(var(--transition-time) * 2);
+					box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 				}
 
 				form * {
@@ -158,6 +162,8 @@ const HireForm = () => {
 					padding: 0;
 					transition: var(--transition-time);
 					opacity: 0;
+					margin-left: 40px;
+					margin-right: 40px;
 				}
 
 				.submitted form {
@@ -170,6 +176,19 @@ const HireForm = () => {
 					max-height: 50vh;
 					padding: 20px;
 					opacity: 1;
+				}
+
+				@media screen and (max-width: 550px) {
+					form {
+						padding: 0;
+						background-color: transparent;
+						border-radius: 0;
+						box-shadow: none;
+					}
+
+					.confirmation-message {
+						margin: 0;
+					}
 				}
 			`}</style>
 		</>
