@@ -1,20 +1,20 @@
 [
 	{
 		"name": "Lev Markelov",
-		"specialty": "Backend Developer",
-		"bio": "It's no secret that creating single-page JavaScript applications can be pretty challenging these days. Fortunately, there are some projects available which simplify things and help you build apps faster. Create React App is a very good example of that.",
+		"specialty": "Co-Founder",
+		"bio": "💻 Avid Programmer<br>♟ Chess Player<br>🍸 Amateur Bartender<br>🌎 Changing the world one line of code at a time",
 		"photo": "/static/images/team/lev.jpg"
 	},
 	{
 		"name": "Daryl Pinto",
-		"specialty": "Frontend Developer",
-		"bio": "Even still, there's a high learning curve before you can build a proper application. That's because you need to learn about client-side routing, page layout, and so on. If you'd like to perform server-side rendering for faster page loads, things can become even more difficult.",
+		"specialty": "Co-Founder",
+		"bio": "🖥️ Professional developer with years of experience<br>🎮 Will take you apart in Smash on the Gamecube<br>🛹 Wannabe skater<br>⌨️ Uses a Dvorak keyboard",
 		"photo": "/static/images/team/daryl.jpg"
 	},
 	{
 		"name": "Kumail Nanji",
-		"specialty": "Frontend Developer",
-		"bio": "So, we need something simple but customizable. Think about how webapps are created with PHP. You create some files, write PHP code, then simply deploy it. We don't have to worry about routing much, and the app is rendered on the server by default.",
+		"specialty": "Co-Founder",
+		"bio": "👨🏾‍💻 Enthusiastic Developer<br>🏓 Semi-Professional Ping Pong Player<br>🍍 Pineapples on pizza<br>🎤 I sing a little too<br>“You can do anything you put your mind to”",
 		"photo": "/static/images/team/kumail.jpg"
 	}
 ]
