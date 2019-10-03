@@ -3,7 +3,7 @@ const path = require("path");
 const withCSS = require("@zeit/next-css");
 
 const nextConfig = {
-	exportTrailingSlash: true,
+	exportTrailingSlash: false,
 	webpack(config) {
 		// Allow absolute paths in `import` statements for all directories
 		// within current directory except those specified in .gitignore file

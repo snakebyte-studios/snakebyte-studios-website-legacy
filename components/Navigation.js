@@ -9,22 +9,22 @@ const Navigation = ({ showHomeLink, tabbable }) => {
 		},
 		{
 			name: "Team",
-			href: "/team/",
+			href: "/team",
 			visible: true
 		},
 		{
 			name: "Portfolio",
-			href: "/portfolio/",
+			href: "/portfolio",
 			visible: true
 		},
 		{
 			name: "Blog",
-			href: "/blog/",
+			href: "/blog",
 			visible: true
 		},
 		{
 			name: "Hire Us",
-			href: "/hire/",
+			href: "/hire",
 			visible: true
 		}
 	];
