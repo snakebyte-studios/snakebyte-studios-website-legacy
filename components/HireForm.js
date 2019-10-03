@@ -60,17 +60,19 @@ const HireForm = () => {
 						/>
 					</label>
 
-					<button>{status.loading ? "Loading..." : "Send"}</button>
+					<button>
+						<span>{status.loading ? "Loading..." : "Send"}</span>
+					</button>
 				</form>
 
-				<p className="thankyou-message">✓ We'll be in touch</p>
+				<p className="confirmation-message">✓ We'll be in touch</p>
 			</div>
 
 			<style jsx>{`
 				form {
 					max-height: 600px;
 					overflow: hidden;
-					transition: var(--transition-time);
+					transition: calc(var(--transition-time) * 2);
 				}
 
 				form * {
@@ -98,7 +100,8 @@ const HireForm = () => {
 					padding: 10px 13px;
 					border: 1px solid rgba(0, 0, 0, 0.175);
 					height: 45px;
-					color: var(--site-bg-color);
+					background-color: #383838;
+					color: var(--site-text-color);
 				}
 
 				form textarea {
@@ -115,15 +118,37 @@ const HireForm = () => {
 					text-transform: uppercase;
 					font-weight: bold;
 					cursor: pointer;
+					position: relative;
+				}
+
+				button span {
+					position: relative;
+					margin: 0;
+				}
+
+				button::before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					background: linear-gradient(0.06turn, #bf0500, #ff8700);
+					transition: 0.2s;
 				}
 
 				button:hover {
 					background-color: transparent;
 					background: transparent;
-					color: var(--brand-orange);
+					border-color: rgba(255, 255, 255, 0.6);
 				}
 
-				.thankyou-message {
+				button:hover::before {
+					opacity: 0;
+				}
+
+				.confirmation-message {
 					max-height: 0;
 					overflow: hidden;
 					background: linear-gradient(0.06turn, #bf0500, #ff8700);
@@ -141,7 +166,7 @@ const HireForm = () => {
 					transform: rotate(180deg);
 				}
 
-				.submitted .thankyou-message {
+				.submitted .confirmation-message {
 					max-height: 50vh;
 					padding: 20px;
 					opacity: 1;

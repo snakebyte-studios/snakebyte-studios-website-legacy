@@ -24,8 +24,8 @@ const Hire = () => (
 					<h1>We're excited to hear from you.</h1>
 					<p>
 						Ready to take your brand to the next level? We're as hyped about it
-						as you are. Shoot us a message and we'll be sure to get back to you
-						as soon as possible!
+						as you are. Shoot us a message and we'll get back to you as soon as
+						possible!
 					</p>
 				</section>
 
@@ -68,6 +68,7 @@ const Hire = () => (
 			section p {
 				line-height: 1.6em;
 				font-size: 18px;
+				opacity: 0.7;
 			}
 
 			@media screen and (max-width: 950px) {
