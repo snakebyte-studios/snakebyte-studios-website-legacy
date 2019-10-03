@@ -1,25 +1,46 @@
 import Link from "components/ActiveLink.js";
 
-const Navigation = ({ showHomeLink }) => (
-	<nav>
-		{showHomeLink && (
-			<Link href="/">
-				<a>Home</a>
-			</Link>
-		)}
-		<Link href="/team/">
-			<a>Team</a>
-		</Link>
-		<Link href="/portfolio/">
-			<a>Portfolio</a>
-		</Link>
-		<Link href="/blog/">
-			<a>Blog</a>
-		</Link>
-		<Link href="/hire/">
-			<a>Hire Us</a>
-		</Link>
-	</nav>
-);
+const Navigation = ({ showHomeLink, tabbable }) => {
+	const links = [
+		{
+			name: "Home",
+			href: "/",
+			visible: showHomeLink
+		},
+		{
+			name: "Team",
+			href: "/team/",
+			visible: true
+		},
+		{
+			name: "Portfolio",
+			href: "/portfolio/",
+			visible: true
+		},
+		{
+			name: "Blog",
+			href: "/blog/",
+			visible: true
+		},
+		{
+			name: "Hire Us",
+			href: "/hire/",
+			visible: true
+		}
+	];
+
+	return (
+		<nav>
+			{links.map(
+				link =>
+					link.visible && (
+						<Link href={link.href}>
+							<a tabIndex={tabbable ? "0" : "-1"}>{link.name}</a>
+						</Link>
+					)
+			)}
+		</nav>
+	);
+};
 
 export default Navigation;

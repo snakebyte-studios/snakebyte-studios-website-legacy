@@ -8,7 +8,7 @@ const NavDrawer = ({ isOpen, onCloseNav }) => (
 	>
 		<aside className="nav-drawer">
 			<div onClick={onCloseNav}>
-				<Navigation showHomeLink={true} />
+				<Navigation showHomeLink={true} tabbable={isOpen} />
 			</div>
 		</aside>
 

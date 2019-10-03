@@ -29,7 +29,7 @@ const Index = () => (
 					alt="Snakebyte Studios"
 				/>
 			</div>
-			<Navigation showHomeLink={false} />
+			<Navigation showHomeLink={false} tabbable={true} />
 
 			<p className="description">
 				Snakebyte Studios is a Toronto based digital agency focused on
