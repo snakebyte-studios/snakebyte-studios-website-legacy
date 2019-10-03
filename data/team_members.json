@@ -2,19 +2,19 @@
 	{
 		"name": "Lev Markelov",
 		"specialty": "Co-Founder",
-		"bio": "💻 Avid Programmer<br>♟ Chess Player<br>🍸 Amateur Bartender<br>🌎 Changing the world one line of code at a time",
+		"bio": "💻 Avid Programmer<br> ♟️  &nbsp;Chess Player Enthusiast<br>🍸 A Fun Bartender <br>✨Overall a Fun Guy<br><br>“Changing the world one line of code at a time”",
 		"photo": "/static/images/team/lev.jpg"
 	},
 	{
 		"name": "Daryl Pinto",
 		"specialty": "Co-Founder",
-		"bio": "🖥️ Professional developer with years of experience<br>🎮 Will take you apart in Smash on the Gamecube<br>🛹 Wannabe skater<br>⌨️ Uses a Dvorak keyboard",
+		"bio": "🖥️ Professional developer with years of experience<br>🎮 Will take you apart in Smash on the Gamecube<br>🛹 Wannabe Skater<br>⌨️ Uses a Dvorak Keyboard<br><br>“Programming is really fun except when it isn't”",
 		"photo": "/static/images/team/daryl.jpg"
 	},
 	{
 		"name": "Kumail Nanji",
 		"specialty": "Co-Founder",
-		"bio": "👨🏾‍💻 Enthusiastic Developer<br>🏓 Semi-Professional Ping Pong Player<br>🍍 Pineapples on pizza<br>🎤 I sing a little too<br>“You can do anything you put your mind to”",
+		"bio": "👨🏾‍💻 Enthusiastic Developer<br>🏓 Semi-Professional Ping Pong Player<br>🍍 Pineapples on Pizza<br>🎤 I sing a little too<br><br>“You can do anything you put your mind to”",
 		"photo": "/static/images/team/kumail.jpg"
 	}
 ]

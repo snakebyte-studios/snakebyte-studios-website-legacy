@@ -133,6 +133,8 @@ const Profile = ({
 			.profile .info h3 {
 				font-size: 18px;
 				margin-bottom: 10px;
+				color: #f26d00;
+				opacity: 0.6;
 			}
 
 			@media screen and (max-width: 1035px) {
