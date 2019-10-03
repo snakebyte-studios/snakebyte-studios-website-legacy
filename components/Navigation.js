@@ -7,16 +7,16 @@ const Navigation = ({ showHomeLink }) => (
 				<a>Home</a>
 			</Link>
 		)}
-		<Link href="/team">
+		<Link href="/team/">
 			<a>Team</a>
 		</Link>
-		<Link href="/portfolio">
+		<Link href="/portfolio/">
 			<a>Portfolio</a>
 		</Link>
-		<Link href="/blog">
+		<Link href="/blog/">
 			<a>Blog</a>
 		</Link>
-		<Link href="/hire">
+		<Link href="/hire/">
 			<a>Hire Us</a>
 		</Link>
 	</nav>

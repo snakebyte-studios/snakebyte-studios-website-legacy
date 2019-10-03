@@ -1,4 +1,4 @@
-import App, { Container } from "next/app";
+import App from "next/app";
 import { PageTransition } from "next-page-transitions";
 import { KEYS } from "global/constants.js";
 import Header from "components/Header.js";
@@ -31,7 +31,7 @@ class MainApp extends App {
 		const { openNavDrawer, closeNavDrawer } = this;
 
 		return (
-			<Container>
+			<>
 				<div
 					tabIndex="0"
 					onKeyDown={e => (e.keyCode === KEYS.ESC ? closeNavDrawer() : null)}
@@ -77,7 +77,7 @@ class MainApp extends App {
 						transition: opacity ${PAGE_TRANSITION_TIME}ms;
 					}
 				`}</style>
-			</Container>
+			</>
 		);
 	}
 }
