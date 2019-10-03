@@ -46,6 +46,9 @@ const Index = () => (
 				height: 100vh;
 				justify-content: center;
 				align-items: center;
+				background-image: url("/static/images/general/dreams.svg");
+				background-repeat: no-repeat;
+				background-position: center center;
 			}
 
 			#logo {
