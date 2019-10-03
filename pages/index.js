@@ -17,8 +17,6 @@ const Index = () => (
 
 		{/* Page content */}
 		<main id="home-page">
-			<Navigation showHomeLink={false} />
-
 			<div id="logo">
 				<img
 					src="/static/images/snakebyte/logo.svg"
@@ -31,6 +29,7 @@ const Index = () => (
 					alt="Snakebyte Studios"
 				/>
 			</div>
+			<Navigation showHomeLink={false} />
 
 			<p className="description">
 				Snakebyte Studios is a Toronto based digital agency focused on
@@ -67,11 +66,11 @@ const Index = () => (
 			}
 
 			#home-page :global(nav) {
-				margin-bottom: 60px;
+				margin-top: 60px;
 			}
 
 			#home-page :global(nav a) {
-				padding: 8px 20px;
+				padding: 10px;
 				text-decoration: none;
 				color: var(--site-text-color);
 				text-transform: uppercase;
@@ -80,30 +79,25 @@ const Index = () => (
 				font-size: 20px;
 				border-radius: 100px;
 				position: relative;
-				transition: var(--transition-time);
 			}
 
 			#home-page :global(nav a::before) {
 				content: "";
-				display: block;
 				position: absolute;
-				top: 0;
-				left: 0;
-				height: 100%;
-				width: 100%;
-				border-radius: 100px;
-				z-index: -1;
+				height: 3px;
+				width: 0;
+				display: block;
+				margin-top: 5px;
+				right: 0;
+				bottom: 0;
 				background: linear-gradient(0.06turn, #bf0500, #ff8700);
-				opacity: 0;
 				transition: var(--transition-time);
 			}
 
-			#home-page :global(nav a:hover) {
-				color: var(--site-bg-color);
-			}
-
 			#home-page :global(nav a:hover::before) {
-				opacity: 1;
+				width: 100%;
+				left: 0;
+				background-color: white;
 			}
 
 			#home-page :global(nav a:last-of-type) {
