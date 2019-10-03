@@ -34,7 +34,7 @@ const Navigation = ({ showHomeLink, tabbable }) => {
 			{links.map(
 				link =>
 					link.visible && (
-						<Link href={link.href}>
+						<Link href={link.href} key={link.href}>
 							<a tabIndex={tabbable ? "0" : "-1"}>{link.name}</a>
 						</Link>
 					)
