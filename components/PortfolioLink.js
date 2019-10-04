@@ -55,14 +55,6 @@ const PortfolioLink = ({ name, image, description, link }) => {
 					margin-bottom: 10px;
 				}
 
-				/*
-				.cardImage img {
-					transition: transform 0.7s, filter 0.7s ease-in-out;
-					filter: blur(0);
-					transform: scale(1);
-				}
-				*/
-
 				.card .link {
 					display: inline-block;
 					text-decoration: none;
