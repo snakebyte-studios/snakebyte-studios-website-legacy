@@ -148,6 +148,12 @@ const Index = () => (
 					transition: var(--transition-time);
 				}
 			}
+
+			@media (orientation: portrait) {
+				main {
+					background-image: none;
+				}
+			}
 		`}</style>
 	</>
 );
