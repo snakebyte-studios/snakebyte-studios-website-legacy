@@ -27,7 +27,6 @@ const Header = ({ onMenuBtnClick }) => (
 				left: 0;
 				height: 90px;
 				width: 100vw;
-				background-color: var(--site-bg-color);
 				z-index: 2;
 			}
 

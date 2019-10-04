@@ -28,7 +28,6 @@ const Footer = () => (
 				height: ${FOOTER_HEIGHT}px;
 				margin-top: -${FOOTER_HEIGHT}px;
 				padding: 15px;
-				background-color: var(--site-bg-color);
 				z-index: 2;
 			}
 
