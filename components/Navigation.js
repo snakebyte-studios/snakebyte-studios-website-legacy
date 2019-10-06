@@ -13,8 +13,8 @@ const Navigation = ({ showHomeLink, tabbable }) => {
 			visible: true
 		},
 		{
-			name: "Portfolio",
-			href: "/portfolio",
+			name: "Designs",
+			href: "/designs",
 			visible: true
 		},
 		{

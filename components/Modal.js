@@ -46,7 +46,7 @@ const Modal = ({ isOpen, onCloseModal, children }) => {
 					height: 80vh;
 					position: relative;
 					padding: 40px;
-					background-color: #1f1f1f;
+					background-color: #121212;
 					position: fixed;
 					z-index: 40;
 				}
