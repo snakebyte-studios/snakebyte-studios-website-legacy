@@ -55,17 +55,6 @@ const DesignLink = ({ name, image, description, link }) => {
 					line-height: 1.4em;
 					margin-bottom: 10px;
 				}
-				.card .link {
-					display: inline-block;
-					text-decoration: none;
-					/*   border: 1px solid black; */
-					padding: 10px 30px;
-					border-radius: 20px;
-					background: orange;
-					color: white;
-					font-size: 1em;
-					margin-left: 33%;
-				}
 
 				.card:hover {
 					transform: scale(1.05);

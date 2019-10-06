@@ -28,6 +28,22 @@ const Designs = () => {
 						/>
 					</div>
 
+					<div className=".DesignLinkCard" onClick={() => setModalOpen(true)}>
+						<DesignLink
+							name="Luxury Car Rental Mockup"
+							image="../static/images/designPics/luxuryCarRental.jpg"
+							description="This mockup was for a Luxury Car Rental app using vibrant and luxirious photos."
+						/>
+					</div>
+
+					<div className=".DesignLinkCard" onClick={() => setModalOpen(true)}>
+						<DesignLink
+							name="Luxury Car Rental Mockup"
+							image="../static/images/designPics/luxuryCarRental.jpg"
+							description="This mockup was for a Luxury Car Rental app using vibrant and luxirious photos."
+						/>
+					</div>
+
 					{/* <button
 						onClick={() => setModalOpen(true)}
 						style={{ backgroundColor: "var(--brand-orange)", padding: "10px" }}
@@ -75,13 +91,17 @@ const Designs = () => {
 				}
 
 				.container :global(.card) {
-					width: calc(33% - 20px);
+					width: 33%;
 					margin-right: 30px;
 					margin-bottom: 20px;
 				}
 
 				.container :global(.card:nth-of-type(3n)) {
 					margin-right: 0px;
+				}
+
+				.DesignLinkCard {
+					width: 100%;
 				}
 
 				.modalConatiner {
@@ -109,8 +129,6 @@ const Designs = () => {
 				@media screen and (max-width: 690px) {
 					.container :global(.card) {
 						width: 100%;
-						margin-right: 30px;
-						margin-bottom: 20px;
 					}
 					.modalConatiner {
 						display: flex;
