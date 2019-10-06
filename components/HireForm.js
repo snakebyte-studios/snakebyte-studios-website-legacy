@@ -72,7 +72,7 @@ const HireForm = () => {
 				form {
 					max-height: 600px;
 					overflow: hidden;
-					background-color: #1d1d1d;
+					background-color: rgba(0, 0, 0, 0.3);
 					border-radius: 5px;
 					padding: 40px;
 					transition: calc(var(--transition-time) * 2);
