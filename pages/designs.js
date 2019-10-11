@@ -25,22 +25,15 @@ const Designs = () => {
 							name="Luxury Car Rental Mockup"
 							image="../static/images/designPics/luxuryCarRental.jpg"
 							description="This mockup was for a Luxury Car Rental app using vibrant and luxirious photos."
+							notAVideo="hidden"
 						/>
 					</div>
 
 					<div className=".DesignLinkCard" onClick={() => setModalOpen(true)}>
 						<DesignLink
-							name="Luxury Car Rental Mockup"
-							image="../static/images/designPics/luxuryCarRental.jpg"
-							description="This mockup was for a Luxury Car Rental app using vibrant and luxirious photos."
-						/>
-					</div>
-
-					<div className=".DesignLinkCard" onClick={() => setModalOpen(true)}>
-						<DesignLink
-							name="Luxury Car Rental Mockup"
-							image="../static/images/designPics/luxuryCarRental.jpg"
-							description="This mockup was for a Luxury Car Rental app using vibrant and luxirious photos."
+							name="Vacation Getaway Mockup"
+							video="../static/images/designPics/travelyMockupVideo.mp4"
+							description="This mockup displays the top places to visit during the cold times, in a beautiful design with smooth animations."
 						/>
 					</div>
 
@@ -83,16 +76,20 @@ const Designs = () => {
 				.container {
 					display: flex;
 					align-items: center;
+					justify-content: space-evenly;
 					flex-wrap: wrap;
-					width: var(--container-width);
 					max-width: 80%;
 					margin: 0 auto;
 					margin-top: 100px;
 				}
 
+				.container :global(.DesignLinkCard:last-of-type) {
+					margin-right: 10px;
+				}
+
 				.container :global(.card) {
-					width: 33%;
-					margin-right: 30px;
+					width: 25vw;
+					margin-right: 20px;
 					margin-bottom: 20px;
 				}
 

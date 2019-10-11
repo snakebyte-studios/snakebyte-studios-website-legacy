@@ -1,9 +1,12 @@
-const DesignLink = ({ name, image, description, link }) => {
+const DesignLink = ({ name, image, description, link, notAvideo, video }) => {
 	return (
 		<>
 			<div className="card">
 				<a href={link}>
 					<img src={image} alt={name} />{" "}
+					<video loop autoPlay muted width="320" visible={notAvideo}>
+						<source src={video} type="video/mp4" alt={name} />
+					</video>
 				</a>
 				<div className="info">
 					<h5>{name}</h5>
@@ -28,6 +31,7 @@ const DesignLink = ({ name, image, description, link }) => {
 					padding: 20px;
 					cursor: pointer;
 					transition: transform 0.7s, filter 0.7s ease-in-out;
+					width: 100%;
 				}
 
 				.card img {
@@ -39,6 +43,11 @@ const DesignLink = ({ name, image, description, link }) => {
 					filter: blur(0);
 					transform: scale(1);
 					margin-bottom: 15px;
+				}
+
+				.card video {
+					margin-bottom: 15px;
+					width: 100%;
 				}
 
 				.card img:hover {
