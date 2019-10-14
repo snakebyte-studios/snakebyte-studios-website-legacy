@@ -1,12 +1,15 @@
-const DesignLink = ({ name, image, description, link, notAvideo, video }) => {
+const DesignLink = ({ name, image, description, link }) => {
+	// eslint-disable-next-line no-console
+	console.log("name: ", name);
+
 	return (
 		<>
 			<div className="card">
 				<a href={link}>
 					<img src={image} alt={name} />{" "}
-					<video loop autoPlay muted width="320" visible={notAvideo}>
+					{/* <video loop autoPlay muted width="320" visible={notAvideo}>
 						<source src={video} type="video/mp4" alt={name} />
-					</video>
+					</video> */}
 				</a>
 				<div className="info">
 					<h5>{name}</h5>

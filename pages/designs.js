@@ -2,6 +2,7 @@ import { useState } from "react";
 import Head from "next/head";
 import DesignLink from "components/DesignLink.js";
 import Modal from "components/Modal.js";
+import DESIGN_LIST from "data/design_list.json";
 
 const Designs = () => {
 	const [modalOpen, setModalOpen] = useState(false);
@@ -20,21 +21,16 @@ const Designs = () => {
 			{/* Page content */}
 			<main id="design-page">
 				<div className="container">
-					<div className=".DesignLinkCard" onClick={() => setModalOpen(true)}>
-						<DesignLink
-							name="Luxury Car Rental Mockup"
-							image="../static/images/designPics/luxuryCarRental.jpg"
-							description="This mockup was for a Luxury Car Rental app using vibrant and luxirious photos."
-							notAVideo="hidden"
-						/>
-					</div>
-
-					<div className=".DesignLinkCard" onClick={() => setModalOpen(true)}>
-						<DesignLink
-							name="Vacation Getaway Mockup"
-							video="../static/images/designPics/travelyMockupVideo.mp4"
-							description="This mockup displays the top places to visit during the cold times, in a beautiful design with smooth animations."
-						/>
+					<div className="DesignLinkCard" onClick={() => setModalOpen(true)}>
+						{DESIGN_LIST.map(design => (
+							<DesignLink
+								name={design.name}
+								// video={design.video}
+								image={design.image}
+								description={design.description}
+								notAVideo={design.notAVideo}
+							/>
+						))}
 					</div>
 
 					{/* <button
@@ -45,27 +41,13 @@ const Designs = () => {
 					</button> */}
 				</div>
 
-				<Modal isOpen={modalOpen} onCloseModal={() => setModalOpen(false)}>
-					<div className="modalConatiner">
-						<div className="left">
-							<video loop autoPlay muted width="250">
-								<source
-									src="../static/images/designPics/appPrototype.mp4"
-									type="video/mp4"
-								/>
-							</video>
-						</div>
-						<div className="right">
-							<h1 className="title">Luxury Car Rental App</h1>
-							<h2 className="tagline">A beautiful UI to rent high end cars</h2>
-							<p className="tools">Tools Used: Adobe XD and Illustrator</p>
-							<p className="desc">
-								This mockup was for a Luxury Car Rental app using vibrant and
-								luxirious photos.
-							</p>
-						</div>
-					</div>
-				</Modal>
+				{DESIGN_LIST.map(design => (
+					<Modal
+						children={design}
+						isOpen={modalOpen}
+						onCloseModal={() => setModalOpen(false)}
+					/>
+				))}
 			</main>
 
 			<style jsx>{`
@@ -98,51 +80,12 @@ const Designs = () => {
 				}
 
 				.DesignLinkCard {
-					width: 100%;
-				}
-
-				.modalConatiner {
-					display: grid;
-					grid-template-columns: 60% 40%;
-				}
-
-				.left {
-					justify-content: center;
 					display: flex;
-				}
-				.title {
-					font-size: 30px;
-					color: var(--brand-orange);
-					margin-bottom: 5px;
-				}
-				.tagline {
-					margin-bottom: 5px;
-				}
-				.tools {
-					font-size: 12px;
-					margin-bottom: 10px;
-					opacity: 0.8;
+					width: 100%;
 				}
 				@media screen and (max-width: 690px) {
 					.container :global(.card) {
 						width: 100%;
-					}
-					.modalConatiner {
-						display: flex;
-						flex-direction: column-reverse;
-					}
-					.modalConatiner video {
-						width: 75%;
-					}
-
-					.right {
-						margin-bottom: 1em;
-					}
-
-					.title {
-						font-size: 30px;
-						color: var(--brand-orange);
-						margin-bottom: 5px;
 					}
 				}
 			`}</style>

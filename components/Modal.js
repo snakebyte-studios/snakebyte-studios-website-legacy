@@ -2,6 +2,9 @@ import { useEffect } from "react";
 import { KEYS } from "global/constants.js";
 
 const Modal = ({ isOpen, onCloseModal, children }) => {
+	// eslint-disable-next-line no-console
+	console.log("children: ", children);
+
 	// Handle ESC key press (without needing the element to be focused first)
 	useEffect(() => {
 		const closeOnEsc = e => (e.keyCode === KEYS.ESC ? onCloseModal() : null);
@@ -18,7 +21,19 @@ const Modal = ({ isOpen, onCloseModal, children }) => {
 				<span className="close-btn" onClick={onCloseModal}>
 					✕
 				</span>
-				{children}
+				<div className="modalConatiner">
+					<div className="left">
+						<video loop autoPlay muted width="">
+							<source src={children.video} type="video/mp4" />
+						</video>
+					</div>
+					<div className="right">
+						<h1 className="title">{children.name}</h1>
+						<h2 className="tagline">{children.tagline}</h2>
+						<p className="tools">{children.tools}</p>
+						<p className="desc">{children.description}</p>
+					</div>
+				</div>
 			</div>
 
 			<style jsx>{`
@@ -65,6 +80,53 @@ const Modal = ({ isOpen, onCloseModal, children }) => {
 
 				.close-btn:hover {
 					opacity: 1;
+				}
+
+				.modalConatiner {
+					display: grid;
+					grid-template-columns: 60% 40%;
+				}
+
+				.modalConatiner video {
+					width: 90%;
+				}
+
+				.left {
+					justify-content: center;
+					display: flex;
+				}
+				.title {
+					font-size: 30px;
+					color: var(--brand-orange);
+					margin-bottom: 5px;
+				}
+				.tagline {
+					margin-bottom: 5px;
+				}
+				.tools {
+					font-size: 12px;
+					margin-bottom: 10px;
+					opacity: 0.8;
+				}
+
+				@media screen and (max-width: 690px) {
+					.modalConatiner {
+						display: flex;
+						flex-direction: column-reverse;
+					}
+					.modalConatiner video {
+						width: 75%;
+					}
+
+					.right {
+						margin-bottom: 1em;
+					}
+
+					.title {
+						font-size: 30px;
+						color: var(--brand-orange);
+						margin-bottom: 5px;
+					}
 				}
 			`}</style>
 		</div>
