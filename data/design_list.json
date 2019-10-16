@@ -6,8 +6,7 @@
 		"video": "../static/images/designPics/appPrototype.mp4",
 		"description": "This mockup was for a Luxury Car Rental app using vibrant and luxirious photos.",
 		"tagline": "A beautiful UI to rent high end cars.",
-		"tools": "Adobe XD and Illustrator",
-		"notAVideo": "hidden"
+		"tools": "Adobe XD and Illustrator"
 	},
 	{
 		"id": 1,
@@ -16,7 +15,6 @@
 		"video": "../static/images/designPics/travelyMockupVideo.mp4",
 		"description": "This mockup displays the top places to visit during the cold times, in a beautiful design with smooth animations.",
 		"tagline": "Beautifully designed with smooth animations.",
-		"tools": "Adobe XD and Illustrator",
-		"notAVideo": "visible"
+		"tools": "Adobe XD and Illustrator"
 	}
 ]

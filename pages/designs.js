@@ -4,8 +4,25 @@ import DesignLink from "components/DesignLink.js";
 import Modal from "components/Modal.js";
 import DESIGN_LIST from "data/design_list.json";
 
+DESIGN_LIST.forEach(design => {
+	design.show = false;
+});
+
 const Designs = () => {
 	const [modalOpen, setModalOpen] = useState(false);
+
+	const [selectedCardId, setSelectedCardId] = useState(false);
+
+	// const selectedCard = DESIGN_LIST.find(post => post.id == selectedCardId);
+
+	function handleClick(id) {
+		let selectedDesign = DESIGN_LIST.find(post => post.id == selectedCardId);
+		// eslint-disable-next-line no-debugger
+		debugger;
+		selectedDesign.show = true;
+		// setModalOpen(true);
+		setSelectedCardId(selectedDesign);
+	}
 
 	return (
 		<>
@@ -14,40 +31,32 @@ const Designs = () => {
 				<title>Designs - Snakebyte Studios</title>
 				<meta
 					name="description"
-					content="" //TODO: Write Design meta description
+					content="View beautifully designed mockups as well as project designs done for clients!" //TODO: Write Design meta description
 				/>
 			</Head>
 
 			{/* Page content */}
 			<main id="design-page">
 				<div className="container">
-					<div className="DesignLinkCard" onClick={() => setModalOpen(true)}>
-						{DESIGN_LIST.map(design => (
+					{DESIGN_LIST.map(design => (
+						<div
+							className="DesignLinkCard"
+							onClick={() => handleClick(design.id)}
+						>
 							<DesignLink
 								name={design.name}
 								// video={design.video}
 								image={design.image}
-								description={design.description}
-								notAVideo={design.notAVideo}
+								description={design.tagline}
 							/>
-						))}
-					</div>
-
-					{/* <button
-						onClick={() => setModalOpen(true)}
-						style={{ backgroundColor: "var(--brand-orange)", padding: "10px" }}
-					>
-						Open Modal
-					</button> */}
+							<Modal
+								data={selectedCardId}
+								isOpen={design.show}
+								onCloseModal={() => (design.show = false)}
+							/>
+						</div>
+					))}
 				</div>
-
-				{DESIGN_LIST.map(design => (
-					<Modal
-						children={design}
-						isOpen={modalOpen}
-						onCloseModal={() => setModalOpen(false)}
-					/>
-				))}
 			</main>
 
 			<style jsx>{`
@@ -63,10 +72,7 @@ const Designs = () => {
 					max-width: 80%;
 					margin: 0 auto;
 					margin-top: 100px;
-				}
-
-				.container :global(.DesignLinkCard:last-of-type) {
-					margin-right: 10px;
+					flex-direction: row;
 				}
 
 				.container :global(.card) {
@@ -81,7 +87,6 @@ const Designs = () => {
 
 				.DesignLinkCard {
 					display: flex;
-					width: 100%;
 				}
 				@media screen and (max-width: 690px) {
 					.container :global(.card) {

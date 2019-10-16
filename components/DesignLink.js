@@ -1,7 +1,4 @@
 const DesignLink = ({ name, image, description, link }) => {
-	// eslint-disable-next-line no-console
-	console.log("name: ", name);
-
 	return (
 		<>
 			<div className="card">

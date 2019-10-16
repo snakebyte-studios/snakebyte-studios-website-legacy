@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import { KEYS } from "global/constants.js";
 
-const Modal = ({ isOpen, onCloseModal, children }) => {
-	// eslint-disable-next-line no-console
-	console.log("children: ", children);
+const Modal = ({ isOpen, onCloseModal, data, id }) => {
+	useEffect(() => {
+		// eslint-disable-next-line no-console
+		console.log(data);
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	// Handle ESC key press (without needing the element to be focused first)
 	useEffect(() => {
@@ -11,6 +14,15 @@ const Modal = ({ isOpen, onCloseModal, children }) => {
 		document.addEventListener("keydown", closeOnEsc);
 		return () => document.removeEventListener("keydown", closeOnEsc);
 	}, [onCloseModal]);
+
+	// const selectedCard = children.id === id;
+	// eslint-disable-next-line no-console
+	// console.log("video: ", children.video);
+
+	// function displaySelectedCard(arr) {
+	// 	return arr === id;
+	// }
+	// const selectedCard = children.filter(id);
 
 	return (
 		<div
@@ -22,16 +34,17 @@ const Modal = ({ isOpen, onCloseModal, children }) => {
 					✕
 				</span>
 				<div className="modalConatiner">
-					<div className="left">
+					{/* <div className="left">
 						<video loop autoPlay muted width="">
-							<source src={children.video} type="video/mp4" />
+							<source src={data.video} type="video/mp4" />
 						</video>
-					</div>
+					</div> */}
 					<div className="right">
-						<h1 className="title">{children.name}</h1>
-						<h2 className="tagline">{children.tagline}</h2>
-						<p className="tools">{children.tools}</p>
-						<p className="desc">{children.description}</p>
+						<pre>{JSON.stringify(data)}</pre>
+						{/* <h1 className="title">{data.name}</h1>
+						<h2 className="tagline">{data.tagline}</h2>
+						<p className="tools">Tools used: {data.tools}</p>
+						<p className="desc">{data.description}</p> */}
 					</div>
 				</div>
 			</div>
