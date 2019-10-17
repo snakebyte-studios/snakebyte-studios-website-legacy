@@ -1,4 +1,5 @@
 import { memo, useState } from "react";
+import axios from "axios";
 
 const HireForm = () => {
 	const [fields, setFields] = useState({ name: "", email: "", message: "" });
@@ -10,9 +11,7 @@ const HireForm = () => {
 
 	const handleFormSubmit = async () => {
 		setStatus({ ...status, loading: true });
-		// TO DO: Send data to a backend
-		// eslint-disable-next-line no-console
-		console.log("Form Payload:", fields);
+		await axios.post("/api/hire", fields);
 		setStatus({ loading: false, submitted: true });
 	};
 
@@ -54,7 +53,7 @@ const HireForm = () => {
 						<textarea
 							name="message"
 							value={fields.message}
-							maxLength="600"
+							maxLength="1000"
 							required={true}
 							onChange={handleFieldChange}
 						/>
