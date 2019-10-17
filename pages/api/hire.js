@@ -41,9 +41,11 @@ export default function handle(req, res) {
 		from: `${req.body.name} <${req.body.email}>`,
 		to: "info@snakebyte.ca",
 		subject: `Contact form submission from ${req.body.name}`,
-		html: `<p>[Name]: ${req.body.name}</p><p>[Email]: ${
-			req.body.email
-		}</p><p>[Message]: ${req.body.message}</p>`
+		html: `
+			<p>[Name]: ${req.body.name}</p>
+			<p>[Email]: ${req.body.email}</p>
+			<p>[Message]: ${req.body.message}</p>
+		`
 	};
 
 	transporter.sendMail(mailOptions, function(err) {
@@ -51,5 +53,5 @@ export default function handle(req, res) {
 		if (err) console.error(err);
 	});
 
-	res.end("hello");
+	res.end("Success!");
 }
