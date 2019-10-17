@@ -1,13 +1,7 @@
 import { useEffect } from "react";
 import { KEYS } from "global/constants.js";
 
-const Modal = ({ isOpen, onCloseModal, data, id }) => {
-	useEffect(() => {
-		// eslint-disable-next-line no-console
-		console.log(data);
-		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, []);
-
+const Modal = ({ isOpen, onCloseModal, design }) => {
 	// Handle ESC key press (without needing the element to be focused first)
 	useEffect(() => {
 		const closeOnEsc = e => (e.keyCode === KEYS.ESC ? onCloseModal() : null);
@@ -33,20 +27,22 @@ const Modal = ({ isOpen, onCloseModal, data, id }) => {
 				<span className="close-btn" onClick={onCloseModal}>
 					✕
 				</span>
-				<div className="modalConatiner">
-					{/* <div className="left">
-						<video loop autoPlay muted width="">
-							<source src={data.video} type="video/mp4" />
-						</video>
-					</div> */}
-					<div className="right">
-						<pre>{JSON.stringify(data)}</pre>
-						{/* <h1 className="title">{data.name}</h1>
-						<h2 className="tagline">{data.tagline}</h2>
-						<p className="tools">Tools used: {data.tools}</p>
-						<p className="desc">{data.description}</p> */}
+				{design && (
+					<div className="modalConatiner">
+						<div className="left">
+							<video loop autoPlay muted width="">
+								<source src={design.video} type="video/mp4" />
+							</video>
+						</div>
+
+						<div className="right">
+							<h1 className="title">{design.name}</h1>
+							<h2 className="tagline">{design.tagline}</h2>
+							<p className="tools">Tools used: {design.tools}</p>
+							<p className="desc">{design.description}</p>
+						</div>
 					</div>
-				</div>
+				)}
 			</div>
 
 			<style jsx>{`

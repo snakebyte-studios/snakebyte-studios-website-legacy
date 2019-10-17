@@ -9,20 +9,12 @@ DESIGN_LIST.forEach(design => {
 });
 
 const Designs = () => {
-	const [modalOpen, setModalOpen] = useState(false);
+	const [activeDesign, setActiveDesign] = useState(null);
 
-	const [selectedCardId, setSelectedCardId] = useState(false);
-
-	// const selectedCard = DESIGN_LIST.find(post => post.id == selectedCardId);
-
-	function handleClick(id) {
-		let selectedDesign = DESIGN_LIST.find(post => post.id == selectedCardId);
-		// eslint-disable-next-line no-debugger
-		debugger;
-		selectedDesign.show = true;
-		// setModalOpen(true);
-		setSelectedCardId(selectedDesign);
-	}
+	const handleClick = id => {
+		let design = DESIGN_LIST.find(design => design.id === id);
+		setActiveDesign(design);
+	};
 
 	return (
 		<>
@@ -42,6 +34,7 @@ const Designs = () => {
 						<div
 							className="DesignLinkCard"
 							onClick={() => handleClick(design.id)}
+							key={design.id}
 						>
 							<DesignLink
 								name={design.name}
@@ -49,13 +42,13 @@ const Designs = () => {
 								image={design.image}
 								description={design.tagline}
 							/>
-							<Modal
-								data={selectedCardId}
-								isOpen={design.show}
-								onCloseModal={() => (design.show = false)}
-							/>
 						</div>
 					))}
+					<Modal
+						design={activeDesign}
+						isOpen={activeDesign !== null}
+						onCloseModal={() => setActiveDesign(null)}
+					/>
 				</div>
 			</main>
 
