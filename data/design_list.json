@@ -5,8 +5,11 @@
 		"image": "../static/images/designPics/luxuryCarRental.jpg",
 		"video": "../static/images/designPics/appPrototype.mp4",
 		"description": "This mockup was for a Luxury Car Rental app using vibrant and luxirious photos.",
-		"tagline": "A beautiful UI to rent high end cars.",
-		"tools": "Adobe XD and Illustrator"
+		"tagline": "A beautifully designed UI to rent high end cars.",
+		"tools": {
+			"Xd": "Adobe XD",
+			"Ai": "Adobe Illustrator"
+		}
 	},
 	{
 		"id": 1,
@@ -14,7 +17,10 @@
 		"image": "../static/images/designPics/travelyMockup.jpg",
 		"video": "../static/images/designPics/travelyMockupVideo.mp4",
 		"description": "This mockup displays the top places to visit during the cold times, in a beautiful design with smooth animations.",
-		"tagline": "Beautifully designed with smooth animations.",
-		"tools": "Adobe XD and Illustrator"
+		"tagline": "A beautifully designed mockup with smooth animations.",
+		"tools": {
+			"Xd": "Adobe XD",
+			"Ai": "Adobe Illustrator"
+		}
 	}
 ]
