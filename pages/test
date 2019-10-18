@@ -1,0 +1,6 @@
+<Modal
+					id={DESIGN_LIST[0].id}
+					children={DESIGN_LIST[0]}
+					isOpen={modalOpen}
+					onCloseModal={() => setModalOpen(false)}
+				/>

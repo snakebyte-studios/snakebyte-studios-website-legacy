@@ -117,6 +117,10 @@ const Index = () => (
 			}
 
 			@media screen and (max-width: 690px) {
+				main {
+					overflow: hidden;
+				}
+
 				#logo .brandmark {
 					height: 30vw;
 					left: -3vw;
