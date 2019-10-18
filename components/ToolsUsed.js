@@ -19,7 +19,7 @@ const ToolsUsed = ({ tools }) => {
 				}
 				.box {
 					display: flex;
-					background-color: white;
+					background-color: #efefef;
 					border-radius: 25px;
 					border: none;
 					align-items: center;

@@ -114,7 +114,7 @@ const Modal = ({ isOpen, onCloseModal, design }) => {
 				}
 				.tagline {
 					margin-bottom: 20px;
-					font-size: 12px;
+					font-size: 15px;
 				}
 				.tools {
 					margin-bottom: 20px;
