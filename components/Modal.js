@@ -9,15 +9,6 @@ const Modal = ({ isOpen, onCloseModal, design }) => {
 		return () => document.removeEventListener("keydown", closeOnEsc);
 	}, [onCloseModal]);
 
-	// const selectedCard = children.id === id;
-	// eslint-disable-next-line no-console
-	// console.log("video: ", children.video);
-
-	// function displaySelectedCard(arr) {
-	// 	return arr === id;
-	// }
-	// const selectedCard = children.filter(id);
-
 	return (
 		<div
 			className={isOpen ? "modal-shade" : "modal-shade hidden"}
@@ -94,10 +85,12 @@ const Modal = ({ isOpen, onCloseModal, design }) => {
 				.modalConatiner {
 					display: grid;
 					grid-template-columns: 60% 40%;
+					height: 100%;
 				}
 
 				.modalConatiner video {
 					width: 90%;
+					max-height: 100%;
 				}
 
 				.left {
