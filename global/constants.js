@@ -6,3 +6,5 @@ export const KEYS = {
 	UPARROW: 38,
 	DOWNARROW: 40
 };
+
+export const RECAPTCHA_SITE_KEY = "6LcmVb4UAAAAAHcQ4YFkIwJIh8l7-CXLZKdIkFek";

@@ -1,8 +1,14 @@
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
 import axios from "axios";
+import { RECAPTCHA_SITE_KEY } from "global/constants";
 
 const HireForm = () => {
-	const [fields, setFields] = useState({ name: "", email: "", message: "" });
+	const [fields, setFields] = useState({
+		name: "",
+		email: "",
+		message: "",
+		"g-recaptcha-response": ""
+	});
 	const [status, setStatus] = useState({ loading: false, submitted: false });
 
 	const handleFieldChange = e => {
@@ -14,6 +20,18 @@ const HireForm = () => {
 		await axios.post("/api/hire", fields);
 		setStatus({ loading: false, submitted: true });
 	};
+
+	// Re-captcha
+	useEffect(() => {
+		window.grecaptcha.ready(function() {
+			window.grecaptcha
+				.execute(RECAPTCHA_SITE_KEY, { action: "hireform" })
+				.then(token => {
+					setFields({ ...fields, "g-recaptcha-response": token });
+				});
+		});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<>
@@ -62,6 +80,21 @@ const HireForm = () => {
 					<button>
 						<span>{status.loading ? "Loading..." : "Send"}</span>
 					</button>
+					{/*
+					Re-Captcha notice is required when the automatically placed badge is hidden
+					https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed
+					*/}
+					<p className="recaptcha-notice">
+						This site is protected by reCAPTCHA and the Google{" "}
+						<a href="https://policies.google.com/privacy">
+							Privacy&nbsp;Policy
+						</a>{" "}
+						and{" "}
+						<a href="https://policies.google.com/terms">
+							Terms&nbsp;of&nbsp;Service
+						</a>{" "}
+						apply.
+					</p>
 				</form>
 
 				<p className="confirmation-message">✓ We'll be in touch</p>
@@ -149,6 +182,25 @@ const HireForm = () => {
 
 				button:hover::before {
 					opacity: 0;
+				}
+
+				.recaptcha-notice {
+					color: white;
+					opacity: 0.25;
+					font-size: 14px;
+					font-weight: 300;
+					margin-top: 15px;
+					line-height: 1.4em;
+					text-align: center;
+				}
+
+				.recaptcha-notice a {
+					color: white;
+					font-size: 14px;
+					display: inline;
+					text-decoration: underline;
+					border: none;
+					outline: none;
 				}
 
 				.confirmation-message {

@@ -1,8 +1,9 @@
 const nodemailer = require("nodemailer");
+const axios = require("axios");
 const secret = require("../../secret.json");
 const MAX_FIELD_LENGTH = 1000;
 
-export default function handle(req, res) {
+export default async function handle(req, res) {
 	// Ensure request is a POST request
 	if (req.method !== "POST") {
 		return res.status(405).json({
@@ -12,23 +13,36 @@ export default function handle(req, res) {
 	}
 
 	// Ensure all required fields are present
-	const requiredFields = ["name", "email", "message"];
+	const requiredFields = ["name", "email", "message", "g-recaptcha-response"];
 	const invalid = requiredFields.some(field => req.body[field] === undefined);
 
 	if (invalid) {
 		return res.status(400).json({
 			status: 400,
-			message: "Invalid body"
+			message: "Required fields are missing"
 		});
 	}
 
-	// TODO: Ensure all requests come from the same domain as this route
+	// Verify Google re-captcha
+	const captchaCheck = await axios.post(
+		`https://www.google.com/recaptcha/api/siteverify?secret=${
+			secret.recaptchaSecretKey
+		}&response=${req.body["g-recaptcha-response"]}`
+	);
 
-	// Truncate all body params for safety
+	if (!captchaCheck.data.success) {
+		return res.status(403).json({
+			status: 403,
+			message: "Spam detected"
+		});
+	}
+
+	// Truncate body params for safety
 	requiredFields.forEach(field => {
 		req.body[field] = req.body[field].substr(0, MAX_FIELD_LENGTH);
 	});
 
+	// Send email
 	const transporter = nodemailer.createTransport({
 		service: "gmail",
 		auth: {

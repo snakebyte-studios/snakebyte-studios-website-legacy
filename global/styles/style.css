@@ -22,3 +22,9 @@ a {
 .no-js .page-transition-enter {
 	opacity: 1;
 }
+
+/* https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed */
+.grecaptcha-badge {
+	visibility: hidden;
+	pointer-events: none;
+}
