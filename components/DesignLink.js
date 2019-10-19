@@ -4,21 +4,10 @@ const DesignLink = ({ name, image, description, link }) => {
 			<div className="card">
 				<a href={link}>
 					<img src={image} alt={name} />{" "}
-					{/* <video loop autoPlay muted width="320" visible={notAvideo}>
-						<source src={video} type="video/mp4" alt={name} />
-					</video> */}
 				</a>
 				<div className="info">
 					<h5>{name}</h5>
 					<p>{description}</p>
-					{/* <div
-						className="link"
-						target="_blank"
-						rel="noopener noreferrer"
-						onClick="setModalOpen(true)"
-					>
-						Visit
-					</div> */}
 				</div>
 			</div>
 
