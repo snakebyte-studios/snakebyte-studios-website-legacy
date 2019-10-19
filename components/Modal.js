@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { KEYS } from "global/constants.js";
+import ToolsUsed from "components/ToolsUsed.js";
 
 const Modal = ({ isOpen, onCloseModal, design }) => {
 	// Handle ESC key press (without needing the element to be focused first)
@@ -28,9 +29,16 @@ const Modal = ({ isOpen, onCloseModal, design }) => {
 
 						<div className="right">
 							<h1 className="title">{design.name}</h1>
-							<h2 className="tagline">{design.tagline}</h2>
-							<p className="tools">Tools used: {design.tools}</p>
-							<p className="desc">{design.description}</p>
+							<p className="tagline">{design.tagline}</p>
+							<hr />
+							<div className="box tools">
+								<h1 className="box-titles">Tools Used:</h1>
+								<ToolsUsed tools={design.tools} />
+							</div>
+							<div className="box desc">
+								<h1 className="box-titles">Description:</h1>
+								<p className="desc">{design.description}</p>
+							</div>
 						</div>
 					</div>
 				)}
@@ -61,9 +69,10 @@ const Modal = ({ isOpen, onCloseModal, design }) => {
 					height: 80vh;
 					position: relative;
 					padding: 40px;
-					background-color: #121212;
+					background-color: #080808;
 					position: fixed;
 					z-index: 40;
+					border-radius: 10px;
 				}
 
 				.close-btn {
@@ -95,29 +104,51 @@ const Modal = ({ isOpen, onCloseModal, design }) => {
 
 				.left {
 					justify-content: center;
+					align-items: flex-start;
 					display: flex;
 				}
 				.title {
-					font-size: 30px;
+					font-size: 35px;
 					color: var(--brand-orange);
 					margin-bottom: 5px;
 				}
 				.tagline {
-					margin-bottom: 5px;
+					margin-bottom: 20px;
+					font-size: 15px;
 				}
 				.tools {
-					font-size: 12px;
-					margin-bottom: 10px;
-					opacity: 0.8;
+					margin-bottom: 20px;
+				}
+				hr {
+					width: 100%;
+					border: 0.5px solid white;
+					margin-bottom: 20px;
+				}
+				.box-titles {
+					color: var(--brand-orange);
+					margin-bottom: 15px;
+				}
+				.box {
+					background-color: rgba(2, 2, 2, 0.5);
+					padding: 15px;
+					border: none;
+					border-radius: 10px;
+				}
+				.desc {
+					height: 40%;
+					font-size: 15px;
+					line-height: 20px;
 				}
 
 				@media screen and (max-width: 690px) {
 					.modalConatiner {
 						display: flex;
-						flex-direction: column-reverse;
+						flex-direction: column;
+						overflow: scroll;
 					}
 					.modalConatiner video {
-						width: 75%;
+						width: 100%;
+						margin-bottom: 10px;
 					}
 
 					.right {
@@ -125,7 +156,7 @@ const Modal = ({ isOpen, onCloseModal, design }) => {
 					}
 
 					.title {
-						font-size: 30px;
+						font-size: 20px;
 						color: var(--brand-orange);
 						margin-bottom: 5px;
 					}
