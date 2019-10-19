@@ -55,7 +55,6 @@ const Hire = () => (
 				margin-left: 80px;
 				padding-top: 15px;
 				padding-bottom: 15px;
-				border-left: 1px solid rgba(0, 0, 0, 0.2);
 			}
 
 			section h1 {

@@ -9,7 +9,12 @@ const HireForm = () => {
 		message: "",
 		"g-recaptcha-response": ""
 	});
-	const [status, setStatus] = useState({ loading: false, submitted: false });
+
+	const [status, setStatus] = useState({
+		loading: false,
+		error: false,
+		submitted: false
+	});
 
 	const handleFieldChange = e => {
 		setFields({ ...fields, [e.target.name]: e.target.value });
@@ -17,8 +22,12 @@ const HireForm = () => {
 
 	const handleFormSubmit = async () => {
 		setStatus({ ...status, loading: true });
-		await axios.post("/api/hire", fields);
-		setStatus({ loading: false, submitted: true });
+		try {
+			await axios.post("/api/hire", fields);
+			setStatus({ loading: false, error: false, submitted: true });
+		} catch (err) {
+			setStatus({ loading: false, error: true, submitted: false });
+		}
 	};
 
 	// Re-captcha
@@ -77,6 +86,12 @@ const HireForm = () => {
 						/>
 					</label>
 
+					<div
+						className={status.error ? "error-message" : "error-message hidden"}
+					>
+						Something went wrong. Please try again later.
+					</div>
+
 					<button>
 						<span>{status.loading ? "Loading..." : "Send"}</span>
 					</button>
@@ -102,7 +117,7 @@ const HireForm = () => {
 
 			<style jsx>{`
 				form {
-					max-height: 600px;
+					max-height: 700px;
 					overflow: hidden;
 					background-color: rgba(0, 0, 0, 0.3);
 					border-radius: 5px;
@@ -182,6 +197,25 @@ const HireForm = () => {
 
 				button:hover::before {
 					opacity: 0;
+				}
+
+				.error-message {
+					border: 1px solid red;
+					border-radius: 3px;
+					padding: 20px;
+					text-align: center;
+					margin-bottom: 20px;
+					background-color: rgba(255, 0, 0, 0.55);
+					transition: 0.2s;
+				}
+
+				.error-message.hidden {
+					max-height: 0;
+					padding: 0;
+					margin: 0;
+					opacity: 0;
+					pointer-events: none;
+					overflow: hidden;
 				}
 
 				.recaptcha-notice {
