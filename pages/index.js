@@ -72,7 +72,7 @@ const Index = () => (
 							"Logo Design",
 							"Graphic Design"
 						]}
-						image="../static/images/home/design.svg"
+						image="/static/images/home/design.svg"
 					/>
 					<ServiceBox
 						type="Web Development"
@@ -83,7 +83,7 @@ const Index = () => (
 							"Mobile Development",
 							"Custom Web Development"
 						]}
-						image="../static/images/home/development.svg"
+						image="/static/images/home/development.svg"
 					/>
 				</Fade>
 			</div>
@@ -293,7 +293,7 @@ const Index = () => (
 			#front-two {
 				display: flex;
 				flex-direction: column;
-				height: 100vh;
+				padding-bottom: 200px;
 				align-items: center;
 				transition: all 1s ease-in;
 			}
