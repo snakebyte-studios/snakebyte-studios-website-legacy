@@ -48,6 +48,7 @@ const Header = ({ onMenuBtnClick }) => (
 				padding: 25px 15px;
 				cursor: pointer;
 				transition: var(--transition-time);
+				z-index: 100;
 			}
 
 			.menu-button:hover {
