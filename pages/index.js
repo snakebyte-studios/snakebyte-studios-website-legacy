@@ -301,6 +301,7 @@ const Index = () => (
 				display: flex;
 				flex-direction: row !important;
 				margin-top: 50px;
+				margin-left: 50px;
 			}
 
 			/* The typing effect */
@@ -362,6 +363,7 @@ const Index = () => (
 					display: flex;
 					flex-direction: column !important;
 					margin-bottom: 50px;
+					margin-left: 0px;
 				}
 				#front-two {
 					height: 100%;
