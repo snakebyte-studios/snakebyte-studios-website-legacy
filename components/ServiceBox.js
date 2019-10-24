@@ -9,9 +9,7 @@ const ServiceBox = ({ services, type, image, style }) => (
 
 					{services.map(service => (
 						<li key={service}>
-							<a href="#">
-								<div className="listtext">{service}</div>
-							</a>
+							<div className="listtext">{service}</div>
 						</li>
 					))}
 				</div>
