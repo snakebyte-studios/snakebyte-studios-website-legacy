@@ -67,6 +67,7 @@ const Designs = () => {
 					margin: 0 auto;
 					text-align: center;
 					font-size: 50px;
+					animation: fade-down 0.7s cubic-bezier(0.57, 0.21, 0.69, 1.25);
 				}
 				.container {
 					display: flex;
@@ -83,6 +84,26 @@ const Designs = () => {
 					width: 25vw;
 					margin-right: 20px;
 					margin-bottom: 20px;
+					animation: fade-up 0.7s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+				}
+
+				@keyframes fade-up {
+					0% {
+						opacity: 0;
+						transform: translateY(50px);
+					}
+					100% {
+						opacity: 100;
+					}
+				}
+				@keyframes fade-down {
+					0% {
+						opacity: 0;
+						transform: translateY(-50px);
+					}
+					100% {
+						opacity: 100;
+					}
 				}
 
 				.container :global(.card:nth-of-type(3n)) {
