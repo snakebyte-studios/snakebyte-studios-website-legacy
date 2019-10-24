@@ -21,6 +21,17 @@ const DesignLink = ({ name, image, description, link }) => {
 					cursor: pointer;
 					transition: transform 0.7s, filter 0.7s ease-in-out;
 					width: 100%;
+					animation: fade-down 0.7s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+				}
+
+				@keyframes fade-down {
+					0% {
+						opacity: 0;
+						transform: translateY(-50px);
+					}
+					100% {
+						opacity: 100;
+					}
 				}
 
 				.card img {

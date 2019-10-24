@@ -29,6 +29,7 @@ const Designs = () => {
 
 			{/* Page content */}
 			<main id="design-page">
+				<h1>Our Designs</h1>
 				<div className="container">
 					{DESIGN_LIST.map(design => (
 						<div
@@ -56,7 +57,17 @@ const Designs = () => {
 				#design-page {
 					min-height: 100vh;
 				}
-
+				h1 {
+					display: inline-block;
+					position: fixed;
+					text-transform: uppercase;
+					top: 90px;
+					right: 0;
+					left: 0;
+					margin: 0 auto;
+					text-align: center;
+					font-size: 50px;
+				}
 				.container {
 					display: flex;
 					align-items: center;
@@ -64,7 +75,7 @@ const Designs = () => {
 					flex-wrap: wrap;
 					max-width: 80%;
 					margin: 0 auto;
-					margin-top: 100px;
+					margin-top: 200px;
 					flex-direction: row;
 				}
 
@@ -82,8 +93,18 @@ const Designs = () => {
 					display: flex;
 				}
 				@media screen and (max-width: 690px) {
+					h1 {
+						font-size: 42px;
+						margin-top: 100px;
+						display: block;
+						position: static;
+					}
 					.container :global(.card) {
 						width: 100%;
+						margin-right: 0;
+					}
+					.container {
+						margin-top: 50px;
 					}
 				}
 			`}</style>
