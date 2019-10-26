@@ -1,7 +1,7 @@
 :root {
-	--site-bg-color: #191919;
+	--site-bg-color: #090808;
 	--site-text-color: #efefef;
-	--brand-orange: #f26d00;
+	--brand-orange: #ee7100;
 	--transition-time: 200ms;
 	--container-width: 1050px;
 }
@@ -21,4 +21,10 @@ a {
 
 .no-js .page-transition-enter {
 	opacity: 1;
+}
+
+/* https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed */
+.grecaptcha-badge {
+	visibility: hidden;
+	pointer-events: none;
 }

@@ -19,7 +19,7 @@ const Profile = ({
 		<div className="info">
 			<h2>{name}</h2>
 			<h3>{specialty}</h3>
-			<p>{bio}</p>
+			<p dangerouslySetInnerHTML={{ __html: bio }} />
 		</div>
 
 		<span
@@ -133,6 +133,8 @@ const Profile = ({
 			.profile .info h3 {
 				font-size: 18px;
 				margin-bottom: 10px;
+				color: #f26d00;
+				opacity: 0.6;
 			}
 
 			@media screen and (max-width: 1035px) {

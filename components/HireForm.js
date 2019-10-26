@@ -1,8 +1,20 @@
-import { memo, useState } from "react";
+import { memo, useState, useEffect } from "react";
+import axios from "axios";
+import { RECAPTCHA_SITE_KEY } from "global/constants";
 
 const HireForm = () => {
-	const [fields, setFields] = useState({ name: "", email: "", message: "" });
-	const [status, setStatus] = useState({ loading: false, submitted: false });
+	const [fields, setFields] = useState({
+		name: "",
+		email: "",
+		message: "",
+		"g-recaptcha-response": ""
+	});
+
+	const [status, setStatus] = useState({
+		loading: false,
+		error: false,
+		submitted: false
+	});
 
 	const handleFieldChange = e => {
 		setFields({ ...fields, [e.target.name]: e.target.value });
@@ -10,11 +22,25 @@ const HireForm = () => {
 
 	const handleFormSubmit = async () => {
 		setStatus({ ...status, loading: true });
-		// TO DO: Send data to a backend
-		// eslint-disable-next-line no-console
-		console.log("Form Payload:", fields);
-		setStatus({ loading: false, submitted: true });
+		try {
+			await axios.post("/api/hire", fields);
+			setStatus({ loading: false, error: false, submitted: true });
+		} catch (err) {
+			setStatus({ loading: false, error: true, submitted: false });
+		}
 	};
+
+	// Re-captcha
+	useEffect(() => {
+		window.grecaptcha.ready(function() {
+			window.grecaptcha
+				.execute(RECAPTCHA_SITE_KEY, { action: "hireform" })
+				.then(token => {
+					setFields({ ...fields, "g-recaptcha-response": token });
+				});
+		});
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, []);
 
 	return (
 		<>
@@ -54,23 +80,50 @@ const HireForm = () => {
 						<textarea
 							name="message"
 							value={fields.message}
-							maxLength="600"
+							maxLength="1000"
 							required={true}
 							onChange={handleFieldChange}
 						/>
 					</label>
 
-					<button>{status.loading ? "Loading..." : "Send"}</button>
+					<div
+						className={status.error ? "error-message" : "error-message hidden"}
+					>
+						Something went wrong. Please try again later.
+					</div>
+
+					<button>
+						<span>{status.loading ? "Loading..." : "Send"}</span>
+					</button>
+					{/*
+					Re-Captcha notice is required when the automatically placed badge is hidden
+					https://developers.google.com/recaptcha/docs/faq#id-like-to-hide-the-recaptcha-badge.-what-is-allowed
+					*/}
+					<p className="recaptcha-notice">
+						This site is protected by reCAPTCHA and the Google{" "}
+						<a href="https://policies.google.com/privacy">
+							Privacy&nbsp;Policy
+						</a>{" "}
+						and{" "}
+						<a href="https://policies.google.com/terms">
+							Terms&nbsp;of&nbsp;Service
+						</a>{" "}
+						apply.
+					</p>
 				</form>
 
-				<p className="thankyou-message">✓ We'll be in touch</p>
+				<p className="confirmation-message">✓ We'll be in touch</p>
 			</div>
 
 			<style jsx>{`
 				form {
-					max-height: 600px;
+					max-height: 700px;
 					overflow: hidden;
-					transition: var(--transition-time);
+					background-color: rgba(0, 0, 0, 0.3);
+					border-radius: 5px;
+					padding: 40px;
+					transition: calc(var(--transition-time) * 2);
+					box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
 				}
 
 				form * {
@@ -98,7 +151,8 @@ const HireForm = () => {
 					padding: 10px 13px;
 					border: 1px solid rgba(0, 0, 0, 0.175);
 					height: 45px;
-					color: var(--site-bg-color);
+					background-color: #383838;
+					color: var(--site-text-color);
 				}
 
 				form textarea {
@@ -115,15 +169,75 @@ const HireForm = () => {
 					text-transform: uppercase;
 					font-weight: bold;
 					cursor: pointer;
+					position: relative;
+				}
+
+				button span {
+					position: relative;
+					margin: 0;
+				}
+
+				button::before {
+					content: "";
+					display: block;
+					position: absolute;
+					top: 0;
+					left: 0;
+					height: 100%;
+					width: 100%;
+					background: linear-gradient(0.06turn, #bf0500, #ff8700);
+					transition: 0.2s;
 				}
 
 				button:hover {
 					background-color: transparent;
 					background: transparent;
-					color: var(--brand-orange);
+					border-color: rgba(255, 255, 255, 0.6);
 				}
 
-				.thankyou-message {
+				button:hover::before {
+					opacity: 0;
+				}
+
+				.error-message {
+					border: 1px solid red;
+					border-radius: 3px;
+					padding: 20px;
+					text-align: center;
+					margin-bottom: 20px;
+					background-color: rgba(255, 0, 0, 0.55);
+					transition: 0.2s;
+				}
+
+				.error-message.hidden {
+					max-height: 0;
+					padding: 0;
+					margin: 0;
+					opacity: 0;
+					pointer-events: none;
+					overflow: hidden;
+				}
+
+				.recaptcha-notice {
+					color: white;
+					opacity: 0.25;
+					font-size: 14px;
+					font-weight: 300;
+					margin-top: 15px;
+					line-height: 1.4em;
+					text-align: center;
+				}
+
+				.recaptcha-notice a {
+					color: white;
+					font-size: 14px;
+					display: inline;
+					text-decoration: underline;
+					border: none;
+					outline: none;
+				}
+
+				.confirmation-message {
 					max-height: 0;
 					overflow: hidden;
 					background: linear-gradient(0.06turn, #bf0500, #ff8700);
@@ -133,6 +247,8 @@ const HireForm = () => {
 					padding: 0;
 					transition: var(--transition-time);
 					opacity: 0;
+					margin-left: 40px;
+					margin-right: 40px;
 				}
 
 				.submitted form {
@@ -141,10 +257,23 @@ const HireForm = () => {
 					transform: rotate(180deg);
 				}
 
-				.submitted .thankyou-message {
+				.submitted .confirmation-message {
 					max-height: 50vh;
 					padding: 20px;
 					opacity: 1;
+				}
+
+				@media screen and (max-width: 550px) {
+					form {
+						padding: 0;
+						background-color: transparent;
+						border-radius: 0;
+						box-shadow: none;
+					}
+
+					.confirmation-message {
+						margin: 0;
+					}
 				}
 			`}</style>
 		</>

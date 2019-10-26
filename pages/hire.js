@@ -20,16 +20,18 @@ const Hire = () => (
 		{/* Page content */}
 		<main id="hire-page">
 			<div className="container">
-				<section>
-					<h1>We're excited to hear from you.</h1>
+				<section className="left">
+					<h1>
+						We're excited to hear from <span className="you">you.</span>
+					</h1>
 					<p>
 						Ready to take your brand to the next level? We're as hyped about it
-						as you are. Shoot us a message and we'll be sure to get back to you
-						as soon as possible!
+						as you are. Shoot us a message and we'll get back to you as soon as
+						possible!
 					</p>
 				</section>
 
-				<section>
+				<section className="right">
 					<HireForm />
 				</section>
 			</div>
@@ -53,10 +55,32 @@ const Hire = () => (
 			section:nth-of-type(2) {
 				width: 500px;
 				margin-left: 80px;
-				padding-left: 80px;
 				padding-top: 15px;
 				padding-bottom: 15px;
-				border-left: 1px solid rgba(0, 0, 0, 0.2);
+			}
+			.right {
+				animation: fade-up 0.7s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+			}
+			.left {
+				animation: fade-down 0.7s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+			}
+			@keyframes fade-up {
+				0% {
+					opacity: 0;
+					transform: translateY(50px);
+				}
+				100% {
+					opacity: 100;
+				}
+			}
+			@keyframes fade-down {
+				0% {
+					opacity: 0;
+					transform: translateY(-50px);
+				}
+				100% {
+					opacity: 100;
+				}
 			}
 
 			section h1 {
@@ -64,10 +88,16 @@ const Hire = () => (
 				margin-bottom: 30px;
 				text-indent: -4px;
 			}
+			.you {
+				font-size: 60px;
+				text-indent: -4px;
+				color: #ee7100;
+			}
 
 			section p {
 				line-height: 1.6em;
 				font-size: 18px;
+				opacity: 0.7;
 			}
 
 			@media screen and (max-width: 950px) {
@@ -93,7 +123,9 @@ const Hire = () => (
 				section h1 {
 					font-size: 42px;
 				}
-
+				.you {
+					font-size: 42px;
+				}
 				section p {
 					font-size: 16px;
 				}

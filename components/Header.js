@@ -30,7 +30,6 @@ const Header = ({ onMenuBtnClick }) => (
 				left: 0;
 				height: 90px;
 				width: 100vw;
-				background-color: var(--site-bg-color);
 				z-index: 2;
 			}
 
@@ -52,6 +51,7 @@ const Header = ({ onMenuBtnClick }) => (
 				padding: 25px 15px;
 				cursor: pointer;
 				transition: var(--transition-time);
+				z-index: 100;
 			}
 
 			.menu-button:hover {
