@@ -63,9 +63,15 @@ export default async function handle(req, res) {
 	};
 
 	transporter.sendMail(mailOptions, function(err) {
-		// eslint-disable-next-line no-console
-		if (err) console.error(err);
+		if (err) {
+			// eslint-disable-next-line no-console
+			console.error(err);
+			return res.status(500).json({
+				status: 500,
+				message: "Internal Server Error"
+			});
+		} else {
+			return res.end("Success!");
+		}
 	});
-
-	res.end("Success!");
 }
