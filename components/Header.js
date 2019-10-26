@@ -13,11 +13,9 @@ const Header = ({ onMenuBtnClick }) => (
 			</a>
 		</ActiveLink>
 
-		{/* 
-			<div className="menu-button" onClick={onMenuBtnClick}>
-				<span />
-			</div>
-		*/}
+		<div className="menu-button" onClick={onMenuBtnClick}>
+			<span />
+		</div>
 
 		<style jsx>{`
 			header {

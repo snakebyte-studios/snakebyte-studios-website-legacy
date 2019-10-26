@@ -11,13 +11,6 @@ const DesignLink = ({ name, image, description, link }) => {
 				</div>
 			</div>
 
-			<Modal isOpen={modalOpen} onCloseModal={() => setModalOpen(false)}>
-				<div className="hello">
-					<img src={image} alt={name} /> <h5>{name}</h5>
-					<p>{description}</p>
-				</div>
-			</Modal>
-
 			<style jsx>{`
 				.card {
 					background-color: rgba(0, 0, 0, 0.3);

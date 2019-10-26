@@ -1,6 +1,5 @@
 import { memo } from "react";
 import Head from "next/head";
-// eslint-disable-next-line no-unused-vars
 import Navigation from "components/Navigation.js";
 import ServiceBox from "components/ServiceBox.js";
 import Fade from "react-reveal/Fade";
