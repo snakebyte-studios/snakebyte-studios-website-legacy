@@ -26,9 +26,10 @@ const Header = ({ onMenuBtnClick }) => (
 				position: fixed;
 				top: 0;
 				left: 0;
-				height: 90px;
+				height: 80px;
 				width: 100vw;
 				z-index: 2;
+				background-color: var(--site-bg-color);
 			}
 
 			header > :global(a) {

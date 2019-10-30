@@ -54,9 +54,9 @@ const Index = () => (
 			<div>
 				<Fade bottom>
 					<p className="description">
-						Snakebyte Studios is a Toronto based digital agency focused on
-						delivering quality web&nbsp;development and graphic&nbsp;design
-						experiences for your brand.
+						We are a Toronto based digital agency focused on delivering quality
+						web&nbsp;development and graphic&nbsp;design experiences for your
+						brand by working with you to increase your online presence.
 					</p>
 				</Fade>
 			</div>
@@ -84,6 +84,17 @@ const Index = () => (
 							"Custom Web Development"
 						]}
 						image="/static/images/home/development.svg"
+					/>
+					<ServiceBox
+						type="Search Engine Optimization"
+						style="service seo"
+						services={[
+							"Organic Results",
+							"First Page Ranking",
+							"Quality of Traffic",
+							"Quantity of Traffic"
+						]}
+						image="/static/images/home/seo.svg"
 					/>
 				</Fade>
 			</div>
@@ -153,9 +164,11 @@ const Index = () => (
 			}
 
 			#home-page :global(nav) {
-				margin-top: 60px;
+				margin-top: 50px;
 				animation: nav-fade-up 1s cubic-bezier(0.25, 0.75, 0.5, 1.25);
 				z-index: 2;
+				display: flex;
+				justify-content: center;
 			}
 
 			#home-page :global(nav a) {
@@ -337,7 +350,7 @@ const Index = () => (
 
 				#logo .brandmark {
 					height: 30vw;
-					left: 0.5vw;
+					left: 0.2vw;
 				}
 
 				#logo .logo-text {
@@ -367,6 +380,10 @@ const Index = () => (
 				}
 				#front-two {
 					height: 100%;
+				}
+
+				.scroll-down {
+					left: 47vw;
 				}
 			}
 

@@ -32,6 +32,11 @@ const ServiceBox = ({ services, type, image, style }) => (
 				flex-direction: column;
 				list-style-type: none;
 				align-items: start;
+				background: linear-gradient(
+					180deg,
+					rgba(222, 74, 0, 1) 0%,
+					rgba(241, 113, 0, 1) 100%
+				);
 			}
 			.service-main {
 				margin: 30px 50px 0px 0px;
@@ -45,20 +50,6 @@ const ServiceBox = ({ services, type, image, style }) => (
 			.listtext {
 				font-size: 18px;
 				margin-bottom: 20px;
-			}
-			.design {
-				background: linear-gradient(
-					180deg,
-					rgba(222, 74, 0, 1) 0%,
-					rgba(241, 113, 0, 1) 100%
-				);
-			}
-			.dev {
-				background: linear-gradient(
-					90deg,
-					rgba(222, 74, 0, 1) 0%,
-					rgba(241, 113, 0, 1) 100%
-				);
 			}
 			.image {
 				height: 40px;
