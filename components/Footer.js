@@ -17,6 +17,13 @@ const Footer = () => (
 			>
 				<img src="/static/images/social/instagram.svg" />
 			</a>
+			<a
+				href="https://ca.linkedin.com/company/snakebyte-studios-inc?trk=public_profile_topcard_current_company"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img src="/static/images/social/linked-in.svg" />
+			</a>
 		</div>
 
 		<style jsx>{`
