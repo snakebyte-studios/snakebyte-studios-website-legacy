@@ -8,3 +8,4 @@ export const KEYS = {
 };
 
 export const RECAPTCHA_SITE_KEY = "6LcmVb4UAAAAAHcQ4YFkIwJIh8l7-CXLZKdIkFek";
+export const ANALYTICS_TRACKING_CODE = "UA-150354503-1";
