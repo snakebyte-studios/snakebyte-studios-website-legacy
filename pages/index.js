@@ -4,6 +4,9 @@ import Navigation from "components/Navigation.js";
 import ServiceBox from "components/ServiceBox.js";
 import Fade from "react-reveal/Fade";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import ReactGA from "react-ga";
+
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 const Index = () => (
 	<>
