@@ -8,7 +8,7 @@ import "global/styles/_reset.css";
 import "global/styles/style.css";
 import ReactGA from "react-ga";
 
-ReactGA.initialize("UA-150354503-1");
+ReactGA.initialize("UA-69953822-1");
 
 const PAGE_TRANSITION_TIME = 150;
 
