@@ -1,5 +1,6 @@
 import ActiveLink from "components/ActiveLink.js";
 
+// eslint-disable-next-line no-unused-vars
 const Header = ({ onMenuBtnClick }) => (
 	<header>
 		<ActiveLink href="/">
@@ -25,9 +26,10 @@ const Header = ({ onMenuBtnClick }) => (
 				position: fixed;
 				top: 0;
 				left: 0;
-				height: 90px;
+				height: 80px;
 				width: 100vw;
 				z-index: 2;
+				background-color: var(--site-bg-color);
 			}
 
 			header > :global(a) {
