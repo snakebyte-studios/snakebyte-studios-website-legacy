@@ -1,4 +1,5 @@
 import { memo } from "react";
+import Link from "next/link";
 import Head from "next/head";
 import Navigation from "components/Navigation.js";
 import ServiceBox from "components/ServiceBox.js";
@@ -19,48 +20,185 @@ const Index = () => (
 		</Head>
 
 		{/* Page content */}
+
 		<main id="home-page">
-			<div id="logo">
-				<img
-					src="/static/images/snakebyte/logo.svg"
-					className="brandmark"
-					alt="Snakebyte Studios"
-				/>
-				<img
-					src="/static/images/snakebyte/logo-text.svg"
-					className="logo-text"
-					alt="Snakebyte Studios"
-				/>
-			</div>
+			<img
+				src="/static/images/snakebyte/logo.svg"
+				className="logo"
+				alt="Snakebyte Studios"
+			/>
 			<Navigation showHomeLink={false} tabbable={true} />
 			<AnchorLink href="#front-two">
 				<div className="scroll-down">
 					<i className="chevron bottom" />
 				</div>
 			</AnchorLink>
-			{/* <a className="scroll-down" href="#front-two">
-				<i className="chevron bottom" />
-			</a> */}
+
+			<svg
+				version="1.1"
+				className="top-left"
+				id="Layer_1"
+				xmlns="http://www.w3.org/2000/svg"
+				x="0px"
+				y="0px"
+				viewBox="0 0 885.7 531.9"
+				style={{ enableBackground: "new 0 0 885.7 531.9" }}
+			>
+				<linearGradient
+					id="SVGID_1_"
+					gradientUnits="userSpaceOnUse"
+					x1="432.8525"
+					y1="512.1655"
+					x2="432.8525"
+					y2="6.6855"
+				>
+					<stop offset="0" style={{ stopColor: "#BE0C00" }} />
+					<stop offset="1" style={{ stopColor: "#F99300" }} />
+				</linearGradient>
+				<linearGradient
+					id="SVGID_2_"
+					gradientUnits="userSpaceOnUse"
+					x1="434.319"
+					y1="530.1446"
+					x2="434.319"
+					y2="1.6855"
+				>
+					<stop offset="0" style={{ stopColor: "#BE0C00" }} />
+					<stop offset="1" style={{ stopColor: "#F99300" }} />
+				</linearGradient>
+				<path
+					className="st0"
+					d="M6.3,512.2V6.7h853c0,0-107.6,224.9-402.9,221.5C456.5,228.1,190,207.5,6.3,512.2z"
+				/>
+			</svg>
+
+			<svg
+				version="1.1"
+				className="top-right"
+				id="Layer_1"
+				xmlns="http://www.w3.org/2000/svg"
+				x="0px"
+				y="0px"
+				viewBox="0 0 885.7 531.9"
+				style={{ enableBackground: "new 0 0 885.7 531.9" }}
+			>
+				<linearGradient
+					id="SVGID_1_"
+					gradientUnits="userSpaceOnUse"
+					x1="432.8525"
+					y1="512.1655"
+					x2="432.8525"
+					y2="6.6855"
+				>
+					<stop offset="0" style={{ stopColor: "#BE0C00" }} />
+					<stop offset="1" style={{ stopColor: "#F99300" }} />
+				</linearGradient>
+				<linearGradient
+					id="SVGID_2_"
+					gradientUnits="userSpaceOnUse"
+					x1="434.319"
+					y1="530.1446"
+					x2="434.319"
+					y2="1.6855"
+				>
+					<stop offset="0" style={{ stopColor: "#BE0C00" }} />
+					<stop offset="1" style={{ stopColor: "#F99300" }} />
+				</linearGradient>
+				<path
+					className="st0"
+					d="M6.3,512.2V6.7h853c0,0-107.6,224.9-402.9,221.5C456.5,228.1,190,207.5,6.3,512.2z"
+				/>
+			</svg>
+
+			<div className="front-page-content container">
+				<div className="left content">
+					<h1 className="title">
+						Developing <span className="highlighted">your</span> dreams.
+					</h1>
+					{/* <h2 className="typing-text title">
+						Developing <span className="highlighted">your</span> dreams.
+					</h2> */}
+					<p className="description">
+						We are a Toronto based digital agency focused on delivering quality
+						Web Development, Design and Digital Marketing to improve your brands
+						online presence.
+					</p>
+					<Link href="/hire">
+						<p className="cta">GET IN TOUCH</p>
+					</Link>
+				</div>
+				<div className="right content">
+					<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 718.61 89.65">
+						<title>Snakebyte Studios</title>
+						<g id="Final_Logo" data-name="Final Logo">
+							<path
+								className="cls-1"
+								d="M11.17,52.2H23.71c.06,3.8,3.17,6.27,8.61,6.27,4.31,0,7.1-1.58,7.1-4.37,0-3.29-3.74-4.05-8.36-4.68-7.79-1.08-19.58-2-19.58-13.68,0-9,7.73-14.83,19.7-14.83s20.08,6.47,20.08,15.84H39.16c0-4-3-6.27-7.53-6.27-4.25,0-6.78,1.77-6.78,4.31,0,3.42,4.5,4,9.75,4.75,7.73,1.14,18.18,2.78,18.18,13.74,0,9-8.3,14.82-21,14.82C19.4,68.1,11.17,61.58,11.17,52.2Z"
+							/>
+							<path
+								className="cls-1"
+								d="M58.42,21.8H72.74L87.62,49.92h.63V21.8h12.48V67.15H86.42L71.53,39.09H70.9V67.15H58.42Z"
+							/>
+							<path
+								className="cls-1"
+								d="M119.23,21.8h19.64l14.18,45.35H139.31l-2.15-6.9H120.88l-2.16,6.9H105Zm15.33,29-5.2-17.61h-.63l-5.19,17.61Z"
+							/>
+							<path
+								className="cls-1"
+								d="M157.3,21.8h13.37V39.47h.63L183.78,21.8h15.77L182.89,43.4l16.85,23.75H184L171.3,47.83h-.63V67.15H157.3Z"
+							/>
+							<path
+								className="cls-1"
+								d="M203.73,21.8h34.9V32.32h-22v7.6h20.78v8.67H216.65v8h22.62V67.15H203.73Z"
+							/>
+							<path
+								className="cls-1"
+								d="M244.72,21.8H268c10.71,0,17,4.94,17,12.54a9.72,9.72,0,0,1-6.59,9.38v.63a10.61,10.61,0,0,1,7.86,10.58c0,7.79-6.53,12.22-17.11,12.22H244.72ZM265.36,40c3.42,0,5.83-1.77,5.83-4.31s-2.41-4.24-5.83-4.24h-7.28V40Zm.89,17.54c3.55,0,6.21-2,6.21-4.68s-2.66-4.63-6.21-4.63h-8.17v9.31Z"
+							/>
+							<path
+								className="cls-1"
+								d="M301.54,51.7,285.76,21.8h13.88L307.87,40h.63l7.73-18.24h14.06L314.9,51.7V67.15H301.54Z"
+							/>
+							<path
+								className="cls-1"
+								d="M345.69,32.76H331.5v-11h41.74v11H359.05V67.15H345.69Z"
+							/>
+							<path
+								className="cls-1"
+								d="M377.48,21.8h34.9V32.32h-22v7.6h20.77v8.67H390.41v8H413V67.15H377.48Z"
+							/>
+							<path
+								className="cls-1"
+								d="M422.27,52.65H428c.06,6.9,4.94,11,13.3,11,7.28,0,11.53-3.17,11.53-8.17,0-6.15-6.21-7.16-12.92-8.24C431.83,46,423,43.91,423,34.22c0-8,6.15-13.31,16.92-13.31,10.95,0,17.6,5.71,17.67,15.14H452C452,29.72,447.54,26,439.88,26c-7.22,0-11.15,3.11-11.15,7.92,0,5.89,5.95,7,12.54,8,8.11,1.33,17.29,3.1,17.29,13.24,0,8.36-6.4,13.62-17.35,13.62C429.49,68.74,422.27,62.59,422.27,52.65Z"
+							/>
+							<path
+								className="cls-1"
+								d="M476.36,27.57H461.6V22.5H497v5.07H482.13V67.15h-5.77Z"
+							/>
+							<path
+								className="cls-1"
+								d="M503.35,50V22.5h5.83V50c0,8,5.25,13.68,12.54,13.68S534.19,58,534.19,50V22.5H540V50c0,10.89-7.6,18.75-18.24,18.75S503.35,60.88,503.35,50Z"
+							/>
+							<path
+								className="cls-1"
+								d="M551.68,22.5H566c15.46,0,25.72,8.8,25.72,22.29S581.45,67.15,566,67.15H551.68ZM566,62.09c12,0,20-6.59,20-17.3s-8.11-17.22-20-17.22h-8.55V62.09Z"
+							/>
+							<path className="cls-1" d="M601,22.5h5.77V67.15H601Z" />
+							<path
+								className="cls-1"
+								d="M616,44.79c0-13.93,10-23.88,24.13-23.88s24.13,10,24.13,23.88-10,23.95-24.13,23.95S616,58.86,616,44.79Zm42.43,0c0-10.95-7.6-18.81-18.3-18.81S621.8,33.84,621.8,44.79s7.66,18.88,18.37,18.88S658.47,55.75,658.47,44.79Z"
+							/>
+							<path
+								className="cls-1"
+								d="M671.15,52.65h5.7c.06,6.9,4.94,11,13.3,11,7.28,0,11.53-3.17,11.53-8.17,0-6.15-6.21-7.16-12.93-8.24-8-1.26-16.91-3.35-16.91-13,0-8,6.15-13.31,16.91-13.31,11,0,17.61,5.71,17.68,15.14h-5.58c0-6.33-4.43-10.07-12.1-10.07-7.22,0-11.14,3.11-11.14,7.92,0,5.89,5.95,7,12.54,8,8.11,1.33,17.29,3.1,17.29,13.24,0,8.36-6.4,13.62-17.36,13.62C678.37,68.74,671.15,62.59,671.15,52.65Z"
+							/>
+						</g>
+					</svg>
+				</div>
+			</div>
 		</main>
 
 		<section id="front-two">
-			<Fade bottom>
-				<div className="bottom-page">
-					<h2 className="typing-text">
-						We're here for <span className="you">you.</span>
-					</h2>
-				</div>
-			</Fade>
-			<div>
-				<Fade bottom>
-					<p className="description">
-						We are a Toronto based digital agency focused on delivering quality
-						web&nbsp;development and graphic&nbsp;design experiences for your
-						brand by working with you to increase your online presence.
-					</p>
-				</Fade>
-			</div>
-
 			<div className="services">
 				<Fade bottom>
 					<ServiceBox
@@ -107,7 +245,198 @@ const Index = () => (
 				height: 100vh;
 				justify-content: center;
 				align-items: center;
+				color: var(--site-text-color);
 			}
+
+			.logo {
+				position: absolute;
+				z-index: 2;
+				width: 40px;
+				top: 0;
+				margin-top: 15px;
+				padding: 5px;
+				animation: pop-in-logo 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+
+			@keyframes pop-in-logo {
+				0% {
+					transform: scale(0);
+					opacity: 0;
+				}
+				50% {
+					transform: scale(0.7);
+					opacity: 0;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+
+			/* -----------SVG STYLING----------- */
+			.st0 {
+				fill: url(#SVGID_1_);
+				stroke: url(#SVGID_2_);
+				stroke-width: 2;
+				stroke-miterlimit: 10;
+			}
+
+			.cls-1 {
+				fill: #f26d00;
+			}
+
+			.top-left,
+			.top-right {
+				width: 45vw;
+				stroke-dasharray: 2400;
+				animation: animate 1.5s ease-in-out;
+				position: absolute;
+			}
+
+			.top-left {
+				top: -4px;
+				left: -4px;
+				z-index: 100;
+			}
+
+			.top-right {
+				transform: rotate(180deg);
+				bottom: -4px;
+				right: -4px;
+			}
+
+			@keyframes animate {
+				0% {
+					opacity: 0;
+					fill-opacity: 0;
+					stroke-dashoffset: 2400;
+				}
+				10% {
+					opacity: 10;
+					stroke-dashoffset: 2400;
+				}
+				70% {
+					fill-opacity: 0;
+				}
+				100% {
+					opacity: 10;
+					stroke-dashoffset: 0;
+					fill-opacity: 1;
+					stroke-width: 1 !important;
+				}
+			}
+			/* -----------END OF SVG STYLING----------- */
+
+			/* -----------HERO PAGE STYLING----------- */
+			.front-page-content {
+				animation: pop-in 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+			}
+
+			.container {
+				width: 80vw;
+				height: 70vh;
+				display: flex;
+			}
+
+			@keyframes pop-in {
+				0% {
+					transform: scale(0);
+					opacity: 0;
+				}
+				50% {
+					transform: scale(0.9);
+					opacity: 0;
+				}
+				100% {
+					transform: scale(1);
+					opacity: 1;
+				}
+			}
+
+			.content {
+				width: 50%;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+
+			.title {
+				margin-bottom: 25px;
+				font-weight: bolder;
+				font-size: 40px;
+			}
+
+			.typing-text {
+				max-width: 275px;
+				line-height: 1.6em;
+				overflow: hidden;
+				border-right: 0.15em solid #ee7100;
+				white-space: nowrap;
+				animation: typing 3.5s steps(30, end),
+					blink-caret 0.5s step-end infinite;
+			}
+
+			/* The typing effect */
+			@keyframes typing {
+				0% {
+					width: 0;
+				}
+				50% {
+					width: 0;
+				}
+				100% {
+					width: 270px;
+				}
+			}
+
+			/* The typewriter cursor effect */
+			@keyframes blink-caret {
+				0% {
+					border-color: transparent;
+				}
+				25% {
+					border-color: transparent;
+				}
+				50% {
+					border-color: #ee7100;
+				}
+			}
+
+			.left {
+				align-items: left;
+			}
+
+			.highlighted {
+				font-size: inherit;
+				color: var(--brand-orange);
+			}
+
+			.description {
+				font-size: 19px;
+				margin-bottom: 25px;
+			}
+
+			.cta {
+				background-color: #f26c00;
+				padding: 17px 15px;
+				width: 150px;
+				text-align: center;
+				border-radius: 30px;
+				text-decoration: none;
+				font-weight: bold;
+				cursor: pointer;
+			}
+
+			.right {
+				align-items: center;
+			}
+
+			.right svg {
+				width: 80%;
+			}
+
+			/* -----------END OF HERO PAGE STYLING----------- */
 
 			#logo {
 				display: flex;
@@ -150,13 +479,16 @@ const Index = () => (
 				}
 			}
 
-			@keyframes nav-fade-up {
+			@keyframes nav-fade-down {
 				0% {
 					opacity: 0;
 				}
 				50% {
 					opacity: 0;
-					transform: translateY(50px);
+				}
+				70% {
+					opacity: 0;
+					transform: translateY(-50px);
 				}
 				100% {
 					opacity: 100;
@@ -164,11 +496,13 @@ const Index = () => (
 			}
 
 			#home-page :global(nav) {
-				margin-top: 50px;
-				animation: nav-fade-up 1s cubic-bezier(0.25, 0.75, 0.5, 1.25);
+				margin-top: 25px;
+				animation: nav-fade-down 1.5s cubic-bezier(0.25, 0.75, 0.5, 1.25);
 				z-index: 2;
 				display: flex;
-				justify-content: center;
+				position: absolute;
+				top: 0;
+				right: 10%;
 			}
 
 			#home-page :global(nav a) {
@@ -209,7 +543,7 @@ const Index = () => (
 				position: absolute;
 				display: flex;
 				align-items: flex-end;
-				animation: chevron-fade-down 1s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+				animation: chevron-fade-down 1.5s cubic-bezier(0.57, 0.21, 0.69, 1.25);
 				bottom: 35px;
 			}
 			.scroll-down .chevron {
@@ -240,6 +574,9 @@ const Index = () => (
 				0% {
 					opacity: 0;
 					transform: translateY(-10px);
+				}
+				70% {
+					opacity: 0;
 				}
 				100% {
 					opacity: 100;
@@ -276,27 +613,14 @@ const Index = () => (
 				}
 			}
 
-			.typing-text {
-				font-size: 32px;
-				margin-top: 50px;
-				max-width: 700px;
-				text-align: center;
-				line-height: 1.6em;
-				overflow: hidden;
-				border-right: 0.15em solid #ee7100;
-				white-space: nowrap;
-				animation: typing 3.5s steps(30, end),
-					blink-caret 0.5s step-end infinite;
-			}
-
-			.description {
+			/* .description {
 				font-size: 16px;
 				margin-top: 25px;
 				max-width: 700px;
 				text-align: center;
 				line-height: 1.6em;
 				opacity: 0.7;
-			}
+			} */
 
 			.you {
 				font-size: 32px;
@@ -309,38 +633,13 @@ const Index = () => (
 				padding-bottom: 200px;
 				align-items: center;
 				transition: all 1s ease-in;
+				height: 100vh;
 			}
 			.services {
 				display: flex;
 				flex-direction: row !important;
 				margin-top: 50px;
 				margin-left: 50px;
-			}
-
-			/* The typing effect */
-			@keyframes typing {
-				0% {
-					width: 0;
-				}
-				50% {
-					width: 0;
-				}
-				100% {
-					width: 270px;
-				}
-			}
-
-			/* The typewriter cursor effect */
-			@keyframes blink-caret {
-				0% {
-					border-color: transparent;
-				}
-				25% {
-					border-color: transparent;
-				}
-				50% {
-					border-color: #ee7100;
-				}
 			}
 
 			@media screen and (max-width: 690px) {
