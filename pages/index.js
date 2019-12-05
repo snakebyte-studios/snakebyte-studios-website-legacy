@@ -4,6 +4,7 @@ import Head from "next/head";
 import Navigation from "components/Navigation.js";
 import ServiceBox from "components/ServiceBox.js";
 import Fade from "react-reveal/Fade";
+
 import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Index = () => (
@@ -22,11 +23,13 @@ const Index = () => (
 		{/* Page content */}
 
 		<main id="home-page">
-			<img
-				src="/static/images/snakebyte/logo.svg"
-				className="logo"
-				alt="Snakebyte Studios"
-			/>
+			<Link href="/">
+				<img
+					src="/static/images/snakebyte/logo.svg"
+					className="logo"
+					alt="Snakebyte Studios"
+				/>
+			</Link>
 			<Navigation showHomeLink={false} tabbable={true} />
 			<AnchorLink href="#front-two">
 				<div className="scroll-down">
@@ -199,42 +202,213 @@ const Index = () => (
 		</main>
 
 		<section id="front-two">
-			<div className="services">
-				<Fade bottom>
-					<ServiceBox
-						type="Website Design"
-						style="service design"
-						services={[
-							"Website Design",
-							"Mobile Design",
-							"Logo Design",
-							"Graphic Design"
-						]}
-						image="/static/images/home/design.svg"
-					/>
-					<ServiceBox
-						type="Web Development"
-						style="service dev"
-						services={[
-							"Responsive Website",
-							"React Development",
-							"Mobile Development",
-							"Custom Web Development"
-						]}
-						image="/static/images/home/development.svg"
-					/>
-					<ServiceBox
-						type="Search Engine Optimization"
-						style="service seo"
-						services={[
-							"Organic Results",
-							"First Page Ranking",
-							"Quality of Traffic",
-							"Quantity of Traffic"
-						]}
-						image="/static/images/home/seo.svg"
-					/>
+			<div className="second-page-content container">
+				<Fade left>
+					<h1 className="title">
+						We are here to help{" "}
+						<span className="highlighted">your brand grow.</span>
+					</h1>
+					<p className="description">
+						Here at Snakebyte Studios, we understand the importance of your
+						brands recognition in the digital market space. This is why we work
+						side by side with you to help you get your business where it should
+						be, on the front page of Google.
+					</p>
 				</Fade>
+
+				<div className="services">
+					<Fade bottom>
+						<ServiceBox
+							type="Website Design"
+							style="service design"
+							services={[
+								"Website Design",
+								"Mobile Design",
+								"Logo Design",
+								"Graphic Design"
+							]}
+							image="/static/images/home/design.svg"
+						/>
+						<ServiceBox
+							type="Web Development"
+							style="service dev"
+							services={[
+								"Responsive Website",
+								"React Development",
+								"Mobile Development",
+								"Custom Web Development"
+							]}
+							image="/static/images/home/development.svg"
+						/>
+						<ServiceBox
+							type="Search Engine Optimization"
+							style="service seo"
+							services={[
+								"Organic Results",
+								"First Page Ranking",
+								"Quality of Traffic",
+								"Quantity of Traffic"
+							]}
+							image="/static/images/home/seo.svg"
+						/>
+					</Fade>
+				</div>
+			</div>
+
+			<Fade bottom>
+				<div className="quote-box">
+					<h1 className="title quote">
+						<span className="quotation-mark quotation-mark-top">“</span>
+						The best marketing doesn’t feel like marketing,
+						<br />
+						it’s simply a solution to your problem
+						<span className="quotation-mark quotation-mark-bottom">”</span>
+					</h1>
+				</div>
+			</Fade>
+		</section>
+
+		<section className="five-steps">
+			<h1 className="title">Our Process</h1>
+
+			<div className="process">
+				<div className="process-left">
+					<Fade left>
+						<div className="snake">
+							<h1>Strategy Development</h1>
+						</div>
+					</Fade>
+					<Fade top>
+						<p>
+							We work with you and come up with a detailed plan of action to
+							transform your online presence into a dominating force using our
+							digital marketing solutions. We conduct research to see the best
+							approach your brand should take in your given market, and the best
+							avenues to operate in.
+						</p>
+					</Fade>
+				</div>
+
+				<div className="process-right">
+					<Fade bottom>
+						<img
+							src="/static/images/home/strategyDevelopment.svg"
+							alt="Strategy Development"
+						/>
+					</Fade>
+				</div>
+			</div>
+
+			<div className="process inverted-process">
+				<div className="inverted-process-right">
+					<Fade right>
+						<div className="snake inverted-snake">
+							<h1>Design</h1>
+						</div>
+					</Fade>
+					<Fade top>
+						<p>
+							Each aspect of your brand is strategically developed in a way
+							which is responsive in all possible screen sizes, user friendly
+							and follows the general UX and UI rules. Our sites are also custom
+							developed using modern web technologies to provide you with the
+							best solution to establish your brands online presence.
+						</p>
+					</Fade>
+				</div>
+
+				<div className="inverted-process-left">
+					<Fade bottom>
+						<img
+							src="/static/images/home/strategyDevelopment.svg"
+							alt="Strategy Development"
+						/>
+					</Fade>
+				</div>
+			</div>
+
+			<div className="process">
+				<div className="process-left">
+					<Fade left>
+						<div className="snake">
+							<h1>Development</h1>
+						</div>
+					</Fade>
+					<Fade top>
+						<p>
+							Each aspect of your brand is strategically developed in a way
+							which is responsive in all possible screen sizes, user friendly
+							and follows the general UX and UI rules. Our sites are also custom
+							developed using modern web technologies to provide you with the
+							best solution to establish your brands online presence.
+						</p>
+					</Fade>
+				</div>
+
+				<div className="process-right">
+					<Fade bottom>
+						<img
+							src="/static/images/home/strategyDevelopment.svg"
+							alt="Strategy Development"
+						/>
+					</Fade>
+				</div>
+			</div>
+
+			<div className="process inverted-process">
+				<div className="inverted-process-right">
+					<Fade right>
+						<div className="snake inverted-snake">
+							<h1>QA Testing</h1>
+						</div>
+					</Fade>
+					<Fade top>
+						<p>
+							Each aspect of your brand is strategically developed in a way
+							which is responsive in all possible screen sizes, user friendly
+							and follows the general UX and UI rules. Our sites are also custom
+							developed using modern web technologies to provide you with the
+							best solution to establish your brands online presence.
+						</p>
+					</Fade>
+				</div>
+
+				<div className="inverted-process-left">
+					<Fade bottom>
+						<img
+							src="/static/images/home/strategyDevelopment.svg"
+							alt="Strategy Development"
+						/>
+					</Fade>
+				</div>
+			</div>
+
+			<div className="process">
+				<div className="process-left">
+					<Fade left>
+						<div className="snake">
+							<h1>Launch</h1>
+						</div>
+					</Fade>
+					<Fade top>
+						<p>
+							Each aspect of your brand is strategically developed in a way
+							which is responsive in all possible screen sizes, user friendly
+							and follows the general UX and UI rules. Our sites are also custom
+							developed using modern web technologies to provide you with the
+							best solution to establish your brands online presence.
+						</p>
+					</Fade>
+				</div>
+
+				<div className="process-right">
+					<Fade bottom>
+						<img
+							src="/static/images/home/strategyDevelopment.svg"
+							alt="Strategy Development"
+						/>
+					</Fade>
+				</div>
 			</div>
 		</section>
 
@@ -256,6 +430,7 @@ const Index = () => (
 				margin-top: 15px;
 				padding: 5px;
 				animation: pop-in-logo 2s cubic-bezier(0.165, 0.84, 0.44, 1);
+				cursor: pointer;
 			}
 
 			@keyframes pop-in-logo {
@@ -415,6 +590,7 @@ const Index = () => (
 			.description {
 				font-size: 19px;
 				margin-bottom: 25px;
+				line-height: 25px;
 			}
 
 			.cta {
@@ -437,6 +613,196 @@ const Index = () => (
 			}
 
 			/* -----------END OF HERO PAGE STYLING----------- */
+
+			/* -----------SECOND SECTION STYLING----------- */
+
+			#front-two {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				transition: all 1s ease-in;
+				height: 100vh;
+				justify-content: space-between;
+			}
+			.services {
+				display: flex;
+				flex-direction: row !important;
+				margin-left: 50px;
+			}
+
+			.second-page-content {
+				flex-direction: column;
+				padding-top: 75px;
+			}
+
+			.second-page-content p {
+				width: 80%;
+			}
+
+			.second-page-content .title {
+				margin: 15px 0px;
+			}
+
+			.quote-box {
+				width: 100vw;
+				height: 10vh;
+				display: flex;
+				justify-content: center;
+				align-items: flex-end;
+				bottom: 0;
+			}
+
+			.quotation-mark {
+				font-family: "PT Sans", sans-serif;
+				font-size: 100px;
+				opacity: 0.2;
+				position: absolute;
+			}
+
+			.quotation-mark-top {
+				margin: -10px -55px;
+			}
+			.quotation-mark-bottom {
+				margin: 70px 55px;
+			}
+
+			.quote {
+				text-align: center;
+				margin-bottom: -35px;
+				line-height: 50px;
+			}
+			/* -----------END OF SECOND SECTION STYLING----------- */
+
+			/* -----------THIRD SECTION STYLING----------- */
+
+			.five-steps {
+				width: 100vw;
+				height: 165vh;
+				padding-top: 100px;
+			}
+
+			.process {
+				display: flex;
+				width: 100vw;
+				margin-top: 30px;
+				margin-bottom: 70px;
+			}
+
+			.process p {
+				color: var(--site-text-color);
+				width: 80%;
+				margin-left: 10vw;
+				grid-row-start: 2;
+			}
+
+			.process img {
+				width: 30%;
+				grid-row-start: 1;
+				grid-row-end: 3;
+				align-items: end;
+			}
+
+			.snake {
+				color: var(--site-text-color);
+				font-size: 30px;
+				text-transform: uppercase;
+				width: 50vw;
+				background: linear-gradient(
+					90deg,
+					rgba(190, 12, 0, 1) -25%,
+					rgba(249, 147, 0, 1) 150%
+				);
+				height: 8vh;
+				border-radius: 0px 0px 150px 0px;
+				display: flex;
+				justify-content: flex-end;
+				align-items: center;
+				margin-bottom: 30px;
+			}
+
+			.snake:after {
+				content: "";
+				width: 20px;
+				height: 20px;
+				background-color: #fa9903;
+				position: absolute;
+				transform: rotate(135deg);
+				border-radius: 0px 30px;
+				left: 50vw;
+				margin-top: -1.5vh;
+				display: inline-block;
+				margin-left: -45px;
+			}
+
+			.snake h1 {
+				font-size: 20px;
+				margin-right: 75px;
+			}
+
+			.snake-right {
+				border-radius: 0px 0px 0px 150px;
+			}
+
+			.five-steps > h1 {
+				margin-left: 10vw;
+				color: white;
+			}
+
+			.process-right {
+				width: 30%;
+				align-items: center;
+				justify-content: center;
+				display: flex;
+			}
+
+			.process-left {
+				width: 70%;
+			}
+
+			/* INVERTED SNAKE*/
+
+			.inverted-process {
+				flex-direction: row-reverse;
+			}
+
+			.inverted-snake {
+				background: linear-gradient(
+					-90deg,
+					rgba(190, 12, 0, 1) -25%,
+					rgba(249, 147, 0, 1) 150%
+				);
+				border-radius: 0px 0px 0px 1500px;
+				justify-content: flex-start;
+			}
+
+			.inverted-snake h1 {
+				margin-left: 85px;
+			}
+
+			.inverted-snake:after {
+				margin-left: 35px;
+			}
+
+			.inverted-process-right {
+				width: 70%;
+				display: flex;
+				flex-direction: column;
+				align-items: flex-end;
+			}
+
+			.inverted-process-right p {
+				margin-right: 10vw;
+				text-align: right;
+			}
+
+			.inverted-process-left {
+				width: 30%;
+				align-items: center;
+				justify-content: center;
+				display: flex;
+			}
+
+			/* -----------END OF THIRD SECTION STYLING----------- */
 
 			#logo {
 				display: flex;
@@ -621,26 +987,6 @@ const Index = () => (
 				line-height: 1.6em;
 				opacity: 0.7;
 			} */
-
-			.you {
-				font-size: 32px;
-				color: #ee7100;
-			}
-
-			#front-two {
-				display: flex;
-				flex-direction: column;
-				padding-bottom: 200px;
-				align-items: center;
-				transition: all 1s ease-in;
-				height: 100vh;
-			}
-			.services {
-				display: flex;
-				flex-direction: row !important;
-				margin-top: 50px;
-				margin-left: 50px;
-			}
 
 			@media screen and (max-width: 690px) {
 				main {

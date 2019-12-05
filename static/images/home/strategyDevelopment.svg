@@ -1,0 +1,20 @@
+<svg id="line-graph" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="214.818" height="225.5" viewBox="0 0 214.818 225.5">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d15b00"/>
+      <stop offset="1" stop-color="#be0c00"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#da5f00"/>
+      <stop offset="1" stop-color="#be0c00"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-3" x1="0.5" y1="1" x2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#d55400"/>
+      <stop offset="1" stop-color="#be0c00"/>
+    </linearGradient>
+  </defs>
+  <path id="Path_48" data-name="Path 48" d="M0,0H18.925V101.891H0Z" transform="translate(129.401 153.463) rotate(-45)" fill="url(#linear-gradient)"/>
+  <ellipse id="Ellipse_1" data-name="Ellipse 1" cx="76.5" cy="75.5" rx="76.5" ry="75.5" transform="translate(8.634 10.5)" fill="url(#linear-gradient-2)"/>
+  <path id="Path_49" data-name="Path 49" d="M73.505,117.161h-.264a9.462,9.462,0,0,1-8.2-5.227L51.989,85.823l-9.642,9.642a9.462,9.462,0,0,1-6.691,2.771H12V79.312H31.737L47.89,63.158a9.462,9.462,0,0,1,15.154,2.459L74.062,87.653l29.077-50.885a9.462,9.462,0,0,1,17,1.183l16.545,41.361h17.25V98.236H130.28a9.462,9.462,0,0,1-8.786-5.948L109.848,63.171,81.721,112.393A9.462,9.462,0,0,1,73.505,117.161Z" transform="translate(2.194 5.85)" fill="#fff"/>
+  <path id="Path_50" data-name="Path 50" d="M85.161,170.323a85.161,85.161,0,1,1,85.161-85.161,85.161,85.161,0,0,1-85.161,85.161Zm0-151.4A66.237,66.237,0,1,0,151.4,85.161,66.237,66.237,0,0,0,85.161,18.925Z" fill="url(#linear-gradient-3)"/>
+</svg>
