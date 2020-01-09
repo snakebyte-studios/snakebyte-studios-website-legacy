@@ -693,6 +693,7 @@ const Index = () => (
 				width: 80%;
 				margin-left: 10vw;
 				grid-row-start: 2;
+				line-height: 1.6em;
 			}
 
 			.process img {
