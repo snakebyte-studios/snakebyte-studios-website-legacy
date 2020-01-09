@@ -292,7 +292,7 @@ const Index = () => (
 				<div className="process-right">
 					<Fade bottom>
 						<img
-							src="/static/images/home/strategyDevelopment.svg"
+							src="/static/images/home/Strategy_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
@@ -320,7 +320,7 @@ const Index = () => (
 				<div className="inverted-process-left">
 					<Fade bottom>
 						<img
-							src="/static/images/home/strategyDevelopment.svg"
+							src="/static/images/home/Design_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
@@ -348,7 +348,7 @@ const Index = () => (
 				<div className="process-right">
 					<Fade bottom>
 						<img
-							src="/static/images/home/strategyDevelopment.svg"
+							src="/static/images/home/Development_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
@@ -376,7 +376,7 @@ const Index = () => (
 				<div className="inverted-process-left">
 					<Fade bottom>
 						<img
-							src="/static/images/home/strategyDevelopment.svg"
+							src="/static/images/home/QATesting_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
@@ -404,7 +404,7 @@ const Index = () => (
 				<div className="process-right">
 					<Fade bottom>
 						<img
-							src="/static/images/home/strategyDevelopment.svg"
+							src="/static/images/home/Launch_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
