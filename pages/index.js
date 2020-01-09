@@ -82,7 +82,7 @@ const Index = () => (
 				xmlns="http://www.w3.org/2000/svg"
 				x="0px"
 				y="0px"
-				viewBox="0 0 885.7 531.9"
+				viewBox="5 0 885.7 531.9"
 				style={{ enableBackground: "new 0 0 885.7 531.9" }}
 			>
 				<linearGradient
@@ -477,7 +477,7 @@ const Index = () => (
 			.top-right {
 				transform: rotate(180deg);
 				bottom: -4px;
-				right: -4px;
+				right: 0px;
 			}
 
 			@keyframes animate {
