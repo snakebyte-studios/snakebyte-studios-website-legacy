@@ -33,14 +33,14 @@ const Index = () => (
 			<Navigation showHomeLink={false} tabbable={true} />
 			<AnchorLink href="#front-two">
 				<div className="scroll-down">
-					<i className="chevron bottom" />
+					<i className="chevron bottom" aria-label="chevron" />
 				</div>
 			</AnchorLink>
 
 			<svg
 				version="1.1"
 				className="top-left"
-				id="Layer_1"
+				id="top-left-shape"
 				xmlns="http://www.w3.org/2000/svg"
 				x="0px"
 				y="0px"
@@ -48,7 +48,7 @@ const Index = () => (
 				style={{ enableBackground: "new 0 0 885.7 531.9" }}
 			>
 				<linearGradient
-					id="SVGID_1_"
+					id="SVGID-1"
 					gradientUnits="userSpaceOnUse"
 					x1="432.8525"
 					y1="512.1655"
@@ -59,7 +59,7 @@ const Index = () => (
 					<stop offset="1" style={{ stopColor: "#F99300" }} />
 				</linearGradient>
 				<linearGradient
-					id="SVGID_2_"
+					id="SVGID-1"
 					gradientUnits="userSpaceOnUse"
 					x1="434.319"
 					y1="530.1446"
@@ -78,7 +78,7 @@ const Index = () => (
 			<svg
 				version="1.1"
 				className="top-right"
-				id="Layer_1"
+				id="bottom-right-shape"
 				xmlns="http://www.w3.org/2000/svg"
 				x="0px"
 				y="0px"
@@ -86,7 +86,7 @@ const Index = () => (
 				style={{ enableBackground: "new 0 0 885.7 531.9" }}
 			>
 				<linearGradient
-					id="SVGID_1_"
+					id="SVGID-1"
 					gradientUnits="userSpaceOnUse"
 					x1="432.8525"
 					y1="512.1655"
@@ -97,7 +97,7 @@ const Index = () => (
 					<stop offset="1" style={{ stopColor: "#F99300" }} />
 				</linearGradient>
 				<linearGradient
-					id="SVGID_2_"
+					id="SVGID-2"
 					gradientUnits="userSpaceOnUse"
 					x1="434.319"
 					y1="530.1446"
@@ -261,7 +261,8 @@ const Index = () => (
 						<span className="quotation-mark quotation-mark-top">“</span>
 						The best marketing doesn’t feel like marketing,
 						<br />
-						it’s simply a solution to your problem
+						it’s simply a{" "}
+						<span className="knockout">solution to your problem</span>
 						<span className="quotation-mark quotation-mark-bottom">”</span>
 					</h1>
 				</div>
@@ -411,11 +412,11 @@ const Index = () => (
 				</div>
 			</div>
 			<div className="bottom-cta-btn-section">
-				<h1 className="bottom-header-one">Interested in working with us?</h1>
-				<h2 className="bottom-header-two">
+				<h1 className="title">Interested in working with us?</h1>
+				<p className="description">
 					Shoot us an email and lets work together in turning your vision into a
 					reality.
-				</h2>
+				</p>
 				<button className="bottom-cta-btn">
 					<a href="/hire">Let's Connect</a>
 				</button>
@@ -460,8 +461,8 @@ const Index = () => (
 
 			/* -----------SVG STYLING----------- */
 			.st0 {
-				fill: url(#SVGID_1_);
-				stroke: url(#SVGID_2_);
+				fill: url(#SVGID-1);
+				stroke: url(#SVGID-2);
 				stroke-width: 2;
 				stroke-miterlimit: 10;
 			}
@@ -481,12 +482,12 @@ const Index = () => (
 			.top-left {
 				top: -4px;
 				left: -4px;
-				z-index: 100;
+				z-index: 30;
 			}
 
 			.top-right {
 				transform: rotate(180deg);
-				bottom: -4px;
+				bottom: -2px;
 				right: 0px;
 			}
 
@@ -612,6 +613,8 @@ const Index = () => (
 				text-decoration: none;
 				font-weight: bold;
 				cursor: pointer;
+				z-index: 10;
+				color: white;
 			}
 
 			.right {
@@ -681,13 +684,19 @@ const Index = () => (
 				margin-bottom: -35px;
 				line-height: 50px;
 			}
+
+			.knockout {
+				background: var(--brand-orange);;
+				font-size: inherit;
+				padding: 0px 10px;
+				color: white;
+			}
 			/* -----------END OF SECOND SECTION STYLING----------- */
 
 			/* -----------THIRD SECTION STYLING----------- */
 
 			.five-steps {
 				width: 100vw;
-				height: 165vh;
 				padding-top: 100px;
 			}
 
@@ -953,7 +962,6 @@ const Index = () => (
 			.bottom-cta-btn-section {
 				display: flex;
 				align-items: center;
-
 				flex-direction: column;
 				margin-top: 50px;
 				margin-bottom: 50px;
@@ -978,6 +986,7 @@ const Index = () => (
 				text-decoration: none;
 				font-weight: bold;
 				cursor: pointer;
+				color: white;
 			}
 			/* bottom call to action section end */
 
@@ -1038,6 +1047,54 @@ const Index = () => (
 					overflow: hidden;
 				}
 
+				#home-page :global(nav) {
+					display: none;
+				}
+
+				#home-page .title {
+					margin-bottom: 15px;
+				}
+
+				.top-left, .top-right {
+					width: 80vw;
+				}
+
+				#home-page .container {
+					height: auto;
+					flex-direction column-reverse;
+				}
+
+				.left {
+					width: auto;
+				}
+
+				.title {
+					font-size: 30px;
+				}
+
+				.content {
+					width: 100%;
+				}
+
+				.right {
+					display: none;
+				}
+
+				.logo {
+					top: 20%;
+				}
+
+				.scroll-down {
+					left: 47vw;
+					z-index: 1;
+				}
+
+				.scroll-down .chevron {
+					color: white;
+				}
+
+
+
 				#logo .brandmark {
 					height: 30vw;
 					left: 0.2vw;
@@ -1048,9 +1105,7 @@ const Index = () => (
 				}
 
 				.description {
-					font-size: 14px;
-					margin-top: 20px;
-					padding: 0 20px;
+					font-size: 16px;
 				}
 
 				#home-page :global(nav a) {
@@ -1072,9 +1127,68 @@ const Index = () => (
 					height: 100%;
 				}
 
-				.scroll-down {
-					left: 47vw;
+				#front-two .container {
+					height: auto;
 				}
+
+				#front-two .description {
+					width: 100%;
+				}
+
+				.quote-box {
+					width: 50vw;
+    				height: auto;
+				}
+				
+				.snake:after {
+					margin-left: 105px;
+				}
+
+
+				.inverted-snake:after {
+					margin-left: -125px;
+				}
+
+				.snake {
+					width: 90vw;
+				}
+
+				.process-left, .inverted-process-right{
+					width: auto;
+				}
+
+				.process-right, .inverted-process-left{
+					width: 100vw;
+				}
+
+				.process-right img, .inverted-process-left img {
+					margin-top: 10px;
+					width: 35%;
+				}
+				
+				.process, .inverted-process {
+					flex-direction: column;
+					align-items: flex-end;
+				}
+
+				.bottom-cta-btn-section {
+					text-align: center;
+					background: var(--brand-orange);
+					padding: 70px 20px;
+					margin-top: 0;
+    				margin-bottom: 0;
+				}
+
+				.bottom-cta-btn {
+					background: var(--site-text-color);
+					padding: 12px 15px;
+				}
+
+				.bottom-cta-btn a {
+					color: var(--brand-orange);
+				}
+
+				
 			}
 
 			@media (orientation: portrait) {
