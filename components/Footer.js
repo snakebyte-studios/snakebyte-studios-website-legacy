@@ -15,14 +15,20 @@ const Footer = () => (
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<img src="/static/images/social/instagram.svg" />
+				<img
+					src="/static/images/social/instagram.svg"
+					alt="Snakebyte Studios Instagram"
+				/>
 			</a>
 			<a
 				href="https://ca.linkedin.com/company/snakebyte-studios-inc?trk=public_profile_topcard_current_company"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<img src="/static/images/social/linked-in.svg" />
+				<img
+					src="/static/images/social/linked-in.svg"
+					alt="Snakebyte Studios LinkedIn"
+				/>
 			</a>
 		</div>
 
