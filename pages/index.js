@@ -410,6 +410,16 @@ const Index = () => (
 					</Fade>
 				</div>
 			</div>
+			<div className="bottom-cta-btn-section">
+				<h1 className="bottom-header-one">Interested in working with us?</h1>
+				<h2 className="bottom-header-two">
+					Shoot us an email and lets work together in turning your vision into a
+					reality.
+				</h2>
+				<button className="bottom-cta-btn">
+					<a href="/hire">Let's Connect</a>
+				</button>
+			</div>
 		</section>
 
 		<style jsx>{`
@@ -936,6 +946,40 @@ const Index = () => (
 				-ms-transform: rotate(135deg);
 				transform: rotate(135deg);
 			}
+
+			/* bottom call to action section start */
+
+			.bottom-cta-btn-section {
+				display: flex;
+				align-items: center;
+
+				flex-direction: column;
+				margin-top: 50px;
+				margin-bottom: 50px;
+			}
+
+			.bottom-header-one {
+				font-size: 40px;
+				margin-bottom: 8px;
+			}
+
+			.bottom-header-two {
+				font-size: 19px;
+				margin-bottom: 40px;
+			}
+
+			.bottom-cta-btn {
+				background-color: #f26c00;
+				padding: 17px 15px;
+				width: 150px;
+				text-align: center;
+				border-radius: 30px;
+				text-decoration: none;
+				font-weight: bold;
+				cursor: pointer;
+			}
+			/* bottom call to action section end */
+
 			@keyframes chevron-fade-down {
 				0% {
 					opacity: 0;
