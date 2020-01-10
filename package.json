@@ -15,6 +15,7 @@
 		"nodemailer": "^6.3.1",
 		"react": "^16.8.6",
 		"react-anchor-link-smooth-scroll": "^1.0.12",
+		"react-cookie-consent": "^3.0.0",
 		"react-dom": "^16.8.6",
 		"react-reveal": "^1.2.2",
 		"react-scrollable-anchor": "^0.6.1"

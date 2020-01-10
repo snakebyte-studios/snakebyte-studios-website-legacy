@@ -6,6 +6,7 @@ import ServiceBox from "components/ServiceBox.js";
 import Fade from "react-reveal/Fade";
 
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import CookieConsent from "react-cookie-consent";
 
 const Index = () => (
 	<>
@@ -23,6 +24,26 @@ const Index = () => (
 		{/* Page content */}
 
 		<main id="home-page">
+			<CookieConsent
+				location="bottom"
+				buttonText="Got it!"
+				cookieName="SnakebyteCookie"
+				style={{ background: "#f26c00", justifyContent: "center" }}
+				buttonStyle={{
+					background: "#fefefe",
+					color: "#f26c00",
+					fontSize: "13px",
+					padding: "10px 30px"
+				}}
+				expires={150}
+				debug={true}
+			>
+				This website uses cookies to enhance the user experience.{" "}
+				<Link className="learn-more" href="http://google.com">
+					Learn More
+				</Link>
+			</CookieConsent>
+
 			<Link href="/">
 				<img
 					src="/static/images/snakebyte/logo.svg"
