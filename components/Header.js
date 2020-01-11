@@ -78,6 +78,12 @@ const Header = ({ onMenuBtnClick }) => (
 				position: absolute;
 				top: 10px;
 			}
+
+			@media screen and (max-width: 850px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+				header {
+					height: 50px;
+				}
+			}
 		`}</style>
 	</header>
 );

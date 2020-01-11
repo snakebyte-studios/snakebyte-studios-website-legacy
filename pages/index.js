@@ -36,7 +36,7 @@ const Index = () => (
 					padding: "10px 30px"
 				}}
 				expires={150}
-				debug={true}
+				// debug={true}
 			>
 				This website uses cookies to enhance the user experience.{" "}
 				<Link className="learn-more" href="http://google.com">
@@ -707,7 +707,7 @@ const Index = () => (
 			}
 
 			.knockout {
-				background: var(--brand-orange);;
+				background: var(--brand-orange);
 				font-size: inherit;
 				padding: 0px 10px;
 				color: white;
@@ -1076,13 +1076,14 @@ const Index = () => (
 					margin-bottom: 15px;
 				}
 
-				.top-left, .top-right {
+				.top-left,
+				.top-right {
 					width: 80vw;
 				}
 
 				#home-page .container {
 					height: auto;
-					flex-direction column-reverse;
+					flex-direction: column-reverse;
 				}
 
 				.left {
@@ -1113,8 +1114,6 @@ const Index = () => (
 				.scroll-down .chevron {
 					color: white;
 				}
-
-
 
 				#logo .brandmark {
 					height: 30vw;
@@ -1158,13 +1157,12 @@ const Index = () => (
 
 				.quote-box {
 					width: 50vw;
-    				height: auto;
+					height: auto;
 				}
-				
+
 				.snake:after {
 					margin-left: 105px;
 				}
-
 
 				.inverted-snake:after {
 					margin-left: -125px;
@@ -1174,20 +1172,24 @@ const Index = () => (
 					width: 90vw;
 				}
 
-				.process-left, .inverted-process-right{
+				.process-left,
+				.inverted-process-right {
 					width: auto;
 				}
 
-				.process-right, .inverted-process-left{
+				.process-right,
+				.inverted-process-left {
 					width: 100vw;
 				}
 
-				.process-right img, .inverted-process-left img {
+				.process-right img,
+				.inverted-process-left img {
 					margin-top: 10px;
 					width: 35%;
 				}
-				
-				.process, .inverted-process {
+
+				.process,
+				.inverted-process {
 					flex-direction: column;
 					align-items: flex-end;
 				}
@@ -1197,7 +1199,7 @@ const Index = () => (
 					background: var(--brand-orange);
 					padding: 70px 20px;
 					margin-top: 0;
-    				margin-bottom: 0;
+					margin-bottom: 0;
 				}
 
 				.bottom-cta-btn {
@@ -1208,13 +1210,73 @@ const Index = () => (
 				.bottom-cta-btn a {
 					color: var(--brand-orange);
 				}
-
-				
 			}
 
 			@media (orientation: portrait) {
 				main {
 					background-image: none;
+				}
+			}
+
+			/* Landscape */
+			@media screen and (max-width: 850px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
+				#home-page :global(nav) {
+					display: none;
+				}
+
+				.front-page-content .title {
+					width: 60vw;
+				}
+
+				.front-page-content {
+					margin-top: 20px;
+				}
+
+				.top-left {
+					position: absolute;
+					top: -9999px;
+					left: -9999px;
+				}
+
+				.description {
+					font-size: 16px;
+				}
+
+				#front-two {
+					height: 100%;
+				}
+
+				#front-two .container {
+					height: auto;
+					margin-bottom: 50px;
+				}
+
+				.services {
+					display: flex;
+					flex-direction: column !important;
+					margin-bottom: 50px;
+					margin-left: 0px;
+				}
+
+				.title {
+					font-size: 30px;
+				}
+
+				.quote {
+					font-size: 25px;
+				}
+
+				.snake {
+					height: 11vh;
+				}
+
+				.snake:after {
+					width: 15px;
+					height: 15px;
+				}
+
+				.process img {
+					width: 50%;
 				}
 			}
 		`}</style>
