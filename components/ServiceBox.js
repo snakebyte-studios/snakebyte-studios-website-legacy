@@ -50,6 +50,7 @@ const ServiceBox = ({ services, type, image, style }) => (
 			.listtext {
 				font-size: 18px;
 				margin-bottom: 20px;
+				line-height: 22px;
 			}
 			.image {
 				height: 40px;
@@ -57,6 +58,15 @@ const ServiceBox = ({ services, type, image, style }) => (
 			}
 
 			@media screen and (max-width: 690px) {
+				.service {
+					width: 100%;
+				}
+				.service-main {
+					margin: 30px 0px 0px 0px;
+				}
+			}
+
+			@media screen and (max-width: 850px) and (-webkit-min-device-pixel-ratio: 3) and (orientation: landscape) {
 				.service {
 					width: 100%;
 				}
