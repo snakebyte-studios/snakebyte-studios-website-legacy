@@ -275,8 +275,10 @@ const Index = () => (
 					</Fade>
 				</div>
 			</div>
+		</section>
 
-			<Fade bottom>
+		<Fade bottom>
+			<section className="quote-section">
 				<div className="quote-box">
 					<h1 className="title quote">
 						<span className="quotation-mark quotation-mark-top">“</span>
@@ -287,11 +289,13 @@ const Index = () => (
 						<span className="quotation-mark quotation-mark-bottom">”</span>
 					</h1>
 				</div>
-			</Fade>
-		</section>
+			</section>
+		</Fade>
 
 		<section className="five-steps">
-			<h1 className="title">Our Process</h1>
+			<Fade left>
+				<h1 className="title">Our Process</h1>
+			</Fade>
 
 			<div className="process">
 				<div className="process-left">
@@ -655,7 +659,7 @@ const Index = () => (
 				flex-direction: column;
 				align-items: center;
 				transition: all 1s ease-in;
-				height: 100vh;
+				height: 100%;
 				justify-content: space-between;
 			}
 			.services {
@@ -667,6 +671,7 @@ const Index = () => (
 			.second-page-content {
 				flex-direction: column;
 				padding-top: 75px;
+				height: 100%;
 			}
 
 			.second-page-content p {
@@ -677,9 +682,16 @@ const Index = () => (
 				margin: 15px 0px;
 			}
 
+			.quote-section {
+				width: 100vw;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin: 100px 0px;
+			}
+
 			.quote-box {
 				width: 100vw;
-				height: 10vh;
 				display: flex;
 				justify-content: center;
 				align-items: flex-end;
@@ -702,8 +714,8 @@ const Index = () => (
 
 			.quote {
 				text-align: center;
-				margin-bottom: -35px;
-				line-height: 50px;
+				line-height: 60px;
+				margin-bottom: 0;
 			}
 
 			.knockout {
@@ -718,7 +730,6 @@ const Index = () => (
 
 			.five-steps {
 				width: 100vw;
-				padding-top: 100px;
 			}
 
 			.process {
@@ -841,6 +852,14 @@ const Index = () => (
 				align-items: center;
 				justify-content: center;
 				display: flex;
+			}
+
+			.bottom-cta-btn {
+				background: var(--site-text-color);
+			}
+
+			.bottom-cta-btn a {
+				color: var(--brand-orange);
 			}
 
 			/* -----------END OF THIRD SECTION STYLING----------- */
@@ -984,8 +1003,11 @@ const Index = () => (
 				display: flex;
 				align-items: center;
 				flex-direction: column;
-				margin-top: 50px;
-				margin-bottom: 50px;
+				text-align: center;
+				background: var(--brand-orange);
+				padding: 100px 20px;
+				margin-top: 0px;
+				margin-bottom: 0px;
 			}
 
 			.bottom-header-one {
@@ -999,15 +1021,18 @@ const Index = () => (
 			}
 
 			.bottom-cta-btn {
-				background-color: #f26c00;
-				padding: 17px 15px;
+				background: var(--site-text-color);
+				padding: 12px 15px;
 				width: 150px;
 				text-align: center;
 				border-radius: 30px;
 				text-decoration: none;
 				font-weight: bold;
 				cursor: pointer;
-				color: white;
+			}
+
+			.bottom-cta-btn a {
+				color: var(--brand-orange);
 			}
 			/* bottom call to action section end */
 
@@ -1092,6 +1117,15 @@ const Index = () => (
 
 				.title {
 					font-size: 30px;
+				}
+
+				.quote {
+					line-height: 45px;
+					font-size: 25px;
+				}
+
+				.quotation-mark-top {
+					margin: -20px -100px;
 				}
 
 				.content {
@@ -1242,6 +1276,10 @@ const Index = () => (
 					font-size: 16px;
 				}
 
+				.second-page-content .description {
+					font-size: 16px;
+				}
+
 				#front-two {
 					height: 100%;
 				}
@@ -1277,6 +1315,38 @@ const Index = () => (
 
 				.process img {
 					width: 50%;
+				}
+
+				.bottom-cta-btn-section {
+					text-align: center;
+					background: var(--brand-orange);
+					padding: 70px 20px;
+					margin-top: 0;
+					margin-bottom: 0;
+				}
+
+				.bottom-cta-btn {
+					background: var(--site-text-color);
+					padding: 12px 15px;
+				}
+
+				.bottom-cta-btn a {
+					color: var(--brand-orange);
+				}
+			}
+
+			@media only screen and (min-width: 768px) and (max-width: 1024px) {
+				.title {
+					font-size: 30px;
+					line-height: 45px;
+				}
+
+				.front-page-content h1 {
+					line-height: 30px;
+				}
+
+				#home-page :global(nav) {
+					display: none;
 				}
 			}
 		`}</style>
