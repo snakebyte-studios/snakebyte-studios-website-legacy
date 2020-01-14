@@ -12,11 +12,11 @@ const Index = () => (
 	<>
 		{/* Meta content */}
 		<Head>
-			<title>Toronto based Web Design & Development - Snakebyte Studios</title>
+			<title>Toronto based Digital Marketing Agency - Snakebyte Studios</title>
 			<meta
 				name="description"
-				content="Snakebyte Studios is a Toronto based digital agency focused on
-				delivering quality web development and graphic design
+				content="Snakebyte Studios is a Toronto based digital marketing agency focused on
+				delivering quality web development, web design and digital marketing
 				experiences for your brand."
 			/>
 		</Head>
