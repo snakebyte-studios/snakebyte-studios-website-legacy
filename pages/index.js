@@ -334,11 +334,12 @@ const Index = () => (
 					</Fade>
 					<Fade top>
 						<p>
-							Each aspect of your brand is strategically developed in a way
-							which is responsive in all possible screen sizes, user friendly
-							and follows the general UX and UI rules. Our sites are also custom
-							developed using modern web technologies to provide you with the
-							best solution to establish your brands online presence.
+							Each aspect of your brand is strategically developed in a way that
+							is responsive in all possible screen sizes, user-friendly and
+							follows the general User Experience and User Interface
+							regulations. Our sites are also custom-developed using modern web
+							technologies to provide you with the best solution to establish
+							your brands' online presence.
 						</p>
 					</Fade>
 				</div>
@@ -362,11 +363,12 @@ const Index = () => (
 					</Fade>
 					<Fade top>
 						<p>
-							Each aspect of your brand is strategically developed in a way
-							which is responsive in all possible screen sizes, user friendly
-							and follows the general UX and UI rules. Our sites are also custom
-							developed using modern web technologies to provide you with the
-							best solution to establish your brands online presence.
+							We work together with you to build your site from the ground up,
+							based on the approved design. We use the latest web technology
+							trends to ensure that your site is up to date with the most modern
+							web practices, and does well in the competing market. We focus
+							heavily on making sure your site is fully optimized to give it the
+							best chances of appearing on the front page. 
 						</p>
 					</Fade>
 				</div>
@@ -390,11 +392,11 @@ const Index = () => (
 					</Fade>
 					<Fade top>
 						<p>
-							Each aspect of your brand is strategically developed in a way
-							which is responsive in all possible screen sizes, user friendly
-							and follows the general UX and UI rules. Our sites are also custom
-							developed using modern web technologies to provide you with the
-							best solution to establish your brands online presence.
+							At this stage we test for last minute compatibility issues, check
+							performance levels, and ensure the site is fully responsive on
+							every screen. We double-check that your site meets all current web
+							protocols and standards, and focus on making your site runs
+							smoothly and loads quickly upon launch. 
 						</p>
 					</Fade>
 				</div>
@@ -418,11 +420,12 @@ const Index = () => (
 					</Fade>
 					<Fade top>
 						<p>
-							Each aspect of your brand is strategically developed in a way
-							which is responsive in all possible screen sizes, user friendly
-							and follows the general UX and UI rules. Our sites are also custom
-							developed using modern web technologies to provide you with the
-							best solution to establish your brands online presence.
+							3...2...1...Blast off! This is the day your site is live and your
+							brand begins to receive the recognition it deserves. Let the
+							conversions start rolling in! So sit back and relax, it's been a
+							long journey and you deserve it. The next stage of your business
+							journey is about to begin, and we are thankful that we could help
+							you reach this stage.
 						</p>
 					</Fade>
 				</div>
@@ -439,8 +442,8 @@ const Index = () => (
 			<div className="bottom-cta-btn-section">
 				<h1 className="title">Interested in working with us?</h1>
 				<p className="description">
-					Shoot us an email and lets work together in turning your vision into a
-					reality.
+					Shoot us an email and let us work together in turning your vision into
+					a reality.
 				</p>
 				<button className="bottom-cta-btn">
 					<a href="/hire">Let's Connect</a>
@@ -745,6 +748,7 @@ const Index = () => (
 				margin-left: 10vw;
 				grid-row-start: 2;
 				line-height: 1.6em;
+				font-size: 19px;
 			}
 
 			.process img {
@@ -1174,7 +1178,7 @@ const Index = () => (
 				.services {
 					display: flex;
 					flex-direction: column !important;
-					margin-bottom: 50px;
+					margin-bottom: 30px;
 					margin-left: 0px;
 				}
 				#front-two {
@@ -1204,6 +1208,10 @@ const Index = () => (
 
 				.snake {
 					width: 90vw;
+				}
+
+				.process p {
+					font-size: 16px;
 				}
 
 				.process-left,
