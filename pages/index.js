@@ -1141,7 +1141,7 @@ const Index = () => (
 				}
 
 				.logo {
-					top: 20%;
+					top: 15%;
 				}
 
 				.scroll-down {
