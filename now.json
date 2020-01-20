@@ -1,0 +1,8 @@
+{
+	"build": {
+		"env": {
+			"EMAIL_PASS": "@email-pass",
+			"RECAPTCHA_SECRET": "@recaptcha-secret"
+		}
+	}
+}

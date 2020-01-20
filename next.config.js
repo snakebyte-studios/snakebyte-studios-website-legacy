@@ -1,6 +1,7 @@
 const { readFileSync, readdirSync, statSync } = require("fs");
 const path = require("path");
 const withCSS = require("@zeit/next-css");
+require("dotenv").config();
 
 const nextConfig = {
 	exportTrailingSlash: false,
