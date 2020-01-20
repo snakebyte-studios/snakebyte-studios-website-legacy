@@ -1,4 +1,5 @@
 {
+	"name": "snakebyte-studios-website",
 	"build": {
 		"env": {
 			"EMAIL_PASS": "@email-pass",

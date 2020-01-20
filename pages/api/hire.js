@@ -1,6 +1,5 @@
 const nodemailer = require("nodemailer");
 const axios = require("axios");
-const secret = require("../../secret.json");
 const MAX_FIELD_LENGTH = 1000;
 
 export default async function handle(req, res) {
@@ -25,9 +24,7 @@ export default async function handle(req, res) {
 
 	// Verify Google re-captcha
 	const captchaCheck = await axios.post(
-		`https://www.google.com/recaptcha/api/siteverify?secret=${
-			secret.recaptchaSecretKey
-		}&response=${req.body["g-recaptcha-response"]}`
+		`https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${req.body["g-recaptcha-response"]}`
 	);
 
 	if (!captchaCheck.data.success) {
@@ -47,7 +44,7 @@ export default async function handle(req, res) {
 		service: "gmail",
 		auth: {
 			user: "snakebyte.studios.dev@gmail.com",
-			pass: secret.emailPassword
+			pass: process.env.EMAIL_PASS
 		}
 	});
 
