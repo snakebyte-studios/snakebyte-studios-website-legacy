@@ -1,4 +1,4 @@
-const { readFileSync, readdirSync, statSync } = require("fs");
+const { readdirSync, statSync } = require("fs");
 const path = require("path");
 const withCSS = require("@zeit/next-css");
 require("dotenv").config();
@@ -7,17 +7,10 @@ const nextConfig = {
 	exportTrailingSlash: false,
 	webpack(config) {
 		// Allow absolute paths in `import` statements for all directories
-		// within current directory except those specified in .gitignore file
-		const ignored_dirs = readFileSync(".gitignore", "utf8")
-			.trim()
-			.split("\n");
+		// within current directory
 
 		readdirSync(__dirname)
-			.filter(
-				f =>
-					statSync(path.join(__dirname, f)).isDirectory() &&
-					!ignored_dirs.includes(f)
-			)
+			.filter(f => statSync(path.join(__dirname, f)).isDirectory())
 			.forEach(dir => {
 				config.resolve.alias[dir] = path.join(__dirname, dir);
 			});
