@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-import { RECAPTCHA_SITE_KEY } from "global/constants";
+import { RECAPTCHA_SITE_KEY } from "src/global/constants";
 
 class MainDocument extends Document {
 	static async getInitialProps(ctx) {
@@ -18,7 +18,7 @@ class MainDocument extends Document {
 					<link
 						rel="shortcut icon"
 						type="image/ico"
-						href="/static/images/snakebyte/favicon.ico"
+						href="/images/snakebyte/favicon.ico"
 					/>
 					<script
 						src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`}

@@ -1,6 +1,6 @@
 import { memo, useState, useEffect } from "react";
 import axios from "axios";
-import { RECAPTCHA_SITE_KEY } from "global/constants";
+import { RECAPTCHA_SITE_KEY } from "src/global/constants";
 
 const HireForm = () => {
 	const [fields, setFields] = useState({

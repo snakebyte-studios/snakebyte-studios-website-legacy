@@ -1,4 +1,4 @@
-import ActiveLink from "components/ActiveLink.js";
+import ActiveLink from "src/components/ActiveLink.js";
 
 // eslint-disable-next-line no-unused-vars
 const Header = ({ onMenuBtnClick }) => (
@@ -6,7 +6,7 @@ const Header = ({ onMenuBtnClick }) => (
 		<ActiveLink href="/">
 			<a>
 				<img
-					src="/static/images/snakebyte/logo.svg"
+					src="/images/snakebyte/logo.svg"
 					className="brandmark"
 					alt="Snakebyte Studios"
 				/>

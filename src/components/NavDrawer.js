@@ -1,4 +1,4 @@
-import Navigation from "components/Navigation.js";
+import Navigation from "src/components/Navigation.js";
 
 const DRAWER_TRANSITION_TIME = 350;
 

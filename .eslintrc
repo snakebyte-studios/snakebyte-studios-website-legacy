@@ -27,10 +27,12 @@
 		"import/no-relative-parent-imports": "error",
 		"react-hooks/rules-of-hooks": "error",
 		"react-hooks/exhaustive-deps": "warn",
-		"indent": [
-			"error",
-			"tab"
-		],
+		"template-curly-spacing" : "off",
+    "indent" : "off",
+		// "indent": [
+		// 	"error",
+		// 	"tab"
+		// ],
 		"linebreak-style": [
 			"error",
 			"unix"

@@ -1,4 +1,4 @@
-import Link from "components/ActiveLink.js";
+import Link from "src/components/ActiveLink.js";
 
 const Navigation = ({ showHomeLink, tabbable }) => {
 	const links = [

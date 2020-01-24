@@ -16,7 +16,7 @@ const Footer = () => (
 				rel="noopener noreferrer"
 			>
 				<img
-					src="/static/images/social/instagram.svg"
+					src="/images/social/instagram.svg"
 					alt="Snakebyte Studios Instagram"
 				/>
 			</a>
@@ -26,7 +26,7 @@ const Footer = () => (
 				rel="noopener noreferrer"
 			>
 				<img
-					src="/static/images/social/linked-in.svg"
+					src="/images/social/linked-in.svg"
 					alt="Snakebyte Studios LinkedIn"
 				/>
 			</a>

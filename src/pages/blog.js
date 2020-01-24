@@ -1,7 +1,7 @@
 import Head from "next/head";
-import FeatureBlog from "components/FeatureBlog.js";
-import BlogCell from "components/BlogCell.js";
-import BLOG_DETAILS from "data/blog_data.json";
+import FeatureBlog from "src/components/FeatureBlog.js";
+import BlogCell from "src/components/BlogCell.js";
+import BLOG_DETAILS from "src/data/blog_data.json";
 
 import { useState } from "react";
 

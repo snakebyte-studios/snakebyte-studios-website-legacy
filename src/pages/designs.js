@@ -1,8 +1,8 @@
 import { useState } from "react";
 import Head from "next/head";
-import DesignLink from "components/DesignLink.js";
-import Modal from "components/Modal.js";
-import DESIGN_LIST from "data/design_list.json";
+import DesignLink from "src/components/DesignLink.js";
+import Modal from "src/components/Modal.js";
+import DESIGN_LIST from "src/data/design_list.json";
 
 DESIGN_LIST.forEach(design => {
 	design.show = false;

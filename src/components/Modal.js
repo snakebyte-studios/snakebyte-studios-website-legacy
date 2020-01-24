@@ -1,6 +1,6 @@
 import { useEffect } from "react";
-import { KEYS } from "global/constants.js";
-import ToolsUsed from "components/ToolsUsed.js";
+import { KEYS } from "src/global/constants.js";
+import ToolsUsed from "src/components/ToolsUsed.js";
 
 const Modal = ({ isOpen, onCloseModal, design }) => {
 	// Handle ESC key press (without needing the element to be focused first)
