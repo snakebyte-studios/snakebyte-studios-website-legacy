@@ -39,8 +39,8 @@ const Index = () => (
 				// debug={true}
 			>
 				This website uses cookies to enhance the user experience.{" "}
-				<Link className="learn-more" href="http://google.com">
-					Learn More
+				<Link href="http://google.com">
+					<a className="learn-more">Learn More</a>
 				</Link>
 			</CookieConsent>
 
