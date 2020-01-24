@@ -1,8 +1,8 @@
 import { memo, useState } from "react";
 import Head from "next/head";
-import TEAM_MEMBERS from "data/team_members.json";
-import { KEYS } from "global/constants.js";
-import Profile from "components/Profile.js";
+import TEAM_MEMBERS from "src/data/team_members.json";
+import { KEYS } from "src/global/constants.js";
+import Profile from "src/components/Profile.js";
 
 const Team = () => {
 	const [activeProfile, setActiveProfile] = useState(null);

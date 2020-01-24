@@ -1,8 +1,8 @@
 import { memo } from "react";
 import Link from "next/link";
 import Head from "next/head";
-import Navigation from "components/Navigation.js";
-import ServiceBox from "components/ServiceBox.js";
+import Navigation from "src/components/Navigation.js";
+import ServiceBox from "src/components/ServiceBox.js";
 import Fade from "react-reveal/Fade";
 
 import AnchorLink from "react-anchor-link-smooth-scroll";
@@ -46,7 +46,7 @@ const Index = () => (
 
 			<Link href="/">
 				<img
-					src="/static/images/snakebyte/logo.svg"
+					src="/images/snakebyte/logo.svg"
 					className="logo"
 					alt="Snakebyte Studios"
 				/>
@@ -248,7 +248,7 @@ const Index = () => (
 								"Logo Design",
 								"Graphic Design"
 							]}
-							image="/static/images/home/design.svg"
+							image="/images/home/design.svg"
 						/>
 						<ServiceBox
 							type="Web Development"
@@ -259,7 +259,7 @@ const Index = () => (
 								"Mobile Development",
 								"Custom Web Development"
 							]}
-							image="/static/images/home/development.svg"
+							image="/images/home/development.svg"
 						/>
 						<ServiceBox
 							type="Search Engine Optimization"
@@ -270,7 +270,7 @@ const Index = () => (
 								"Quality of Traffic",
 								"Quantity of Traffic"
 							]}
-							image="/static/images/home/seo.svg"
+							image="/images/home/seo.svg"
 						/>
 					</Fade>
 				</div>
@@ -318,7 +318,7 @@ const Index = () => (
 				<div className="process-right">
 					<Fade bottom>
 						<img
-							src="/static/images/home/Strategy_ServiceIcon.svg"
+							src="/images/home/Strategy_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
@@ -347,7 +347,7 @@ const Index = () => (
 				<div className="inverted-process-left">
 					<Fade bottom>
 						<img
-							src="/static/images/home/Design_ServiceIcon.svg"
+							src="/images/home/Design_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
@@ -376,7 +376,7 @@ const Index = () => (
 				<div className="process-right">
 					<Fade bottom>
 						<img
-							src="/static/images/home/Development_ServiceIcon.svg"
+							src="/images/home/Development_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
@@ -404,7 +404,7 @@ const Index = () => (
 				<div className="inverted-process-left">
 					<Fade bottom>
 						<img
-							src="/static/images/home/QATesting_ServiceIcon.svg"
+							src="/images/home/QATesting_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>
@@ -433,7 +433,7 @@ const Index = () => (
 				<div className="process-right">
 					<Fade bottom>
 						<img
-							src="/static/images/home/Launch_ServiceIcon.svg"
+							src="/images/home/Launch_ServiceIcon.svg"
 							alt="Strategy Development"
 						/>
 					</Fade>

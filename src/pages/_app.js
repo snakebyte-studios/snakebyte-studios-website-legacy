@@ -1,12 +1,12 @@
 import App from "next/app";
 import Router from "next/router";
 import { PageTransition } from "next-page-transitions";
-import { KEYS, ANALYTICS_TRACKING_CODE } from "global/constants.js";
-import Header from "components/Header.js";
-import NavDrawer from "components/NavDrawer.js";
-import Footer from "components/Footer.js";
-import "global/styles/_reset.css";
-import "global/styles/style.css";
+import { KEYS, ANALYTICS_TRACKING_CODE } from "src/global/constants.js";
+import Header from "src/components/Header.js";
+import NavDrawer from "src/components/NavDrawer.js";
+import Footer from "src/components/Footer.js";
+import "src/global/styles/_reset.css";
+import "src/global/styles/style.css";
 import withGA from "next-ga";
 
 const PAGE_TRANSITION_TIME = 150;
