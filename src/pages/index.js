@@ -446,7 +446,9 @@ const Index = () => (
 					a reality.
 				</p>
 				<button className="bottom-cta-btn">
-					<a href="/hire">Let's Connect</a>
+					<Link href="/hire">
+						<a>Let's Connect</a>
+					</Link>
 				</button>
 			</div>
 		</section>
