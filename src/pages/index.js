@@ -445,11 +445,9 @@ const Index = () => (
 					Shoot us an email and let us work together in turning your vision into
 					a reality.
 				</p>
-				<button className="bottom-cta-btn">
-					<Link href="/hire">
-						<a>Let's Connect</a>
-					</Link>
-				</button>
+				<Link href="/hire">
+					<a className="bottom-cta-btn">Let's Connect</a>
+				</Link>
 			</div>
 		</section>
 
@@ -862,9 +860,6 @@ const Index = () => (
 
 			.bottom-cta-btn {
 				background: var(--site-text-color);
-			}
-
-			.bottom-cta-btn a {
 				color: var(--brand-orange);
 			}
 
@@ -1028,17 +1023,13 @@ const Index = () => (
 
 			.bottom-cta-btn {
 				background: var(--site-text-color);
-				padding: 12px 15px;
+				padding: 16px 15px;
 				width: 150px;
 				text-align: center;
 				border-radius: 30px;
 				text-decoration: none;
 				font-weight: bold;
 				cursor: pointer;
-			}
-
-			.bottom-cta-btn a {
-				color: var(--brand-orange);
 			}
 			/* bottom call to action section end */
 
