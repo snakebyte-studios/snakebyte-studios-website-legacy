@@ -10,4 +10,16 @@ const nextConfig = {
 	}
 };
 
-module.exports = withCSS(nextConfig);
+// --- blog config ---
+
+//lets next know to automatically process any .md file as if they were JSX files
+const withMDX = require("@next/mdx")({
+	extension: /\.mdx?$/
+});
+
+// --- end of blog config ---
+
+(module.exports = withCSS(nextConfig)),
+	withMDX({
+		pageExtensions: ["js", "jsx", "md", "mdx"]
+	});

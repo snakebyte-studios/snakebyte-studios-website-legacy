@@ -20,7 +20,7 @@ const Navigation = ({ showHomeLink, tabbable }) => {
 		{
 			name: "Blog",
 			href: "/blog",
-			visible: false
+			visible: true
 		},
 		{
 			name: "Hire Us",

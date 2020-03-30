@@ -1,20 +1,17 @@
 import Head from "next/head";
-import FeatureBlog from "src/components/FeatureBlog.js";
-import BlogCell from "src/components/BlogCell.js";
-import BLOG_DETAILS from "src/data/blog_data.json";
 
-import { useState } from "react";
+// import { useState } from "react";
 
-//sorts array based on post time, sets it to the newest post.
-const initialPost = BLOG_DETAILS.sort(
-	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
-)[0];
+// //sorts array based on post time, sets it to the newest post.
+// const initialPost = BLOG_DETAILS.sort(
+// 	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+// )[0];
 
 const Blog = () => {
-	const [selectedPostsId, setSelectedPostsId] = useState(initialPost.id);
+	// const [selectedPostsId, setSelectedPostsId] = useState(initialPost.id);
 
 	//Returns the currently selected posts object.
-	const selectedPost = BLOG_DETAILS.find(post => post.id === selectedPostsId);
+	// const selectedPost = BLOG_DETAILS.find(post => post.id === selectedPostsId);
 
 	return (
 		<>
@@ -28,60 +25,65 @@ const Blog = () => {
 			</Head>
 
 			<main id="blog-page">
-				<div className="container">
-					<div>Filler 1</div>
-					<div>Filler 2</div>
+				<div className="must-read-feature">
+					<div className="must-read-attributes-container">
+						<div className="must-read-attributes-littleTitle">
+							- must read -
+						</div>
+						<div className="must-read-attributes-title">
+							What I have learned building a markdown blog!
+						</div>
 
-					<div className="blog-grid">
-						{BLOG_DETAILS.map(blogCell => (
-							<div onClick={() => setSelectedPostsId(blogCell.id)}>
-								<BlogCell
-									title={blogCell.title}
-									photo={blogCell.photo}
-									summary={blogCell.summary}
-								/>
-							</div>
-						))}
+						{/*end of must-read-attributes-container*/}
 					</div>
+				</div>
+				{/*end of must-read-feature div*/}
 
-					<div className="blog-feature">
-						<FeatureBlog
-							title={selectedPost.title}
-							date={selectedPost.date}
-							summary={selectedPost.summary}
-							body={selectedPost.body}
-							conclusion={selectedPost.conclusion}
-							photo={selectedPost.photo}
-						/>
-					</div>
+				<div className="blog-topic-menu">
+					<ul className="list-of-blog-topics">
+						<li>DIGITAL MARKETING</li>
+						<li>MONEY</li>
+						<li>STARTUP ADVICE</li>
+						<li>OUR EXPERIENCE</li>
+						<li>FUN STUFF</li>
+					</ul>
 				</div>
 			</main>
 
 			<style jsx>{`
-				.container {
+				#blog-page {
 					display: grid;
-					grid-template-columns: auto 2fr;
-					grid-template-rows: 90px 2fr 55px;
-
 					height: 100vh;
+					width: 100vw;
+					grid-template-columns: 1fr 2fr;
+					grid-template-rows: 1fr 1fr;
 				}
 
-				.blog-grid {
-					display: grid;
-					grid-template-columns: repeat(1, 1fr);
-					grid-auto-rows: 200px;
-					grid-gap: 1em;
-
-					padding: 10px 25px 10px 10px;
-
-					overflow: auto;
+				.must-read-feature {
+					grid-column: 1 / span 3;
+				}
+				.must-read-feature {
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					align-items: center;
+					align-items: center;
+					color: white;
 				}
 
-				.blog-feature {
+				.blog-topic-menu {
 					display: flex;
 					justify-content: center;
-					max-height: calc(100vh - (90px + 55px));
-					overflow: auto;
+					align-items: center;
+					grid-column: 1 / span 1;
+					grid-row: 2 / 3;
+				}
+
+				.blog-topic-menu .list-of-blog-topics {
+					border: 1px solid white;
+				}
+				.blog-topic-menu .list-of-blog-topics li {
+					color: red;
 				}
 			`}</style>
 		</>
