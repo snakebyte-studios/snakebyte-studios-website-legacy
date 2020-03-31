@@ -1,13 +1,20 @@
 import Head from "next/head";
-
-// import { useState } from "react";
+//import ReactMarkdown from "react-markdown";
 
 // //sorts array based on post time, sets it to the newest post.
 // const initialPost = BLOG_DETAILS.sort(
 // 	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 // )[0];
 
-const Blog = () => {
+// const importAll = results => results.keys().map(results);
+
+// const markdownFiles = importAll(
+// 	require.context("../../data/blogContent", false, /\.md$/)
+// )
+// 	.sort()
+// 	.reverse();
+
+const Blog = props => {
 	// const [selectedPostsId, setSelectedPostsId] = useState(initialPost.id);
 
 	//Returns the currently selected posts object.
@@ -31,7 +38,7 @@ const Blog = () => {
 							- must read -
 						</div>
 						<div className="must-read-attributes-title">
-							What I have learned building a markdown blog!
+							What I am doing right now: {props.blogCategory}!
 						</div>
 
 						{/*end of must-read-attributes-container*/}
@@ -47,6 +54,10 @@ const Blog = () => {
 						<li>OUR EXPERIENCE</li>
 						<li>FUN STUFF</li>
 					</ul>
+				</div>
+
+				<div className="blog-boxes">
+					<div>Hello this is where the blogs will go!</div>
 				</div>
 			</main>
 
@@ -82,8 +93,15 @@ const Blog = () => {
 				.blog-topic-menu .list-of-blog-topics {
 					border: 1px solid white;
 				}
+
 				.blog-topic-menu .list-of-blog-topics li {
 					color: red;
+				}
+
+				.blog-boxes {
+					display: flex;
+					justify-content: center;
+					align-items: center;
 				}
 			`}</style>
 		</>
