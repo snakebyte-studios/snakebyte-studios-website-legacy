@@ -3,6 +3,7 @@ import Head from "next/head";
 import DesignLink from "src/components/DesignLink.js";
 import Modal from "src/components/Modal.js";
 import DESIGN_LIST from "src/data/design_list.json";
+import Counter from "src/components/Counter.js";
 
 DESIGN_LIST.forEach(design => {
 	design.show = false;
@@ -30,6 +31,7 @@ const Designs = () => {
 			{/* Page content */}
 			<main id="design-page">
 				<h1>Our Designs</h1>
+				<Counter />
 				<div className="container">
 					{DESIGN_LIST.map(design => (
 						<div
