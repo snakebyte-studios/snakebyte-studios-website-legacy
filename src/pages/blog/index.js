@@ -1,5 +1,16 @@
+import { useState } from "react";
+
 import Head from "next/head";
-//import ReactMarkdown from "react-markdown";
+import matter from "gray-matter";
+// import ReactMarkdown from "react-markdown";
+
+let categories = [
+	"digital marketing",
+	"money",
+	"startup advice",
+	"our experience",
+	"fun stuff"
+];
 
 // //sorts array based on post time, sets it to the newest post.
 // const initialPost = BLOG_DETAILS.sort(
@@ -12,16 +23,16 @@ const markdownFiles = importAll(
 	require.context("../../data/blogContent", false, /\.md$/)
 )
 	.sort()
+	.map(blogPost => matter(blogPost.default))
 	.reverse();
 
-console.log(markdownFiles);
+const Blog = () => {
+	const [selectedCategory, setSelectedCategory] = useState("digital marketing");
 
-const Blog = props => {
-	// const [selectedPostsId, setSelectedPostsId] = useState(initialPost.id);
+	const activePosts = markdownFiles.find(p => p.data.tag === selectedCategory);
 
-	//Returns the currently selected posts object.
-	// const selectedPost = BLOG_DETAILS.find(post => post.id === selectedPostsId);
-
+	console.log(activePosts);
+	console.log(markdownFiles[0].data.tag === selectedCategory);
 	return (
 		<>
 			{/* Meta content */}
@@ -40,7 +51,7 @@ const Blog = props => {
 							- must read -
 						</div>
 						<div className="must-read-attributes-title">
-							What I am doing right now: {props.blogCategory}!
+							What I am doing right now:!
 						</div>
 
 						{/*end of must-read-attributes-container*/}
@@ -50,17 +61,13 @@ const Blog = props => {
 
 				<div className="blog-topic-menu">
 					<ul className="list-of-blog-topics">
-						<li>DIGITAL MARKETING</li>
-						<li>MONEY</li>
-						<li>STARTUP ADVICE</li>
-						<li>OUR EXPERIENCE</li>
-						<li>FUN STUFF</li>
+						{categories.map(category => (
+							<li onClick={() => setSelectedCategory(category)}>{category}</li>
+						))}
 					</ul>
 				</div>
 
-				<div className="blog-boxes">
-					<div>Hello this is where the blogs will go!</div>
-				</div>
+				<div className="blog-boxes">{/* <ReactMarkdown source={} /> */}</div>
 			</main>
 
 			<style jsx>{`
