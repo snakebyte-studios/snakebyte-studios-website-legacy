@@ -30,6 +30,7 @@ const Designs = () => {
 			{/* Page content */}
 			<main id="design-page">
 				<h1>Our Designs</h1>
+
 				<div className="container">
 					{DESIGN_LIST.map(design => (
 						<div

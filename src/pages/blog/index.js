@@ -6,13 +6,15 @@ import Head from "next/head";
 // 	(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 // )[0];
 
-// const importAll = results => results.keys().map(results);
+const importAll = results => results.keys().map(results);
 
-// const markdownFiles = importAll(
-// 	require.context("../../data/blogContent", false, /\.md$/)
-// )
-// 	.sort()
-// 	.reverse();
+const markdownFiles = importAll(
+	require.context("../../data/blogContent", false, /\.md$/)
+)
+	.sort()
+	.reverse();
+
+console.log(markdownFiles);
 
 const Blog = props => {
 	// const [selectedPostsId, setSelectedPostsId] = useState(initialPost.id);
