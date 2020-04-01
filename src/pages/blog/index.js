@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import Head from "next/head";
 import matter from "gray-matter";
-// import ReactMarkdown from "react-markdown";
+import ReactMarkdown from "react-markdown";
 
 let categories = [
 	"digital marketing",
@@ -29,10 +29,10 @@ const markdownFiles = importAll(
 const Blog = () => {
 	const [selectedCategory, setSelectedCategory] = useState("digital marketing");
 
-	const activePosts = markdownFiles.find(p => p.data.tag === selectedCategory);
+	const activePosts = markdownFiles.filter(
+		p => p.data.tag === selectedCategory
+	);
 
-	console.log(activePosts);
-	console.log(markdownFiles[0].data.tag === selectedCategory);
 	return (
 		<>
 			{/* Meta content */}
@@ -67,7 +67,11 @@ const Blog = () => {
 					</ul>
 				</div>
 
-				<div className="blog-boxes">{/* <ReactMarkdown source={} /> */}</div>
+				<div className="blog-boxes">
+					{activePosts.map(post => (
+						<ReactMarkdown source={post.content} />
+					))}
+				</div>
 			</main>
 
 			<style jsx>{`
