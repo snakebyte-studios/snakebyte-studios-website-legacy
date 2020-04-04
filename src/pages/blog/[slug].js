@@ -20,42 +20,48 @@ const PostTemplate = ({ content, data }) => {
 			</Head>
 
 			<div className="hero">
-				<div className="leftside">
-					<div className="blogHeader">
-						<h1>{frontmatter.title}</h1>
+				<div className="makeSpaceForSideMenu">
+					<div className="leftside">
+						<div className="blogHeader">
+							<h1>{frontmatter.title}</h1>
+						</div>
+						<div className="justBelowBlogHeader">
+							<BlogNamePlate
+								photo="/images/team/lev.jpg"
+								author={frontmatter.author}
+								date={frontmatter.date}
+								readTime={frontmatter.readTime}
+							/>
+						</div>
+						<div className="markdown-body">
+							<ReactMarkdown source={content} />
+						</div>
 					</div>
-					<div className="justBelowBlogHeader">
-						<BlogNamePlate
-							photo="/images/team/lev.jpg"
-							author={frontmatter.author}
-							date={frontmatter.date}
-							readTime={frontmatter.readTime}
-						/>
-					</div>
-					<div className="markdown-body">
-						<ReactMarkdown source={content} />
-					</div>
+					<div>hello</div>
 				</div>
 			</div>
 
 			<style jsx>{`
 				.hero {
-					display: grid;
-					height: 100vh;
-					width: 100vw;
-
-					grid-template-columns: 2fr 1fr;
-				}
-
-				.leftside {
 					display: flex;
 					justify-content: center;
+					height: 100vh;
+					width: 100vw;
+				}
+
+				.makeSpaceForSideMenu {
+					display: flex;
+				}
+				.leftside {
+					display: flex;
 					align-items: center;
 					flex-direction: column;
 					grid-column: 1 / 2;
-					overflow: hidden;
 				}
 
+				.leftside::-webkit-scrollbar {
+					display: none;
+				}
 				.blogHeader {
 					display: flex;
 					justify-content: center;
@@ -68,18 +74,17 @@ const PostTemplate = ({ content, data }) => {
 				.justBelowBlogHeader {
 					display: flex;
 					width: 980px;
-					padding: 45px 45px 0 45px;
+					padding: 45px;
 					align-items: center;
 				}
 
 				.blogHeader h1 {
-					font-size: 5em;
+					font-size: 3.5em;
 				}
 
 				.markdown-body {
 					width: 980px;
 					padding: 45px;
-					overflow-y: scroll;
 				}
 			`}</style>
 		</>

@@ -19,8 +19,12 @@ const BlogNamePlate = props => {
 				.plate {
 					display: flex;
 					flex-direction: row;
+					border: 1px solid white;
+					border-right: none;
+					border-top: none;
+					border-radius: 15px;
+					padding: 5px;
 				}
-
 				.plate img {
 					background-size: cover;
 					border-radius: 50% 50% 50% 50%;

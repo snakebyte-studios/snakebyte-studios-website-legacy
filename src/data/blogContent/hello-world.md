@@ -1,7 +1,7 @@
 ---
-title: "What I learned from making my first staic blog"
+title: "What I learned from making my first static blog"
 hook: "In this blog we will explore what it is like to build your own static blog using markdown and Next.js!"
-date: "April 3rd, 2019"
+date: "April 3rd"
 author: "Lev Markelov"
 readTime: "6 min"
 tag: "money"
