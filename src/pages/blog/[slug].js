@@ -84,8 +84,15 @@ const PostTemplate = ({ content, data }) => {
 				}
 
 				.markdown-body {
-					width: 980px;
+					min-width: 200px;
+					max-width: 980px;
+					margin: 0 auto;
 					padding: 45px;
+				}
+
+				img[src*="styleIt"] {
+					width: 50px;
+					height: 50px;
 				}
 			`}</style>
 		</>

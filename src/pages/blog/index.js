@@ -69,7 +69,7 @@ const Blog = () => {
 
 				<div className="blog-boxes">
 					{activePosts.map(post => (
-						<ReactMarkdown source={post.content} />
+						<ReactMarkdown source={post.data.title} />
 					))}
 				</div>
 			</main>
