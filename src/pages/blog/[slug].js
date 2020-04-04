@@ -2,6 +2,7 @@ import matter from "gray-matter";
 import Head from "next/head";
 import ReactMarkdown from "react-markdown";
 import BlogNamePlate from "src/components/BlogNamePlate.js";
+import MoreFromAuthor from "src/components/MoreFromAuthor.js";
 import "github-markdown-css";
 
 const PostTemplate = ({ content, data }) => {
@@ -37,7 +38,7 @@ const PostTemplate = ({ content, data }) => {
 							<ReactMarkdown source={content} />
 						</div>
 					</div>
-					<div>hello</div>
+					<MoreFromAuthor authorName={frontmatter.author} />
 				</div>
 			</div>
 
