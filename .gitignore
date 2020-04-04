@@ -1,6 +1,16 @@
+# Node
 node_modules
-out
-secret.json
+
+# this project uses yarn.lock instead
+package-lock.json
+
+# macOS
 .DS_Store
+
+# NextJS
+out
 .next
+
+# Secrets
 .env
+secret.json
