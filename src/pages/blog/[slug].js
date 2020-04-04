@@ -29,6 +29,7 @@ const PostTemplate = ({ content, data }) => {
 							photo="/images/team/lev.jpg"
 							author={frontmatter.author}
 							date={frontmatter.date}
+							readTime={frontmatter.readTime}
 						/>
 					</div>
 					<div className="markdown-body">
@@ -46,14 +47,6 @@ const PostTemplate = ({ content, data }) => {
 					grid-template-columns: 2fr 1fr;
 				}
 
-				.blogHeader {
-					display: flex;
-					justify-content: center;
-					margin-top: 80px;
-					width: 980px;
-					padding: 45px 45px 0 45px;
-				}
-
 				.leftside {
 					display: flex;
 					justify-content: center;
@@ -61,6 +54,26 @@ const PostTemplate = ({ content, data }) => {
 					flex-direction: column;
 					grid-column: 1 / 2;
 					overflow: hidden;
+				}
+
+				.blogHeader {
+					display: flex;
+					justify-content: center;
+					align-content: center;
+					margin-top: 80px;
+					width: 980px;
+					padding: 0 45px 0 45px;
+				}
+
+				.justBelowBlogHeader {
+					display: flex;
+					width: 980px;
+					padding: 45px 45px 0 45px;
+					align-items: center;
+				}
+
+				.blogHeader h1 {
+					font-size: 5em;
 				}
 
 				.markdown-body {
