@@ -19,6 +19,7 @@ const Index = () => (
 				delivering quality web development, web design and digital marketing
 				experiences for your brand."
 			/>
+			<meta name="p:domain_verify" content="40e6c8d7f35b6e8f49a53c15d209f8e0" />
 		</Head>
 
 		{/* Page content */}
@@ -368,7 +369,7 @@ const Index = () => (
 							trends to ensure that your site is up to date with the most modern
 							web practices, and does well in the competing market. We focus
 							heavily on making sure your site is fully optimized to give it the
-							best chances of appearing on the front page. 
+							best chances of appearing on the front page.
 						</p>
 					</Fade>
 				</div>
@@ -396,7 +397,7 @@ const Index = () => (
 							performance levels, and ensure the site is fully responsive on
 							every screen. We double-check that your site meets all current web
 							protocols and standards, and focus on making your site runs
-							smoothly and loads quickly upon launch. 
+							smoothly and loads quickly upon launch.
 						</p>
 					</Fade>
 				</div>
