@@ -1,9 +1,0 @@
-{
-	"name": "snakebyte-studios-website",
-	"version": 2,
-	"scope": "snakebyte-studios",
-	"env": {
-		"EMAIL_PASS": "@snakebyte-studios-website-email-pass",
-		"RECAPTCHA_SECRET": "@snakebyte-studios-website-recaptcha-secret"
-	}
-}
