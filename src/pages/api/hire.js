@@ -1,5 +1,10 @@
-const nodemailer = require("nodemailer");
-const axios = require("axios");
+import axios from "axios";
+import sgMail from "@sendgrid/mail";
+import {
+	CONTACT_FORM_SENDER_EMAIL,
+	CONTACT_FORM_RECIEVING_EMAIL
+} from "src/global/constants.js";
+
 const MAX_FIELD_LENGTH = 1000;
 
 export default async function handle(req, res) {
@@ -40,35 +45,18 @@ export default async function handle(req, res) {
 	});
 
 	// Send email
-	const transporter = nodemailer.createTransport({
-		service: "gmail",
-		auth: {
-			user: "snakebyte.studios.dev@gmail.com",
-			pass: process.env.EMAIL_PASS
-		}
-	});
+	sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
-	const mailOptions = {
-		from: `${req.body.name} <${req.body.email}>`,
-		to: "info@snakebyte.ca",
-		subject: `Contact form submission from ${req.body.name}`,
+	await sgMail.send({
+		to: CONTACT_FORM_RECIEVING_EMAIL,
+		from: CONTACT_FORM_SENDER_EMAIL,
+		subject: `${req.body.name} - Contact form submission`,
 		html: `
 			<p>[Name]: ${req.body.name}</p>
 			<p>[Email]: ${req.body.email}</p>
 			<p>[Message]: ${req.body.message}</p>
 		`
-	};
-
-	transporter.sendMail(mailOptions, function(err) {
-		if (err) {
-			// eslint-disable-next-line no-console
-			console.error(err);
-			return res.status(500).json({
-				status: 500,
-				message: "Internal Server Error"
-			});
-		} else {
-			return res.end("Success!");
-		}
 	});
+
+	return res.json({ success: true });
 }
